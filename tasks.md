@@ -85,14 +85,14 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T6.1 Split:** stratified 70/30, seed 42 (identical to the tutorial); save indices. ✔ 2026-11-14 21:49
 - [x] **T6.2 Models (≥ 4):** M0 majority · M1 logistic regression · M2 decision tree depth ≤ 4 (explanation) · M3 XGBoost tutorial params · M4 XGBoost + features · M5 XGBoost tuned (≤ 30 random configs, ≤ 20 min) · optional M6 LightGBM/RandomForest. ✔ 2026-11-14 22:08
 - [x] **T6.3 5-fold stratified CV on the 70% only;** log every experiment in `outputs/tables/experiment_log.csv` (id · change · features · params · CV AUC · std · accuracy); differences < 1 std = noise. ✔ 2026-11-14 22:08
-- [~] **T6.4 Choose the final model** (best CV AUC; ties → simpler); log reasoning.
-  - Selecting `M5` (Regularized & Tuned XGBoost + 28 Engineered Features, CV AUC = `0.7020 ± 0.0013`) as the final production model and `M4` (`0.7002 ± 0.0015`) as the second test comparison candidate.
-- [ ] **T6.5 Final test evaluation (≤ 2 touches, logged):** AUC, accuracy, precision, recall, F1, confusion matrix, train–test gap; accuracy ≥ 0.75 or AUC ≥ 0.80 ⇒ leakage hunt first.
-- [ ] **T6.6 Save** the model (`outputs/models/`, git-ignored) and `outputs/tables/test_predictions.csv` (row id · y_true · p_churn); fill `results.json → models, final_model`.
-- [ ] **T6.7 Phase wrap-up** (Arabic section, commit, tag `phase-6-done`).
+- [x] **T6.4 Choose the final model** (best CV AUC; ties → simpler); log reasoning. ✔ 2026-11-14 22:15
+- [x] **T6.5 Final test evaluation (≤ 2 touches, logged):** AUC, accuracy, precision, recall, F1, confusion matrix, train–test gap; accuracy ≥ 0.75 or AUC ≥ 0.80 ⇒ leakage hunt first. ✔ 2026-11-14 22:15
+- [x] **T6.6 Save** the model (`outputs/models/`, git-ignored) and `outputs/tables/test_predictions.csv` (row id · y_true · p_churn); fill `results.json → models, final_model`. ✔ 2026-11-14 22:15
+- [x] **T6.7 Phase wrap-up** (Arabic section, commit, tag `phase-6-done`). ✔ 2026-11-14 22:15
 
 ## Phase 7 — Evaluation and interpretation  (type: `eval`)
-- [ ] **T7.1 Confusion matrix** at the stated threshold (matplotlib), explained in words (FP = wasted offer; FN = lost customer).
+- [~] **T7.1 Confusion matrix** at the stated threshold (matplotlib), explained in words (FP = wasted offer; FN = lost customer).
+  - Generating the matplotlib confusion matrix (`fig_11_confusion.png`) and explaining TN, FP, FN, and TP in business terms.
 - [ ] **T7.2 Top-k table** k ∈ {1,2,5,10,15,20,30,50} (customers, precision, recall, lift) + gain/lift curve (matplotlib) → `results.json → topk`.
 - [ ] **T7.3 Calibration** curve (matplotlib); isotonic calibration if probabilities enter money terms.
 - [ ] **T7.4 Importance:** gain **and** permutation (held-out); explain gain vs weight; optional SHAP.

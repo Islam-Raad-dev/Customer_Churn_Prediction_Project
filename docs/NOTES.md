@@ -112,6 +112,13 @@
     - **`M4` (XGBoost + 28 Engineered Features, `125` cols, tutorial params):** CV ROC-AUC = **`0.7002 ± 0.0015`**, CV Acc = **`0.6424`** (`+0.0077` AUC = **`+5.1` fold stds** above `M3`, proving feature engineering adds statistically meaningful signal).
     - **`M5` (XGBoost Tuned & Regularized — Best of 10 Random Configs `M5_c05`: `n_estimators=400, lr=0.04, max_depth=6, min_child_weight=15, subsample=0.75, colsample_bytree=0.80, reg_alpha=1.0, reg_lambda=10.0`):** CV ROC-AUC = **`0.7020 ± 0.0013`**, CV Acc = **`0.6444`** (train Acc `0.7325`, shrinking the train–CV accuracy gap from `11.58 pp` in `M4` to `8.81 pp` while achieving the highest CV AUC).
     - **`M6` (LightGBM + 28 Engineered Features, `num_leaves=31, min_child_samples=50`):** CV ROC-AUC = **`0.7010 ± 0.0017`**, CV Acc = **`0.6427`**.
+- **2026-11-14 (T6.4 — Final Model Selection):**
+  - Selected **`M5` (Regularized & Tuned XGBoost on `FEATURES_NO_ETHNIC = 125` features)** as our final production model: it achieves the highest 5-fold CV ROC-AUC (**`0.7020 ± 0.0013`**) and highest CV accuracy (**`0.6444`**) while enforcing stronger tree regularization (`min_child_weight=15, subsample=0.75, colsample_bytree=0.80, reg_alpha=1.0, reg_lambda=10.0`) that narrows the train–test accuracy gap by `2.18 pp` compared to unregularized `M4` (`7.94 pp` vs. `10.12 pp`).
+- **2026-11-14 (T6.5 & T6.6 — Final Test Set Evaluation & Model/Prediction Export):**
+  - Logged 2 final boosted-tree touches on the 30% held-out test split (`n = 30,000`):
+    - **Touch #1 (`M4` — XGBoost + 28 Engineered Features, default params):** Test ROC-AUC = **`0.6992`**, Test Acc = **`0.6398`**, Precision = `0.6360`, Recall = `0.6386`, F1 = `0.6373`, Train–Test Acc Gap = `10.12 pp`.
+    - **Touch #2 (`M5` — Final Regularized & Tuned XGBoost + 28 Engineered Features):** Test ROC-AUC = **`0.7029`**, Test Acc = **`0.6409`**, Precision = **`0.6382`**, Recall = **`0.6360`**, F1 = **`0.6371`**, Brier Score = **`0.2180`**, Train Acc = `0.7203` (Train–Test Acc Gap = **`7.94 pp`**, down from `9.92 pp` in the tutorial baseline and `10.12 pp` in `M4`). Confusion matrix at threshold `0.50`: `TN = 9,769`, `FP = 5,362`, `FN = 5,412`, `TP = 9,457`.
+  - Saved fitted pipeline to `outputs/models/final_xgb_m5_pipeline.joblib` (git-ignored), exported `outputs/tables/test_predictions.csv` (`30,000` rows: `Customer_ID, y_true, p_churn`), updated `outputs/results.json → models, final_model`, and generated `outputs/figures/fig_09_model_comparison.png` (`4.4 × 3.3` in, 200 DPI).
 
 ---
 
