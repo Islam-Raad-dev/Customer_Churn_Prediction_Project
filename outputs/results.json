@@ -2449,7 +2449,80 @@
         "rev_mean": 83.74,
         "eqpdays_mean": 255.8
       }
-    ]
+    ],
+    "quality_overage_roaming": {
+      "overage_share_buckets": [
+        {
+          "bucket": "ovr_share == 0%",
+          "n_train": 28557,
+          "churn_train": 0.482509
+        },
+        {
+          "bucket": "0% < ovr_share <= 20%",
+          "n_train": 19036,
+          "churn_train": 0.474417
+        },
+        {
+          "bucket": "20% < ovr_share <= 40%",
+          "n_train": 10461,
+          "churn_train": 0.504445
+        },
+        {
+          "bucket": "ovr_share > 40% (bill shock)",
+          "n_train": 10341,
+          "churn_train": 0.542017
+        }
+      ],
+      "drop_blk_rate_quartiles": [
+        {
+          "quartile": "(-0.001, 0.0343]",
+          "n_train": 15295,
+          "churn_train": 0.467473
+        },
+        {
+          "quartile": "(0.0343, 0.0553]",
+          "n_train": 15296,
+          "churn_train": 0.471365
+        },
+        {
+          "quartile": "(0.0553, 0.0885]",
+          "n_train": 15288,
+          "churn_train": 0.487114
+        },
+        {
+          "quartile": "(0.0885, 0.969]",
+          "n_train": 15293,
+          "churn_train": 0.517099
+        }
+      ],
+      "roaming_asl": [
+        {
+          "segment": "roam_Mean == 0",
+          "n_train": 48027,
+          "churn_train": 0.498678
+        },
+        {
+          "segment": "0 < roam_Mean <= 5",
+          "n_train": 18133,
+          "churn_train": 0.48056
+        },
+        {
+          "segment": "roam_Mean > 5",
+          "n_train": 3578,
+          "churn_train": 0.51621
+        },
+        {
+          "segment": "asl_flag == N (no spend limit)",
+          "n_train": 60188,
+          "churn_train": 0.508972
+        },
+        {
+          "segment": "asl_flag == Y (spend limit)",
+          "n_train": 9812,
+          "churn_train": 0.413677
+        }
+      ]
+    }
   },
   "models": [],
   "final_model": {},

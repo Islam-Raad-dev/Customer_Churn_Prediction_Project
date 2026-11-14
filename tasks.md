@@ -53,9 +53,9 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T2.5 Usage-collapse segments:** `mou_Mean` = 0, ≤ 10, ≤ 30, ≤ 65, missing `change_mou`: size, churn, mean revenue, revenue share, lifetime totals; stand-alone target or "already gone"? ✔ 2026-11-14 20:44
 - [x] **T2.6 Revenue and "value":** distributions/medians by class; implication for defining a valuable customer. ✔ 2026-11-14 20:46
 - [x] **T2.7 Customer-care calls vs churn:** buckets; ≥ 3 competing explanations (hypotheses only). ✔ 2026-11-14 20:47
-- [~] **T2.8 Call quality, overage, roaming vs churn.**
-  - Analyzing call quality (`drop_vce_Mean`, `blck_vce_Mean`, `drop_rate`, `completion_rate`), overage (`ovrrev_Mean`, `overage_share`), and roaming (`roam_Mean`) vs. churn on the 70% training split.
-- [ ] **T2.9 Demographics vs churn** + fairness note for `ethnic` and proxies.
+- [x] **T2.8 Call quality, overage, roaming vs churn.** ✔ 2026-11-14 20:49
+- [~] **T2.9 Demographics vs churn** + fairness note for `ethnic` and proxies.
+  - Analyzing demographic features (`income`, `marital`, `prizm_social_one`, `dwlltype`, `ownrent`, `infobase`, `ethnic`) vs. churn on the 70% training split and documenting the fairness policy (`ethnic` and proxies excluded from targeting).
 - [ ] **T2.10 Select 4–6 final EDA charts** for slides 4–6 (PRD §10 style; exact placement sizes; PNG 200 dpi; open each PNG and inspect).
 - [ ] **T2.11 Write 3 hypotheses** (full sentences, ranked by actionability) in `docs/NOTES.md → Hypotheses`; store key stats in `results.json → eda`.
 - [ ] **T2.12 Phase wrap-up** (Arabic section, commit, tag `phase-2-done`).
