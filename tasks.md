@@ -79,11 +79,11 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T5.2 Engineer ≥ 10 features** (PRD §8.3); safe division with epsilon; negatives per T1.3; fill **Feature dictionary** (name · formula · business reason · leakage check · kept?). ✔ 2026-11-14 21:40
 - [x] **T5.3 Leakage review:** each feature available before the churn window; none uses `churn`; target statistics only inside CV folds; no single feature gives unexpectedly high AUC (prior max ≈ 0.57). ✔ 2026-11-14 21:41
 - [x] **T5.4 Fairness variants:** feature sets with/without `ethnic, income, marital, kid*, dwllsize`. ✔ 2026-11-14 21:47
-- [~] **T5.5 Phase wrap-up** (Arabic section, commit, tag `phase-5-done`).
-  - Appending Phase 5 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`, committing, and tagging `phase-5-done`.
+- [x] **T5.5 Phase wrap-up** (Arabic section, commit, tag `phase-5-done`). ✔ 2026-11-14 21:48
 
 ## Phase 6 — Modeling and experiments  (type: `model`)
-- [ ] **T6.1 Split:** stratified 70/30, seed 42 (identical to the tutorial); save indices.
+- [~] **T6.1 Split:** stratified 70/30, seed 42 (identical to the tutorial); save indices.
+  - Verifying stratified 70/30 split (`seed=42`) indices and class distribution in `Islam-Raad.ipynb` Section 7.
 - [ ] **T6.2 Models (≥ 4):** M0 majority · M1 logistic regression · M2 decision tree depth ≤ 4 (explanation) · M3 XGBoost tutorial params · M4 XGBoost + features · M5 XGBoost tuned (≤ 30 random configs, ≤ 20 min) · optional M6 LightGBM/RandomForest.
 - [ ] **T6.3 5-fold stratified CV on the 70% only;** log every experiment in `outputs/tables/experiment_log.csv` (id · change · features · params · CV AUC · std · accuracy); differences < 1 std = noise.
 - [ ] **T6.4 Choose the final model** (best CV AUC; ties → simpler); log reasoning.

@@ -1,8 +1,8 @@
 # PROGRESS
-Updated: 2026-11-14 21:47
-Last completed task: T5.4 — Fairness variants (`FEATURES_FULL` = 126, `FEATURES_NO_ETHNIC` = 125, `FEATURES_NO_PROXIES` = 117)
-Current task: T5.5 — Phase 5 wrap-up   | status: [~] in progress (appending Phase 5 Arabic walkthrough to `docs/UNDERSTANDING_AR.md` and tagging `phase-5-done`)
-Next concrete action: Append Phase 5 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`, commit `T5.5`, tag `phase-5-done`, and start Phase 6 (`T6.1`).
+Updated: 2026-11-14 21:48
+Last completed task: T5.5 — Phase 5 wrap-up (tagged `phase-5-done`)
+Current task: T6.1 — Stratified 70/30 split, seed 42; save indices   | status: [~] in progress (verifying split indices and starting Phase 6 modeling experiments)
+Next concrete action: Complete `T6.1`–`T6.7` (verify split indices, run 5-fold Stratified CV on M0–M6 on the 70% training split, log `outputs/tables/experiment_log.csv`, select final model, evaluate on 30% test split, save model & `test_predictions.csv`, update `outputs/results.json`, and wrap up Phase 6).
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
@@ -13,7 +13,7 @@ Key decisions so far:
 - Completed Phase 2 Exploratory Data Analysis (`T2.1`–`T2.12`, tagged `phase-2-done`).
 - Completed Phase 3 Market Research (`T3.1`–`T3.6`, tagged `phase-3-done`).
 - Completed Phase 4 Problem Definition & Decision Gate (`T4.1`–`T4.5`, tagged `phase-4-done`).
-- Completed `T5.1`–`T5.4`: Built leakage-safe tree & linear preprocessing pipelines, engineered 28 domain features across 6 families, verified zero target leakage (max single-feature train AUC = `0.5817` on `dev_age_gt_300`), and defined the 3 fairness feature-set variants (`126`, `125` default without `ethnic`, and `117` without socioeconomic proxies).
+- Completed Phase 5 Preprocessing & Feature Engineering (`T5.1`–`T5.5`, tagged `phase-5-done`): built leakage-safe `ColumnTransformer` pipelines (`0.6938 ± 0.0016` CV AUC), engineered 28 domain features across 6 families, verified zero target leakage (max single-feature train AUC = `0.5817`), and defined 3 fairness feature-set variants (`126` full, `125` default without `ethnic`, `117` without socioeconomic proxies).
 Key numbers so far (from results.json):
 - `data.n_rows`: `100,000`, `data.n_cols`: `100`, `data.n_features_raw`: `98`.
 - `data.churn_count`: `49,562` (`49.562%`), `data.stayed_count`: `50,438` (`50.438%`), `data.imbalance_ratio`: `1.0177`.
