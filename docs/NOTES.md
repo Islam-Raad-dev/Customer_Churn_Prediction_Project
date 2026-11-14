@@ -57,6 +57,11 @@
 ## 1. Decision Log
 - **2026-11-14 (T0.1):** Adopted `README.docx` as primary source of truth for cohort title (*GCI World 2026 September*) and deadline (*28 Nov 2026, 11:30 UTC*), resolving cohort-label inconsistencies in `tutorial.ipynb` (*Winter*) and tutorial PDF screenshots (*April*).
 - **2026-11-14 (T0.1):** Enforced PRD §10 `matplotlib`-only rule across all notebook and slide figures, superseding `seaborn` usage in `tutorial.ipynb`.
+- **2026-11-14 (T1.3 — Negative/impossible values handling):**
+  - `change_mou` (`53,651` negatives, min `-3,875.00`) & `change_rev` (`56,150` negatives, min `-1,107.74`): **Keep as-is** (legitimate signed deltas vs. prior 3-month average).
+  - `eqpdays` (`133` negatives, range `-5` to `-1`, `35.34%` churn): **Clip to `0` for age ratios/binning (`eqpdays_clean = clip(lower=0)`) and add binary flag `eqpdays_neg_flag`** so tree/linear models retain the low-churn (`35.34%`) pre-activation/recent-swap signal while avoiding negative equipment ages.
+  - `totmrc_Mean` (`23` negatives, min `-26.91`, `47.83%` churn), `rev_Mean` (`5` negatives, min `-6.17`, `40.00%` churn), `avg6rev` (`3` negatives, min `-2.00`, `66.67%` churn): **Clip denominators at `0` (with epsilon) when computing revenue ratios (`recurring_share`, `overage_share`, `rev_trend`) and add `neg_bill_flag`**, while keeping raw values for tree splits (reflecting billing credits/adjustments).
+  - **Explanation of `tutorial.ipynb` `np.log1p` `RuntimeWarning`:** `np.log1p(x) = ln(1 + x)` yields `-inf` (`divide by zero`) at `x = -1` (`34` rows in `eqpdays`) and `NaN` (`invalid value`) for `x < -1` (`99` rows in `eqpdays`, `14` rows in `totmrc_Mean`, `4` rows in `rev_Mean`).
 
 ---
 

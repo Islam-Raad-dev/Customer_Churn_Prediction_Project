@@ -716,7 +716,51 @@
         "churn_when_present": 49.56,
         "churn_diff_pp": -49.56
       }
-    ]
+    ],
+    "negatives": {
+      "change_rev": {
+        "n_negative": 56150,
+        "pct_negative": 56.15,
+        "n_le_minus1": 41744,
+        "min_val": -1107.74,
+        "churn_when_neg_pct": 49.39
+      },
+      "change_mou": {
+        "n_negative": 53651,
+        "pct_negative": 53.651,
+        "n_le_minus1": 52974,
+        "min_val": -3875.0,
+        "churn_when_neg_pct": 51.2
+      },
+      "eqpdays": {
+        "n_negative": 133,
+        "pct_negative": 0.133,
+        "n_le_minus1": 133,
+        "min_val": -5.0,
+        "churn_when_neg_pct": 35.34
+      },
+      "totmrc_Mean": {
+        "n_negative": 23,
+        "pct_negative": 0.023,
+        "n_le_minus1": 14,
+        "min_val": -26.91,
+        "churn_when_neg_pct": 47.83
+      },
+      "rev_Mean": {
+        "n_negative": 5,
+        "pct_negative": 0.005,
+        "n_le_minus1": 4,
+        "min_val": -6.17,
+        "churn_when_neg_pct": 40.0
+      },
+      "avg6rev": {
+        "n_negative": 3,
+        "pct_negative": 0.003,
+        "n_le_minus1": 3,
+        "min_val": -2.0,
+        "churn_when_neg_pct": 66.67
+      }
+    }
   },
   "eda": {},
   "models": [],
