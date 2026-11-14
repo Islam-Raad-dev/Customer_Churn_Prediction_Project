@@ -69,7 +69,17 @@
 ---
 
 ## 2. Assumptions
-*(To be populated in Phase 3 & Phase 8 — every input marked `SOURCED [ID]` or `ASSUMPTION`.)*
+| Parameter | Symbol | Conservative | Base | Optimistic | Provenance (`SOURCED [ID]` vs. `ASSUMPTION`) & Rationale |
+|---|---|---|---|---|---|
+| Active customer base | $N$ | `100,000` | `100,000` | `100,000` | **SOURCED (Dataset)** — exact merged row count of `Client.csv` and `Record.csv`. |
+| Monthly ARPU (Monetary Units) | $\text{ARPU}$ | `48.20 MU` (median `rev_Mean`) | `58.72 MU` (mean `rev_Mean`) | `58.72 MU` (mean `rev_Mean`) | **SOURCED (Dataset)** — empirical mean (`58.72 MU`) and median (`48.20 MU`) of `rev_Mean` across `99,643` non-null accounts. |
+| Sample churn rate | $\pi_s$ | `49.562%` | `49.562%` | `49.562%` | **SOURCED (Dataset `[7]`)** — oversampled/balanced case-control rate (`49,562 / 100,000`). |
+| Realistic operational churn prior | $\pi_r$ | `5.0%` | `10.0%` (also shown at `5.0%`) | `10.0%` | **SOURCED `[7, 10]` & Course Guide** — `tutorial.ipynb` §3.3 and `GCI_Final_Assignment_Guide.pdf` p. 19, 28 specify `5%–10%` realistic churn; Neslin et al. `[7]` report `~1.8%/mo` (`~5%–10%` over a 3–6 month campaign horizon). Re-based via Saerens et al. `[10]`. |
+| Gross contribution margin | $m$ | `60%` (`0.60`) | `70%` (`0.70`) | `80%` (`0.80`) | **ASSUMPTION** — wireless gross service margin after interconnect/direct variable costs; sensitivity-tested in Phase 8. |
+| Retained lifetime horizon | $H$ | `3 months` | `6 months` | `9 months` | **ASSUMPTION** — months of incremental cash flow preserved when a would-be churner is saved (anchored to Neslin et al. `[7]` 3–6 month model horizon). |
+| Retained value per saved churner | $V = \text{ARPU} \times m \times H$ | `86.76 MU` (`48.20 × 0.60 × 3`) | `246.62 MU` (`58.72 × 0.70 × 6`) | `422.78 MU` (`58.72 × 0.80 × 9`) | **DERIVED (`SOURCED` ARPU × `ASSUMPTION` $m, H$)** — gross margin preserved per successfully retained true churner. |
+| Retention offer success rate | $s$ | `10%` (`0.10`) | `20%` (`0.20`) | `30%` (`0.30`) | **ASSUMPTION** — fraction of targeted true churners persuaded to stay by the proactive offer (no Iraqi operator publishes internal save rates; anchored to literature ranges `[7, 8, 9]`). |
+| Cost per targeted customer | $c$ | `12.00 MU` | `8.00 MU` | `5.00 MU` | **ASSUMPTION** — incentive + outreach cost incurred for **every** targeted customer ($n = k \cdot N$), including false positives who would have stayed anyway (`~8.5%–20.4%` of monthly ARPU). |
 
 ---
 

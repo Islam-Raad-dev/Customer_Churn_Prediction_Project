@@ -1,8 +1,8 @@
 # PROGRESS
-Updated: 2026-11-14 21:06
-Last completed task: T3.3 — Answer each research question
-Current task: T3.4 — Choose 3 facts for slide 3 & impact model inputs   | status: [~] in progress (recording 3 Slide 3 KPI facts and populating `docs/NOTES.md → 2. Assumptions`)
-Next concrete action: Record the 3 sourced KPI facts for Slide 3 and populate `docs/NOTES.md → 2. Assumptions` with every impact-model input marked `SOURCED [ID]` or `ASSUMPTION`.
+Updated: 2026-11-14 21:08
+Last completed task: T3.4 — Choose 3 facts for slide 3 & impact model inputs
+Current task: T3.5 — Draft `references.txt`   | status: [~] in progress (writing numbered `submission/references.txt` with stable IDs `[1]`–`[18]`)
+Next concrete action: Write `submission/references.txt` (one numbered reference per line, identical to Slide 15, covering `[1]`–`[12]` market/academic sources, `[13]`–`[16]` Python libraries, `[17]` Company A dataset citation, and `[18]` AI chat link placeholders), and log in `research/sources_log.md`.
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
@@ -11,7 +11,7 @@ Key decisions so far:
 - Reproduced exact tutorial baseline (`0.6357` test accuracy, `0.6938` test AUC).
 - Completed Phase 1 Data Audit (`T1.1`–`T1.8`, tagged `phase-1-done`).
 - Completed Phase 2 Exploratory Data Analysis (`T2.1`–`T2.12`, tagged `phase-2-done`).
-- Completed T3.1–T3.3: collected and verified 12 sources (`[1]`–`[12]`) and answered all 7 PRD §7 research questions with explicit `[ID]` citations in `research/sources_log.md`.
+- Completed T3.1–T3.4: collected 12 verified sources (`[1]`–`[12]`), answered all 7 PRD §7 research questions, selected the 3 Slide 3 KPI facts, and populated `docs/NOTES.md → 2. Assumptions` (`V = 86.76 / 246.62 / 422.78 MU`, `s = 10% / 20% / 30%`, `c = 12 / 8 / 5 MU`, `π_r ∈ {5%, 10%}`).
 Key numbers so far (from results.json):
 - `data.n_rows`: `100,000`, `data.n_cols`: `100`, `data.n_features_raw`: `98`.
 - `data.churn_count`: `49,562` (`49.562%`), `data.stayed_count`: `50,438` (`50.438%`), `data.imbalance_ratio`: `1.0177`.
@@ -19,7 +19,6 @@ Key numbers so far (from results.json):
 - `eda.jump_ci`: `260–300d` (`36.85%`) vs `301–340d` (`60.69%`), `+23.83 pp` (`95% CI [+22.12, +25.62] pp`), local linear jump `+23.22 pp`, `months >= 10` jump `+19.46 pp`.
 - `eda.tenure_summary`: month 9 `29.25%` $\rightarrow$ month 10 `40.18%` $\rightarrow$ month 11 `64.57%` $\rightarrow$ month 12 `61.49%` $\rightarrow$ `37+` months `47.15%`.
 - `eda.zero_usage`: `mou_Mean == 0` has `n=1,120` train (`1,600` all), churn `78.48%` (`79.81%` all), mean `rev_Mean = 22.89 MU` (`0.62%` revenue share).
-- `eda.demographics`: household spread `2.68–5.26 pp` vs `ethnic` spread `18.88 pp`.
 - `tutorial_baseline.test_acc`: `0.6357`, `test_auc`: `0.6938`, `train_acc`: `0.7349`, `majority_test_acc`: `0.5044`.
 Files produced so far:
 - `.gitignore`, `PROGRESS.md`, `Islam-Raad.ipynb`, `docs/NOTES.md`, `docs/UNDERSTANDING_AR.md`, `research/sources_log.md`, `scripts/check_submission.py`, `outputs/results.json`, `outputs/figures/fig_04_missing.png`, `outputs/figures/fig_05_device_age.png`, `outputs/figures/fig_06a_tenure.png`, `outputs/figures/fig_06b_entanglement.png`, `outputs/figures/fig_06c_usage_collapse.png`, `outputs/figures/fig_06_tenure_usage.png`

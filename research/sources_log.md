@@ -59,3 +59,22 @@
 
 7. **Q7 — Peer-reviewed papers on telecom churn prediction & why tree models win on tabular data:**
    Four peer-reviewed studies anchor our methodology: (i) **Grinsztajn, Oyallon, & Varoquaux (NeurIPS 2022)** `[11]` prove across 45 tabular benchmarks that gradient-boosted trees (`XGBoost`, `LightGBM`) outperform deep neural networks on heterogeneous tabular data because axis-aligned splits capture sharp step discontinuities (like our `300`-day and `10–12`-month cliffs) and ignore uninformative/redundant columns natively; (ii) **Chen & Guestrin (KDD 2016)** `[12]` show that `XGBoost`'s sparsity-aware split finding learns optimal default directions for missing values (`NaN`), crucial for our `43` columns with informative missingness; (iii) **Verbeke et al. (EJOR 2012)** `[8]` prove across 11 telecom datasets that top-$k\%$ profit-maximizing targeting beats threshold accuracy; and (iv) **Saerens, Latinne, & Decaestecker (Neural Computation 2002)** `[10]` provide the exact Bayes label-shift formula to re-base predictions from our `49.56%` sample prior to realistic `5%–10%` operational churn priors.
+
+---
+
+## 4. Three Selected Facts for Slide 3 & Impact-Model Inputs (T3.4)
+
+### A. Three Sourced KPI Facts for Slide 3 ("Market Context — Why Churn Is the Profit Lever")
+1. **Fact 1 — Saturated Penetration (`103%` SIMs / Population):** Iraq reached **`48.1M` mobile connections (`103%` of its `46.5M` population, `82.9%` broadband)** in early 2025 (up from `46.0M` / `100.0%` in 2024) — in a saturated multi-SIM market, revenue growth depends on **retaining active subscribers** rather than first-time acquisition `[1, 2, 6]`.
+2. **Fact 2 — Fierce Multi-SIM Duopoly/Triopoly (`>80%` Top-2 Share):** Regulated by the **CMC** `[3]`, **Zain Iraq (`19.7M` subs)** `[4]` and **Asiacell (`19.13M` subs)** `[5]` command **`>80%`** of active lines; dual-SIM/eSIM usage allows dissatisfied users to shift call volume silently (`mou_Mean → 0`) before formal cancellation `[1, 6]`.
+3. **Fact 3 — Profit-Driven Top-$k\%$ Targeting vs. Untargeted Spend:** Empirical wireless studies show realistic campaign-window churn is **`5%–10%`** (`~1.8%/month` vs. our `49.56%` oversampled calibration set) `[7]`, and targeting only the top-$k\%$ by expected net value while running **A/B holdout pilots** prevents wasting offers on stayers or lost causes `[8, 9, 10]`.
+
+### B. Impact-Model Parameter Provenance (`docs/NOTES.md → 2. Assumptions`)
+- **Base size `N`:** `100,000` customers (**SOURCED — Company A dataset**, `Client.csv` + `Record.csv`).
+- **Monthly ARPU:** Mean `rev_Mean = 58.72 MU` (Base/Optimistic) and Median `rev_Mean = 48.20 MU` (Conservative sensitivity) (**SOURCED — Company A dataset**).
+- **Sample churn prior $\pi_s$:** `0.49562` (`49.56%`) (**SOURCED — Company A dataset**).
+- **Realistic operational churn priors $\pi_r$:** `5.0%` (Conservative/Base realistic campaign window) and `10.0%` (High-churn / multi-month campaign window), contrasted side-by-side with raw `49.56%` sample prior via Saerens et al. label-shift re-weighting (**SOURCED `[7, 10]`** and `tutorial.ipynb` §3.3).
+- **Gross margin $m$:** `60%` (Conservative) / `70%` (Base) / `80%` (Optimistic) (**ASSUMPTION** — standard wireless contribution margin after interconnect/direct variable costs; sensitivity-tested).
+- **Retained horizon $H$:** `3 months` (Conservative) / `6 months` (Base, matching Neslin et al. `[7]` 3–6 month staying-power window) / `9 months` (Optimistic) (**ASSUMPTION** — sensitivity-tested).
+- **Retention offer success rate $s$ (incremental save rate among targeted true churners):** `10%` (Conservative) / `20%` (Base) / `30%` (Optimistic) (**ASSUMPTION** — anchored to ranges discussed in `[7, 8, 9]`; no Iraqi operator publishes internal save rates).
+- **Offer + contact cost per targeted customer $c$ (paid for all $n = k \cdot N$ targeted accounts):** `12 MU` (Conservative) / `8 MU` (Base, `~13.6%` of mean monthly ARPU) / `5 MU` (Optimistic) (**ASSUMPTION** — sensitivity-tested).
