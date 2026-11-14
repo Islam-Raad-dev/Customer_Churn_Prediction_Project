@@ -1659,6 +1659,37 @@
       "all_261_300_churn": 0.369396,
       "all_301_340_churn": 0.60961,
       "all_321_340_churn": 0.645484
+    },
+    "jump_ci": {
+      "window_pre": "260-300",
+      "window_post": "301-340",
+      "n_pre_train": 4792,
+      "n_post_train": 6774,
+      "churn_pre_train": 0.368531,
+      "churn_post_train": 0.606879,
+      "diff_pp_train": 23.83,
+      "boot_ci_95_pp": [
+        22.12,
+        25.62
+      ],
+      "local_linear_left_300": 0.3752,
+      "local_linear_right_300": 0.6074,
+      "local_linear_jump_pp": 23.22,
+      "tenure_ge_10_diff_pp": 19.46,
+      "tenure_10_12_diff_pp": 28.43,
+      "tenure_ge_13_diff_pp": 2.98,
+      "phones_eq_1_diff_pp": 34.08,
+      "phones_ge_2_diff_pp": 5.6,
+      "areas_positive": "19/19 (+16.3 pp to +30.1 pp)",
+      "crclscod_positive": "8/8 (+11.0 pp to +29.3 pp)",
+      "covariate_smd": {
+        "rev_Mean": -0.097,
+        "hnd_price": -0.076,
+        "months": -0.042,
+        "mou_Mean": -0.121,
+        "uniqsubs": -0.04
+      },
+      "verdict": "real-looking (lifecycle commitment/upgrade threshold strongly coupled with months 10-12; retains Lane 2 as controlled A/B pilot)"
     }
   },
   "models": [],
