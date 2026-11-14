@@ -1,16 +1,15 @@
 # PROGRESS
-Updated: 2026-11-14 20:23
-Last completed task: T1.7 — Target audit
-Current task: T1.8 — Phase wrap-up   | status: [~] in progress (writing Phase 1 Arabic walkthrough in docs/UNDERSTANDING_AR.md)
-Next concrete action: Append Phase 1 Arabic section to `docs/UNDERSTANDING_AR.md`, commit, and tag `phase-1-done`.
+Updated: 2026-11-14 20:25
+Last completed task: T1.8 — Phase 1 wrap-up (tagged `phase-1-done`)
+Current task: T2.1 — `eqpdays` vs churn   | status: [~] in progress (analyzing `eqpdays` vs churn in 25-day bins on 70% train split and generating `fig_05_device_age.png`)
+Next concrete action: Perform stratified 70/30 split (`seed=42`), compute `eqpdays` churn rate and 95% confidence intervals in 25-day bins on the 70% training set, plot `outputs/figures/fig_05_device_age.png`, inspect it, and update `Islam-Raad.ipynb` Section 4.1.
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
 - Initialized local-only git repository on `main` with strict `.gitignore` and PRD §3 lean workspace.
 - Verified 1-to-1 inner merge of `Client.csv` (100,000 × 50) and `Record.csv` (100,000 × 51) on `Customer_ID` (`1000001`–`1100000`) → `(100000, 100)`.
 - Reproduced exact tutorial baseline (`0.6357` test accuracy, `0.6938` test AUC).
-- Completed T1.1–T1.6 audits (dtypes, missingness + `fig_04_missing.png`, negatives, outliers/skew, near-duplicates & 5-fold CV check, doc-vs-data discrepancies).
-- Completed T1.7 target audit: confirmed `49,562` churn (`49.562%`) vs. `50,438` stayed (`50.438%`) — a case-control / downsampled sample requiring ROC-AUC + top-k precision/lift and label-shift prior re-basing (`π_r ∈ {5%, 10%}`) in Phase 8.
+- Completed Phase 1 Data Audit (`T1.1`–`T1.8`): audited dtypes/memory, missingness (`fig_04_missing.png`), negatives (`eqpdays` 133 rows at `35.34%` churn), outliers/skew, near-duplicates (`20` pairs $|\rho|>0.97`), doc-vs-data discrepancies (`change_mou` $\rho=0.9881$ with `mou_Mean - avg3mou`), and target balance (`49.562%` churn).
 Key numbers so far (from results.json):
 - `data.n_rows`: `100,000`, `data.n_cols`: `100`, `data.n_features_raw`: `98`.
 - `data.churn_count`: `49,562` (`49.562%`), `data.stayed_count`: `50,438` (`50.438%`), `data.imbalance_ratio`: `1.0177`.
