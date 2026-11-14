@@ -128,6 +128,27 @@
     - `Top 20%` (`n=20,000`): raw precision **`74.58%`** (`1.50x` lift, `30.10%` recall); re-based ($\pi_r=10\%$): **`24.91%`** (`2.49x` lift); re-based ($\pi_r=5\%$): **`13.58%`** (`2.72x` lift).
     - `Bottom 10%` (`n=10,000` lowest-risk decile): churn rate = **`17.67%`**, giving a **`4.60x` top-vs-bottom decile risk ratio** (`81.30% / 17.67%`).
   - **`T7.3` Calibration (`outputs/figures/fig_11_calibration.png`):** `M5` probabilities are well-calibrated out of the box (`Test Brier = 0.2180`, 10-bin Expected Calibration Error `ECE = 0.0075`); post-hoc isotonic regression yields identical holdout Brier (`0.2181` vs. `0.2177` raw), confirming `M5` logloss probabilities can enter the `Value-at-Risk` and label-shift re-basing formulas directly.
+- **2026-11-14 (T7.4–T7.8 — Importance, Partial Dependence, Ablation, Business Levers, and Fairness Audit):**
+  - **`T7.4` Gain vs. Weight vs. Held-Out Permutation Importance (`outputs/figures/fig_10_importance.png`):**
+    - Binary threshold flags (`dev_age_gt_300`: `22.02%` average gain per split, `0.04%` split weight; `zero_mou_flag`: `5.92%` average gain, `0.01%` weight) have high average gain per split because they split once near tree roots, whereas continuous/ratio features dominate **Held-Out Test Permutation AUC Drop** and **Total Cumulative Gain**:
+      1. `mou_ratio_3m` (Engineered): **`-29.85e-3` Test AUC drop** (`±0.55e-3`), `7.6%` total gain, `3.38%` weight.
+      2. `months`: **`-21.09e-3` Test AUC drop** (`±0.69e-3`), `6.7%` total gain, `2.21%` weight.
+      3. `eqpdays`: **`-15.68e-3` Test AUC drop** (`±0.52e-3`), `8.3%` total gain, `2.24%` weight.
+      4. `rev_ratio_3m` (Engineered): **`-8.06e-3` Test AUC drop**, `3.1%` total gain.
+      5. `avgqty`: **`-7.10e-3` Test AUC drop**, `2.7%` total gain.
+      6. `totmrc_Mean`: **`-6.74e-3` Test AUC drop**, `2.4%` total gain.
+      7. `hnd_price`: **`-6.49e-3` Test AUC drop**, `2.3%` total gain.
+      8. `crclscod`: **`-5.86e-3` Test AUC drop**, `2.0%` total gain.
+      9. `recurring_share` (Engineered): **`-4.23e-3` Test AUC drop**, `3.7%` total gain.
+      10. `lor` & `eqp_per_tenure` (Engineered): **`-3.47e-3`** and **`-3.07e-3` Test AUC drop**.
+  - **`T7.5` Partial Dependence (`outputs/figures/fig_10_pdp.png`):** Confirm that `M5` learned both the **`~300-day` device-age threshold** (`45.5%` at `300d` $\rightarrow$ `55.3%` at `320d` total PDP; `45.5%` $\rightarrow$ `53.6%` direct `eqpdays` PDP) and the **`months 10–12` commitment cliff** (`47.1%` at `m=9` $\rightarrow$ **`61.4%` at `m=11`** total PDP).
+  - **`T7.6` Ablation Study:** Dropping `#1` permutation driver `mou_ratio_3m` changes 5-fold CV AUC by only **`-0.0035`** (`0.7020` $\rightarrow$ `0.6985`, Test AUC `0.7029` $\rightarrow$ `0.6993`), and dropping all `5` device-age features (`eqpdays, dev_age_gt_300, dev_age_301_360, eqp_per_tenure, eqpdays_neg_flag`) changes CV AUC by **`-0.0061`** (`0.7020` $\rightarrow$ `0.6959`, Test AUC `0.6987`). Conclusion: **churn risk is driven by many complementary behavioral and lifecycle signals rather than a single magic column.**
+  - **`T7.7` Business Lever Table:** Mapped top 5 driver families to operational controllability and Two-Lane actions (`mou_ratio_3m` $\rightarrow$ Lane 1 early-warning bundle; `months 10–12` $\rightarrow$ Lane 2 Month-9 loyalty check pilot; `eqpdays > 300` $\rightarrow$ Lane 2 pre-300d handset refresh pilot; `totmrc_Mean / recurring_share / overage` $\rightarrow$ Lane 1 tariff right-sizing & ASL; `hnd_price / crclscod` $\rightarrow$ Value-at-Risk offer tiering).
+  - **`T7.8` Fairness & Proxy Sensitivity Audit:**
+    - `Variant A (Full, 126 cols incl. ethnic)`: CV AUC = `0.7031 ± 0.0010`, Test AUC = `0.7030`.
+    - `Variant B (No ethnic, 125 cols — Final Production Model)`: CV AUC = **`0.7020 ± 0.0013`**, Test AUC = **`0.7029`** (`-0.0001` Test AUC difference — noise).
+    - `Variant C (No ethnic + 8 socioeconomic/family proxies, 117 cols)`: CV AUC = **`0.7018 ± 0.0013`**, Test AUC = **`0.7020`** (`-0.0009` Test AUC difference).
+    - **Decision:** Retain `Variant B (FEATURES_NO_ETHNIC)` as production default and document `Variant C` as a zero-loss strict alternative (*"We target on behavior, not identity"*).
 
 ---
 

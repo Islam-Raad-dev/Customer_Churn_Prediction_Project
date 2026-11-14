@@ -3044,7 +3044,514 @@
       "lift_rebased_10": 1.6501
     }
   ],
-  "importance": {},
+  "importance": {
+    "gain": [
+      {
+        "feature": "dev_age_gt_300",
+        "idx": 78,
+        "gain_pct": 22.023,
+        "weight_pct": 0.0403,
+        "perm_auc_drop_mean": -0.00012,
+        "perm_auc_drop_std": 0.00012
+      },
+      {
+        "feature": "zero_mou_flag",
+        "idx": 85,
+        "gain_pct": 5.9167,
+        "weight_pct": 0.0058,
+        "perm_auc_drop_mean": 0.0,
+        "perm_auc_drop_std": 1e-05
+      },
+      {
+        "feature": "eqpdays",
+        "idx": 27,
+        "gain_pct": 2.6686,
+        "weight_pct": 2.2361,
+        "perm_auc_drop_mean": 0.01568,
+        "perm_auc_drop_std": 0.00052
+      },
+      {
+        "feature": "months",
+        "idx": 76,
+        "gain_pct": 2.1585,
+        "weight_pct": 2.213,
+        "perm_auc_drop_mean": 0.02109,
+        "perm_auc_drop_std": 0.00069
+      },
+      {
+        "feature": "tenure_10_12",
+        "idx": 81,
+        "gain_pct": 1.6409,
+        "weight_pct": 0.2593,
+        "perm_auc_drop_mean": 0.00165,
+        "perm_auc_drop_std": 0.00019
+      },
+      {
+        "feature": "mou_ratio_3m",
+        "idx": 87,
+        "gain_pct": 1.6134,
+        "weight_pct": 3.3771,
+        "perm_auc_drop_mean": 0.02985,
+        "perm_auc_drop_std": 0.00055
+      },
+      {
+        "feature": "refurb_new",
+        "idx": 111,
+        "gain_pct": 1.5333,
+        "weight_pct": 0.2536,
+        "perm_auc_drop_mean": 0.00054,
+        "perm_auc_drop_std": 7e-05
+      },
+      {
+        "feature": "active_sub_ratio",
+        "idx": 84,
+        "gain_pct": 1.2673,
+        "weight_pct": 0.8011,
+        "perm_auc_drop_mean": 0.00237,
+        "perm_auc_drop_std": 0.00023
+      },
+      {
+        "feature": "tenure_le_9",
+        "idx": 80,
+        "gain_pct": 1.2074,
+        "weight_pct": 0.0576,
+        "perm_auc_drop_mean": 7e-05,
+        "perm_auc_drop_std": 4e-05
+      },
+      {
+        "feature": "hnd_webcap",
+        "idx": 112,
+        "gain_pct": 1.1267,
+        "weight_pct": 0.3515,
+        "perm_auc_drop_mean": 0.00065,
+        "perm_auc_drop_std": 0.0002
+      },
+      {
+        "feature": "phones",
+        "idx": 18,
+        "gain_pct": 1.0369,
+        "weight_pct": 0.121,
+        "perm_auc_drop_mean": 0.00011,
+        "perm_auc_drop_std": 9e-05
+      },
+      {
+        "feature": "recurring_share",
+        "idx": 97,
+        "gain_pct": 1.0264,
+        "weight_pct": 2.553,
+        "perm_auc_drop_mean": 0.00423,
+        "perm_auc_drop_std": 0.00058
+      },
+      {
+        "feature": "hnd_price",
+        "idx": 17,
+        "gain_pct": 1.0259,
+        "weight_pct": 1.5791,
+        "perm_auc_drop_mean": 0.00649,
+        "perm_auc_drop_std": 0.00022
+      },
+      {
+        "feature": "avgqty",
+        "idx": 10,
+        "gain_pct": 1.0161,
+        "weight_pct": 1.9133,
+        "perm_auc_drop_mean": 0.0071,
+        "perm_auc_drop_std": 0.00029
+      },
+      {
+        "feature": "asl_flag",
+        "idx": 107,
+        "gain_pct": 1.0161,
+        "weight_pct": 0.4265,
+        "perm_auc_drop_mean": 0.00232,
+        "perm_auc_drop_std": 0.00022
+      },
+      {
+        "feature": "dev_age_301_360",
+        "idx": 79,
+        "gain_pct": 1.0096,
+        "weight_pct": 0.1268,
+        "perm_auc_drop_mean": 0.0001,
+        "perm_auc_drop_std": 3e-05
+      },
+      {
+        "feature": "rev_ratio_3m",
+        "idx": 89,
+        "gain_pct": 0.81,
+        "weight_pct": 2.7893,
+        "perm_auc_drop_mean": 0.00806,
+        "perm_auc_drop_std": 0.00037
+      },
+      {
+        "feature": "mou_ratio_6m",
+        "idx": 88,
+        "gain_pct": 0.7617,
+        "weight_pct": 2.4781,
+        "perm_auc_drop_mean": 0.00271,
+        "perm_auc_drop_std": 0.00038
+      },
+      {
+        "feature": "eqp_per_tenure",
+        "idx": 82,
+        "gain_pct": 0.7615,
+        "weight_pct": 2.1669,
+        "perm_auc_drop_mean": 0.00307,
+        "perm_auc_drop_std": 0.00024
+      },
+      {
+        "feature": "uniqsubs",
+        "idx": 0,
+        "gain_pct": 0.7578,
+        "weight_pct": 0.5014,
+        "perm_auc_drop_mean": 0.00105,
+        "perm_auc_drop_std": 0.00031
+      }
+    ],
+    "permutation": [
+      {
+        "feature": "mou_ratio_3m",
+        "idx": 87,
+        "gain_pct": 1.6134,
+        "weight_pct": 3.3771,
+        "perm_auc_drop_mean": 0.02985,
+        "perm_auc_drop_std": 0.00055,
+        "total_gain_pct": 7.6
+      },
+      {
+        "feature": "months",
+        "idx": 76,
+        "gain_pct": 2.1585,
+        "weight_pct": 2.213,
+        "perm_auc_drop_mean": 0.02109,
+        "perm_auc_drop_std": 0.00069,
+        "total_gain_pct": 6.66
+      },
+      {
+        "feature": "eqpdays",
+        "idx": 27,
+        "gain_pct": 2.6686,
+        "weight_pct": 2.2361,
+        "perm_auc_drop_mean": 0.01568,
+        "perm_auc_drop_std": 0.00052,
+        "total_gain_pct": 8.33
+      },
+      {
+        "feature": "rev_ratio_3m",
+        "idx": 89,
+        "gain_pct": 0.81,
+        "weight_pct": 2.7893,
+        "perm_auc_drop_mean": 0.00806,
+        "perm_auc_drop_std": 0.00037,
+        "total_gain_pct": 3.15
+      },
+      {
+        "feature": "avgqty",
+        "idx": 10,
+        "gain_pct": 1.0161,
+        "weight_pct": 1.9133,
+        "perm_auc_drop_mean": 0.0071,
+        "perm_auc_drop_std": 0.00029,
+        "total_gain_pct": 2.71
+      },
+      {
+        "feature": "totmrc_Mean",
+        "idx": 30,
+        "gain_pct": 0.7094,
+        "weight_pct": 2.4089,
+        "perm_auc_drop_mean": 0.00674,
+        "perm_auc_drop_std": 0.00025,
+        "total_gain_pct": 2.38
+      },
+      {
+        "feature": "hnd_price",
+        "idx": 17,
+        "gain_pct": 1.0259,
+        "weight_pct": 1.5791,
+        "perm_auc_drop_mean": 0.00649,
+        "perm_auc_drop_std": 0.00022,
+        "total_gain_pct": 2.26
+      },
+      {
+        "feature": "crclscod",
+        "idx": 106,
+        "gain_pct": 0.7481,
+        "weight_pct": 1.8787,
+        "perm_auc_drop_mean": 0.00586,
+        "perm_auc_drop_std": 0.00052,
+        "total_gain_pct": 1.96
+      },
+      {
+        "feature": "recurring_share",
+        "idx": 97,
+        "gain_pct": 1.0264,
+        "weight_pct": 2.553,
+        "perm_auc_drop_mean": 0.00423,
+        "perm_auc_drop_std": 0.00058,
+        "total_gain_pct": 3.66
+      },
+      {
+        "feature": "lor",
+        "idx": 22,
+        "gain_pct": 0.7553,
+        "weight_pct": 1.6943,
+        "perm_auc_drop_mean": 0.00347,
+        "perm_auc_drop_std": 0.00032,
+        "total_gain_pct": 1.79
+      },
+      {
+        "feature": "eqp_per_tenure",
+        "idx": 82,
+        "gain_pct": 0.7615,
+        "weight_pct": 2.1669,
+        "perm_auc_drop_mean": 0.00307,
+        "perm_auc_drop_std": 0.00024,
+        "total_gain_pct": 2.3
+      },
+      {
+        "feature": "change_rev",
+        "idx": 38,
+        "gain_pct": 0.7331,
+        "weight_pct": 2.3859,
+        "perm_auc_drop_mean": 0.00271,
+        "perm_auc_drop_std": 0.00011,
+        "total_gain_pct": 2.44
+      },
+      {
+        "feature": "mou_ratio_6m",
+        "idx": 88,
+        "gain_pct": 0.7617,
+        "weight_pct": 2.4781,
+        "perm_auc_drop_mean": 0.00271,
+        "perm_auc_drop_std": 0.00038,
+        "total_gain_pct": 2.63
+      },
+      {
+        "feature": "months_per_phone",
+        "idx": 83,
+        "gain_pct": 0.5696,
+        "weight_pct": 1.654,
+        "perm_auc_drop_mean": 0.00239,
+        "perm_auc_drop_std": 0.00019,
+        "total_gain_pct": 1.31
+      },
+      {
+        "feature": "active_sub_ratio",
+        "idx": 84,
+        "gain_pct": 1.2673,
+        "weight_pct": 0.8011,
+        "perm_auc_drop_mean": 0.00237,
+        "perm_auc_drop_std": 0.00023,
+        "total_gain_pct": 1.42
+      },
+      {
+        "feature": "asl_flag",
+        "idx": 107,
+        "gain_pct": 1.0161,
+        "weight_pct": 0.4265,
+        "perm_auc_drop_mean": 0.00232,
+        "perm_auc_drop_std": 0.00022,
+        "total_gain_pct": 0.6
+      },
+      {
+        "feature": "rev_per_mou",
+        "idx": 100,
+        "gain_pct": 0.5713,
+        "weight_pct": 1.8787,
+        "perm_auc_drop_mean": 0.00192,
+        "perm_auc_drop_std": 0.00042,
+        "total_gain_pct": 1.5
+      },
+      {
+        "feature": "avgmou",
+        "idx": 9,
+        "gain_pct": 0.5806,
+        "weight_pct": 1.3255,
+        "perm_auc_drop_mean": 0.00172,
+        "perm_auc_drop_std": 0.00024,
+        "total_gain_pct": 1.07
+      },
+      {
+        "feature": "area",
+        "idx": 109,
+        "gain_pct": 0.4443,
+        "weight_pct": 1.6943,
+        "perm_auc_drop_mean": 0.00166,
+        "perm_auc_drop_std": 0.00016,
+        "total_gain_pct": 1.05
+      },
+      {
+        "feature": "tenure_10_12",
+        "idx": 81,
+        "gain_pct": 1.6409,
+        "weight_pct": 0.2593,
+        "perm_auc_drop_mean": 0.00165,
+        "perm_auc_drop_std": 0.00019,
+        "total_gain_pct": 0.59
+      }
+    ],
+    "weight": [
+      {
+        "feature": "mou_ratio_3m",
+        "idx": 87,
+        "gain_pct": 1.6134,
+        "weight_pct": 3.3771,
+        "perm_auc_drop_mean": 0.02985,
+        "perm_auc_drop_std": 0.00055
+      },
+      {
+        "feature": "rev_ratio_6m",
+        "idx": 90,
+        "gain_pct": 0.4525,
+        "weight_pct": 2.893,
+        "perm_auc_drop_mean": 0.00132,
+        "perm_auc_drop_std": 0.00021
+      },
+      {
+        "feature": "rev_ratio_3m",
+        "idx": 89,
+        "gain_pct": 0.81,
+        "weight_pct": 2.7893,
+        "perm_auc_drop_mean": 0.00806,
+        "perm_auc_drop_std": 0.00037
+      },
+      {
+        "feature": "recurring_share",
+        "idx": 97,
+        "gain_pct": 1.0264,
+        "weight_pct": 2.553,
+        "perm_auc_drop_mean": 0.00423,
+        "perm_auc_drop_std": 0.00058
+      },
+      {
+        "feature": "mou_ratio_6m",
+        "idx": 88,
+        "gain_pct": 0.7617,
+        "weight_pct": 2.4781,
+        "perm_auc_drop_mean": 0.00271,
+        "perm_auc_drop_std": 0.00038
+      },
+      {
+        "feature": "totmrc_Mean",
+        "idx": 30,
+        "gain_pct": 0.7094,
+        "weight_pct": 2.4089,
+        "perm_auc_drop_mean": 0.00674,
+        "perm_auc_drop_std": 0.00025
+      },
+      {
+        "feature": "change_rev",
+        "idx": 38,
+        "gain_pct": 0.7331,
+        "weight_pct": 2.3859,
+        "perm_auc_drop_mean": 0.00271,
+        "perm_auc_drop_std": 0.00011
+      },
+      {
+        "feature": "change_mou",
+        "idx": 37,
+        "gain_pct": 0.5848,
+        "weight_pct": 2.3513,
+        "perm_auc_drop_mean": 0.00136,
+        "perm_auc_drop_std": 0.00025
+      },
+      {
+        "feature": "eqpdays",
+        "idx": 27,
+        "gain_pct": 2.6686,
+        "weight_pct": 2.2361,
+        "perm_auc_drop_mean": 0.01568,
+        "perm_auc_drop_std": 0.00052
+      },
+      {
+        "feature": "months",
+        "idx": 76,
+        "gain_pct": 2.1585,
+        "weight_pct": 2.213,
+        "perm_auc_drop_mean": 0.02109,
+        "perm_auc_drop_std": 0.00069
+      },
+      {
+        "feature": "eqp_per_tenure",
+        "idx": 82,
+        "gain_pct": 0.7615,
+        "weight_pct": 2.1669,
+        "perm_auc_drop_mean": 0.00307,
+        "perm_auc_drop_std": 0.00024
+      },
+      {
+        "feature": "avgqty",
+        "idx": 10,
+        "gain_pct": 1.0161,
+        "weight_pct": 1.9133,
+        "perm_auc_drop_mean": 0.0071,
+        "perm_auc_drop_std": 0.00029
+      },
+      {
+        "feature": "rev_per_mou",
+        "idx": 100,
+        "gain_pct": 0.5713,
+        "weight_pct": 1.8787,
+        "perm_auc_drop_mean": 0.00192,
+        "perm_auc_drop_std": 0.00042
+      },
+      {
+        "feature": "crclscod",
+        "idx": 106,
+        "gain_pct": 0.7481,
+        "weight_pct": 1.8787,
+        "perm_auc_drop_mean": 0.00586,
+        "perm_auc_drop_std": 0.00052
+      },
+      {
+        "feature": "mou_delta_3v6",
+        "idx": 91,
+        "gain_pct": 0.4258,
+        "weight_pct": 1.8211,
+        "perm_auc_drop_mean": 0.0001,
+        "perm_auc_drop_std": 7e-05
+      },
+      {
+        "feature": "completion_rate",
+        "idx": 96,
+        "gain_pct": 0.5014,
+        "weight_pct": 1.8211,
+        "perm_auc_drop_mean": 0.00073,
+        "perm_auc_drop_std": 0.00012
+      },
+      {
+        "feature": "lor",
+        "idx": 22,
+        "gain_pct": 0.7553,
+        "weight_pct": 1.6943,
+        "perm_auc_drop_mean": 0.00347,
+        "perm_auc_drop_std": 0.00032
+      },
+      {
+        "feature": "area",
+        "idx": 109,
+        "gain_pct": 0.4443,
+        "weight_pct": 1.6943,
+        "perm_auc_drop_mean": 0.00166,
+        "perm_auc_drop_std": 0.00016
+      },
+      {
+        "feature": "months_per_phone",
+        "idx": 83,
+        "gain_pct": 0.5696,
+        "weight_pct": 1.654,
+        "perm_auc_drop_mean": 0.00239,
+        "perm_auc_drop_std": 0.00019
+      },
+      {
+        "feature": "drop_rate",
+        "idx": 92,
+        "gain_pct": 0.6044,
+        "weight_pct": 1.5906,
+        "perm_auc_drop_mean": 0.00152,
+        "perm_auc_drop_std": 0.00017
+      }
+    ]
+  },
   "impact": {},
   "meta": {
     "seed": 42,
@@ -3286,5 +3793,539 @@
         }
       ]
     }
-  }
+  },
+  "pdp": {
+    "eqpdays": [
+      {
+        "eqpdays": 0,
+        "p_direct_pct": 43.05,
+        "p_total_pct": 36.86
+      },
+      {
+        "eqpdays": 20,
+        "p_direct_pct": 44.58,
+        "p_total_pct": 38.91
+      },
+      {
+        "eqpdays": 40,
+        "p_direct_pct": 44.6,
+        "p_total_pct": 40.25
+      },
+      {
+        "eqpdays": 60,
+        "p_direct_pct": 44.65,
+        "p_total_pct": 41.08
+      },
+      {
+        "eqpdays": 80,
+        "p_direct_pct": 44.66,
+        "p_total_pct": 41.55
+      },
+      {
+        "eqpdays": 100,
+        "p_direct_pct": 44.67,
+        "p_total_pct": 42.01
+      },
+      {
+        "eqpdays": 120,
+        "p_direct_pct": 44.98,
+        "p_total_pct": 42.77
+      },
+      {
+        "eqpdays": 140,
+        "p_direct_pct": 44.98,
+        "p_total_pct": 43.13
+      },
+      {
+        "eqpdays": 160,
+        "p_direct_pct": 45.01,
+        "p_total_pct": 43.41
+      },
+      {
+        "eqpdays": 180,
+        "p_direct_pct": 45.03,
+        "p_total_pct": 43.72
+      },
+      {
+        "eqpdays": 200,
+        "p_direct_pct": 45.17,
+        "p_total_pct": 44.05
+      },
+      {
+        "eqpdays": 220,
+        "p_direct_pct": 45.24,
+        "p_total_pct": 44.4
+      },
+      {
+        "eqpdays": 240,
+        "p_direct_pct": 45.21,
+        "p_total_pct": 44.59
+      },
+      {
+        "eqpdays": 260,
+        "p_direct_pct": 45.18,
+        "p_total_pct": 44.71
+      },
+      {
+        "eqpdays": 280,
+        "p_direct_pct": 45.27,
+        "p_total_pct": 44.96
+      },
+      {
+        "eqpdays": 300,
+        "p_direct_pct": 45.64,
+        "p_total_pct": 45.52
+      },
+      {
+        "eqpdays": 320,
+        "p_direct_pct": 53.65,
+        "p_total_pct": 55.26
+      },
+      {
+        "eqpdays": 340,
+        "p_direct_pct": 53.49,
+        "p_total_pct": 55.27
+      },
+      {
+        "eqpdays": 360,
+        "p_direct_pct": 53.08,
+        "p_total_pct": 55.04
+      },
+      {
+        "eqpdays": 380,
+        "p_direct_pct": 52.7,
+        "p_total_pct": 53.8
+      },
+      {
+        "eqpdays": 400,
+        "p_direct_pct": 52.81,
+        "p_total_pct": 53.97
+      },
+      {
+        "eqpdays": 420,
+        "p_direct_pct": 52.62,
+        "p_total_pct": 53.94
+      },
+      {
+        "eqpdays": 440,
+        "p_direct_pct": 52.59,
+        "p_total_pct": 53.95
+      },
+      {
+        "eqpdays": 460,
+        "p_direct_pct": 52.34,
+        "p_total_pct": 53.78
+      },
+      {
+        "eqpdays": 480,
+        "p_direct_pct": 52.34,
+        "p_total_pct": 53.86
+      },
+      {
+        "eqpdays": 500,
+        "p_direct_pct": 52.39,
+        "p_total_pct": 53.97
+      },
+      {
+        "eqpdays": 520,
+        "p_direct_pct": 52.5,
+        "p_total_pct": 54.13
+      },
+      {
+        "eqpdays": 540,
+        "p_direct_pct": 52.51,
+        "p_total_pct": 54.22
+      },
+      {
+        "eqpdays": 560,
+        "p_direct_pct": 52.57,
+        "p_total_pct": 54.33
+      },
+      {
+        "eqpdays": 580,
+        "p_direct_pct": 52.52,
+        "p_total_pct": 54.32
+      },
+      {
+        "eqpdays": 600,
+        "p_direct_pct": 52.5,
+        "p_total_pct": 54.36
+      },
+      {
+        "eqpdays": 620,
+        "p_direct_pct": 52.5,
+        "p_total_pct": 54.4
+      },
+      {
+        "eqpdays": 640,
+        "p_direct_pct": 52.45,
+        "p_total_pct": 54.37
+      },
+      {
+        "eqpdays": 660,
+        "p_direct_pct": 52.42,
+        "p_total_pct": 54.38
+      },
+      {
+        "eqpdays": 680,
+        "p_direct_pct": 52.4,
+        "p_total_pct": 54.4
+      },
+      {
+        "eqpdays": 700,
+        "p_direct_pct": 52.66,
+        "p_total_pct": 54.68
+      },
+      {
+        "eqpdays": 720,
+        "p_direct_pct": 52.68,
+        "p_total_pct": 54.73
+      },
+      {
+        "eqpdays": 740,
+        "p_direct_pct": 52.74,
+        "p_total_pct": 54.82
+      }
+    ],
+    "months": [
+      {
+        "months": 6,
+        "p_direct_pct": 45.51,
+        "p_total_pct": 48.49
+      },
+      {
+        "months": 7,
+        "p_direct_pct": 45.5,
+        "p_total_pct": 47.99
+      },
+      {
+        "months": 8,
+        "p_direct_pct": 45.42,
+        "p_total_pct": 47.58
+      },
+      {
+        "months": 9,
+        "p_direct_pct": 45.45,
+        "p_total_pct": 47.15
+      },
+      {
+        "months": 10,
+        "p_direct_pct": 46.35,
+        "p_total_pct": 50.45
+      },
+      {
+        "months": 11,
+        "p_direct_pct": 57.36,
+        "p_total_pct": 61.36
+      },
+      {
+        "months": 12,
+        "p_direct_pct": 56.68,
+        "p_total_pct": 60.27
+      },
+      {
+        "months": 13,
+        "p_direct_pct": 54.09,
+        "p_total_pct": 54.7
+      },
+      {
+        "months": 14,
+        "p_direct_pct": 52.6,
+        "p_total_pct": 52.78
+      },
+      {
+        "months": 15,
+        "p_direct_pct": 52.06,
+        "p_total_pct": 51.91
+      },
+      {
+        "months": 16,
+        "p_direct_pct": 51.17,
+        "p_total_pct": 50.7
+      },
+      {
+        "months": 17,
+        "p_direct_pct": 51.13,
+        "p_total_pct": 50.43
+      },
+      {
+        "months": 18,
+        "p_direct_pct": 50.65,
+        "p_total_pct": 49.65
+      },
+      {
+        "months": 19,
+        "p_direct_pct": 49.76,
+        "p_total_pct": 48.53
+      },
+      {
+        "months": 20,
+        "p_direct_pct": 49.67,
+        "p_total_pct": 48.24
+      },
+      {
+        "months": 21,
+        "p_direct_pct": 49.41,
+        "p_total_pct": 47.75
+      },
+      {
+        "months": 22,
+        "p_direct_pct": 49.35,
+        "p_total_pct": 47.53
+      },
+      {
+        "months": 23,
+        "p_direct_pct": 49.31,
+        "p_total_pct": 47.21
+      },
+      {
+        "months": 24,
+        "p_direct_pct": 49.25,
+        "p_total_pct": 46.91
+      },
+      {
+        "months": 25,
+        "p_direct_pct": 48.93,
+        "p_total_pct": 46.43
+      },
+      {
+        "months": 26,
+        "p_direct_pct": 48.93,
+        "p_total_pct": 46.29
+      },
+      {
+        "months": 27,
+        "p_direct_pct": 48.93,
+        "p_total_pct": 46.1
+      },
+      {
+        "months": 28,
+        "p_direct_pct": 48.89,
+        "p_total_pct": 45.76
+      },
+      {
+        "months": 29,
+        "p_direct_pct": 48.78,
+        "p_total_pct": 45.42
+      },
+      {
+        "months": 30,
+        "p_direct_pct": 48.68,
+        "p_total_pct": 45.19
+      },
+      {
+        "months": 31,
+        "p_direct_pct": 48.5,
+        "p_total_pct": 44.95
+      },
+      {
+        "months": 32,
+        "p_direct_pct": 48.51,
+        "p_total_pct": 44.85
+      },
+      {
+        "months": 33,
+        "p_direct_pct": 48.43,
+        "p_total_pct": 44.63
+      },
+      {
+        "months": 34,
+        "p_direct_pct": 47.85,
+        "p_total_pct": 43.96
+      },
+      {
+        "months": 35,
+        "p_direct_pct": 47.79,
+        "p_total_pct": 43.73
+      },
+      {
+        "months": 36,
+        "p_direct_pct": 47.43,
+        "p_total_pct": 43.27
+      },
+      {
+        "months": 37,
+        "p_direct_pct": 47.35,
+        "p_total_pct": 43.23
+      },
+      {
+        "months": 38,
+        "p_direct_pct": 47.35,
+        "p_total_pct": 43.14
+      },
+      {
+        "months": 39,
+        "p_direct_pct": 47.37,
+        "p_total_pct": 43.07
+      },
+      {
+        "months": 40,
+        "p_direct_pct": 47.33,
+        "p_total_pct": 42.94
+      },
+      {
+        "months": 41,
+        "p_direct_pct": 47.33,
+        "p_total_pct": 42.86
+      },
+      {
+        "months": 42,
+        "p_direct_pct": 47.33,
+        "p_total_pct": 42.72
+      },
+      {
+        "months": 43,
+        "p_direct_pct": 47.33,
+        "p_total_pct": 42.65
+      },
+      {
+        "months": 44,
+        "p_direct_pct": 47.33,
+        "p_total_pct": 42.55
+      },
+      {
+        "months": 45,
+        "p_direct_pct": 47.33,
+        "p_total_pct": 42.48
+      },
+      {
+        "months": 46,
+        "p_direct_pct": 47.54,
+        "p_total_pct": 42.75
+      },
+      {
+        "months": 47,
+        "p_direct_pct": 47.52,
+        "p_total_pct": 42.67
+      },
+      {
+        "months": 48,
+        "p_direct_pct": 47.54,
+        "p_total_pct": 42.6
+      },
+      {
+        "months": 49,
+        "p_direct_pct": 47.49,
+        "p_total_pct": 42.49
+      },
+      {
+        "months": 50,
+        "p_direct_pct": 47.69,
+        "p_total_pct": 42.63
+      },
+      {
+        "months": 51,
+        "p_direct_pct": 47.69,
+        "p_total_pct": 42.58
+      },
+      {
+        "months": 52,
+        "p_direct_pct": 47.58,
+        "p_total_pct": 42.42
+      },
+      {
+        "months": 53,
+        "p_direct_pct": 44.57,
+        "p_total_pct": 39.44
+      },
+      {
+        "months": 54,
+        "p_direct_pct": 44.57,
+        "p_total_pct": 39.38
+      },
+      {
+        "months": 55,
+        "p_direct_pct": 44.57,
+        "p_total_pct": 39.33
+      }
+    ]
+  },
+  "ablation": [
+    {
+      "label": "Baseline M5 (All 125 No-Ethnic Features)",
+      "n_features": 125,
+      "cv_auc_mean": 0.702,
+      "cv_auc_std": 0.0013,
+      "test_auc": 0.7029
+    },
+    {
+      "label": "Drop Top Permutation Feature (mou_ratio_3m, 124 cols)",
+      "n_features": 124,
+      "cv_auc_mean": 0.6985,
+      "cv_auc_std": 0.0019,
+      "test_auc": 0.6993
+    },
+    {
+      "label": "Drop All Device-Age Features (eqpdays + 4 derived, 120 cols)",
+      "n_features": 120,
+      "cv_auc_mean": 0.6959,
+      "cv_auc_std": 0.0024,
+      "test_auc": 0.6987
+    }
+  ],
+  "fairness": [
+    {
+      "label": "Variant A: Full (incl. ethnic, 126 cols)",
+      "n_features": 126,
+      "cv_auc_mean": 0.7031,
+      "cv_auc_std": 0.001,
+      "test_auc": 0.703
+    },
+    {
+      "label": "Variant B: No ethnic (Default Production Set, 125 cols)",
+      "n_features": 125,
+      "cv_auc_mean": 0.702,
+      "cv_auc_std": 0.0013,
+      "test_auc": 0.7029
+    },
+    {
+      "label": "Variant C: No ethnic + 8 Socioeconomic Proxies (117 cols)",
+      "n_features": 117,
+      "cv_auc_mean": 0.7018,
+      "cv_auc_std": 0.0013,
+      "test_auc": 0.702
+    }
+  ],
+  "levers": [
+    {
+      "rank": 1,
+      "driver": "mou_ratio_3m & change_mou (Voice Usage Drop vs 3m Avg)",
+      "evidence": "Perm AUC drop = -29.85e-3 (#1); silent 0 MOU lines churn at 78.5%, missing trend at 76.0%",
+      "can_company_change_it": "Yes (Indirectly \u2014 before SIM goes silent)",
+      "action_lane": "Lane 1 (Early Warning)",
+      "implied_action": "Trigger proactive voice/data bonus or multi-SIM loyalty bundle when active subscriber MOU drops >25% vs 3m avg (while excluding mou_Mean == 0 silent SIMs)"
+    },
+    {
+      "rank": 2,
+      "driver": "months & tenure_10_12 (Service Tenure & First-Year Cliff)",
+      "evidence": "Perm AUC drop = -21.09e-3 (#2); churn jumps from 29.3% (m=9) to 64.6% (m=11)",
+      "can_company_change_it": "Yes (Contract / Commitment Renewal Timing)",
+      "action_lane": "Lane 2 (Month-9 Loyalty Check Pilot)",
+      "implied_action": "Contact subscribers in months 8\u20139 (before the month 10\u201312 cliff) with a commitment renewal / loyalty perk in a 50/50 holdout A/B pilot"
+    },
+    {
+      "rank": 3,
+      "driver": "eqpdays, dev_age_gt_300 & eqp_per_tenure (Handset Aging >300d)",
+      "evidence": "Perm AUC drop = -15.68e-3 (#3) + -3.07e-3; +23.83 pp jump past 300d across 19/19 areas",
+      "can_company_change_it": "Yes (Device Upgrade / Trade-in Eligibility)",
+      "action_lane": "Lane 2 (Pre-300d Handset Refresh Pilot)",
+      "implied_action": "Send targeted trade-in / installment upgrade voucher at eqpdays 240\u2013290 to high-value active accounts in a 50/50 holdout A/B pilot"
+    },
+    {
+      "rank": 4,
+      "driver": "totmrc_Mean, rev_ratio_3m & recurring_share (Tariff Fit & Overage Shock)",
+      "evidence": "Combined Perm AUC drop = -19.03e-3; overage >40% of bill raises churn to 54.2% (ASL lowers by -9.5 pp)",
+      "can_company_change_it": "Yes (Directly \u2014 Tariff Plan Right-Sizing & ASL)",
+      "action_lane": "Lane 1 (Tariff Right-Sizing)",
+      "implied_action": "Migrate high-overage accounts to predictable higher-tier recurring bundles and enable Account Spending Limit (ASL) protection"
+    },
+    {
+      "rank": 5,
+      "driver": "hnd_price & crclscod (Handset Tier & Credit Class)",
+      "evidence": "Perm AUC drop = -6.49e-3 & -5.86e-3; budget handsets (<100 MU) churn higher than premium tiers",
+      "can_company_change_it": "Partially (Used for Value-at-Risk Segmentation)",
+      "action_lane": "Lane 1 (Offer Tiering)",
+      "implied_action": "Scale retention offer cost (c) to customer recurring margin (V) so costly subsidies go only to high-margin accounts"
+    }
+  ]
 }

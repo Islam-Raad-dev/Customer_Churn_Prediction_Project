@@ -94,16 +94,16 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T7.1 Confusion matrix** at the stated threshold (matplotlib), explained in words (FP = wasted offer; FN = lost customer). ✔ 2026-11-14 22:20
 - [x] **T7.2 Top-k table** k ∈ {1,2,5,10,15,20,30,50} (customers, precision, recall, lift) + gain/lift curve (matplotlib) → `results.json → topk`. ✔ 2026-11-14 22:20
 - [x] **T7.3 Calibration** curve (matplotlib); isotonic calibration if probabilities enter money terms. ✔ 2026-11-14 22:20
-- [~] **T7.4 Importance:** gain **and** permutation (held-out); explain gain vs weight; optional SHAP.
-  - Computing XGBoost Gain vs. Weight importance and held-out Test Permutation importance (`n_repeats=5`), and plotting `outputs/figures/fig_10_importance.png`.
-- [ ] **T7.5 Partial dependence** for `eqpdays` and `months` (matplotlib) — do thresholds show in the model?
-- [ ] **T7.6 Ablation:** drop the top feature, retrain, compare CV AUC; conclude "one strong signal" vs "many weak ones".
-- [ ] **T7.7 Lever table:** top 3–5 drivers → can the company change it? → implied action.
-- [ ] **T7.8 Fairness check:** AUC with vs without sensitive/proxy fields; final feature-set decision.
-- [ ] **T7.9 Phase wrap-up** (Arabic section, commit, tag `phase-7-done`).
+- [x] **T7.4 Importance:** gain **and** permutation (held-out); explain gain vs weight; optional SHAP. ✔ 2026-11-14 22:42
+- [x] **T7.5 Partial dependence** for `eqpdays` and `months` (matplotlib) — do thresholds show in the model? ✔ 2026-11-14 22:42
+- [x] **T7.6 Ablation:** drop the top feature, retrain, compare CV AUC; conclude "one strong signal" vs "many weak ones". ✔ 2026-11-14 22:42
+- [x] **T7.7 Lever table:** top 3–5 drivers → can the company change it? → implied action. ✔ 2026-11-14 22:42
+- [x] **T7.8 Fairness check:** AUC with vs without sensitive/proxy fields; final feature-set decision. ✔ 2026-11-14 22:42
+- [x] **T7.9 Phase wrap-up** (Arabic section, commit, tag `phase-7-done`). ✔ 2026-11-14 22:42
 
 ## Phase 8 — Business impact model  (type: `impact`)
-- [ ] **T8.1 Assumptions table** in `docs/NOTES.md`: ARPU (mean & median of `rev_Mean`, unit MU), margin, horizon H, success rate `s`, cost `c`, base N = 100,000, churn priors π_r ∈ {5%, 10%} — each **SOURCED [ID]** or **ASSUMPTION** with rationale.
+- [~] **T8.1 Assumptions table** in `docs/NOTES.md`: ARPU (mean & median of `rev_Mean`, unit MU), margin, horizon H, success rate `s`, cost `c`, base N = 100,000, churn priors π_r ∈ {5%, 10%} — each **SOURCED [ID]** or **ASSUMPTION** with rationale.
+  - Verifying and finalizing the Phase 8 business-impact assumptions table in `docs/NOTES.md → 2. Assumptions` and `outputs/results.json → impact.assumptions`.
 - [ ] **T8.2 Re-basing function** (label shift): positives × π_r/π_s, negatives × (1−π_r)/(1−π_s); weighted precision@k and lift@k on test predictions; **unit-test with a toy example** inside the notebook; keep raw vs re-based side by side.
 - [ ] **T8.3 Net-impact function** `Net = n·p_adj·s·V − n·c`, `V = ARPU × margin × H`; conservative/base/optimistic scenarios → `results.json → impact`.
 - [ ] **T8.4 Optimal k\*** per scenario and **break-even** `s* = c/(p_adj·V)`; matplotlib net-vs-k chart.
