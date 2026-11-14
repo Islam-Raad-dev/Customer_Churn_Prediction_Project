@@ -760,7 +760,323 @@
         "min_val": -2.0,
         "churn_when_neg_pct": 66.67
       }
-    }
+    },
+    "outliers_focus": [
+      {
+        "column": "uniqsubs",
+        "min": 1.0,
+        "p1": 1.0,
+        "p50": 1.0,
+        "p99": 5.0,
+        "max": 196.0,
+        "max_over_p99": 39.2,
+        "skew": 60.52
+      },
+      {
+        "column": "rev_Mean",
+        "min": -6.17,
+        "p1": 10.0,
+        "p50": 48.2,
+        "p99": 227.89,
+        "max": 3843.26,
+        "max_over_p99": 16.86,
+        "skew": 9.15
+      },
+      {
+        "column": "actvsubs",
+        "min": 0.0,
+        "p1": 1.0,
+        "p50": 1.0,
+        "p99": 4.0,
+        "max": 53.0,
+        "max_over_p99": 13.25,
+        "skew": 6.87
+      },
+      {
+        "column": "totcalls",
+        "min": 0.0,
+        "p1": 66.0,
+        "p50": 1822.0,
+        "p99": 17676.03,
+        "max": 98874.0,
+        "max_over_p99": 5.59,
+        "skew": 6.02
+      },
+      {
+        "column": "totmou",
+        "min": 0.0,
+        "p1": 154.0,
+        "p50": 5191.5,
+        "p99": 40411.5,
+        "max": 233419.1,
+        "max_over_p99": 5.78,
+        "skew": 4.4
+      },
+      {
+        "column": "totrev",
+        "min": 3.65,
+        "p1": 142.42,
+        "p50": 804.53,
+        "p99": 4428.19,
+        "max": 27321.5,
+        "max_over_p99": 6.17,
+        "skew": 3.82
+      },
+      {
+        "column": "mou_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 355.5,
+        "p99": 2422.4,
+        "max": 12206.75,
+        "max_over_p99": 5.04,
+        "skew": 2.31
+      },
+      {
+        "column": "totmrc_Mean",
+        "min": -26.91,
+        "p1": 7.74,
+        "p50": 44.99,
+        "p99": 118.03,
+        "max": 409.99,
+        "max_over_p99": 3.47,
+        "skew": 1.64
+      },
+      {
+        "column": "months",
+        "min": 6.0,
+        "p1": 6.0,
+        "p50": 16.0,
+        "p99": 49.0,
+        "max": 61.0,
+        "max_over_p99": 1.24,
+        "skew": 1.06
+      },
+      {
+        "column": "eqpdays",
+        "min": -5.0,
+        "p1": 8.0,
+        "p50": 342.0,
+        "p99": 1165.0,
+        "max": 1823.0,
+        "max_over_p99": 1.56,
+        "skew": 1.04
+      },
+      {
+        "column": "hnd_price",
+        "min": 9.99,
+        "p1": 9.99,
+        "p50": 99.99,
+        "p99": 199.99,
+        "max": 499.99,
+        "max_over_p99": 2.5,
+        "skew": 0.48
+      }
+    ],
+    "outliers_top_skew": [
+      {
+        "column": "blck_dat_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 0.33,
+        "max": 413.33,
+        "max_over_p99": 1240.0,
+        "skew": 224.6
+      },
+      {
+        "column": "roam_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 22.41,
+        "max": 3685.2,
+        "max_over_p99": 164.45,
+        "skew": 168.81
+      },
+      {
+        "column": "recv_sms_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 0.0,
+        "max": 517.33,
+        "max_over_p99": NaN,
+        "skew": 168.44
+      },
+      {
+        "column": "drop_dat_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 0.67,
+        "max": 207.33,
+        "max_over_p99": 311.0,
+        "skew": 149.64
+      },
+      {
+        "column": "callfwdv_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 0.0,
+        "max": 81.33,
+        "max_over_p99": NaN,
+        "skew": 90.74
+      },
+      {
+        "column": "unan_dat_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 0.67,
+        "max": 81.67,
+        "max_over_p99": 122.5,
+        "skew": 81.81
+      },
+      {
+        "column": "change_rev",
+        "min": -1107.74,
+        "p1": -104.57,
+        "p50": -0.32,
+        "p99": 121.88,
+        "max": 9963.66,
+        "max_over_p99": 81.75,
+        "skew": 80.54
+      },
+      {
+        "column": "mou_opkd_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 20.99,
+        "max": 2922.04,
+        "max_over_p99": 139.19,
+        "skew": 67.44
+      },
+      {
+        "column": "uniqsubs",
+        "min": 1.0,
+        "p1": 1.0,
+        "p50": 1.0,
+        "p99": 5.0,
+        "max": 196.0,
+        "max_over_p99": 39.2,
+        "skew": 60.52
+      },
+      {
+        "column": "datovr_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 5.26,
+        "max": 423.54,
+        "max_over_p99": 80.44,
+        "skew": 58.01
+      },
+      {
+        "column": "mou_cdat_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 38.19,
+        "max": 3032.05,
+        "max_over_p99": 79.4,
+        "skew": 49.33
+      },
+      {
+        "column": "mou_pead_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 15.45,
+        "max": 1036.05,
+        "max_over_p99": 67.06,
+        "skew": 43.0
+      },
+      {
+        "column": "custcare_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 20.33,
+        "max": 675.33,
+        "max_over_p99": 33.21,
+        "skew": 32.03
+      },
+      {
+        "column": "plcd_dat_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 17.33,
+        "max": 733.67,
+        "max_over_p99": 42.33,
+        "skew": 30.27
+      },
+      {
+        "column": "opk_dat_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 8.0,
+        "max": 309.67,
+        "max_over_p99": 38.71,
+        "skew": 29.97
+      },
+      {
+        "column": "peak_dat_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 7.0,
+        "max": 281.0,
+        "max_over_p99": 40.14,
+        "skew": 29.81
+      },
+      {
+        "column": "comp_dat_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 15.67,
+        "max": 559.33,
+        "max_over_p99": 35.7,
+        "skew": 28.64
+      },
+      {
+        "column": "threeway_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 4.0,
+        "max": 66.0,
+        "max_over_p99": 16.5,
+        "skew": 17.0
+      },
+      {
+        "column": "change_mou",
+        "min": -3875.0,
+        "p1": -835.98,
+        "p50": -6.25,
+        "p99": 751.46,
+        "max": 31219.25,
+        "max_over_p99": 41.54,
+        "skew": 14.39
+      },
+      {
+        "column": "ccrndmou_Mean",
+        "min": 0.0,
+        "p1": 0.0,
+        "p50": 0.0,
+        "p99": 55.33,
+        "max": 861.33,
+        "max_over_p99": 15.57,
+        "skew": 11.57
+      }
+    ],
+    "hnd_price_n_tiers": 17,
+    "uniqsubs_gt_10_n": 13
   },
   "eda": {},
   "models": [],

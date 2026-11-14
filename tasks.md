@@ -38,9 +38,9 @@
 - [x] **T1.1 Structure & types:** dtype counts (expect float64 69 / int64 10 / object 21), memory, duplicates, ID checks. Notebook §3. ✔ 2026-11-14 20:00
 - [x] **T1.2 Missing values:** full table, **matplotlib** bar of top 20 (`fig_04_missing.png`), the "same rows missing across demographic columns" block (~1.7%), and **churn rate when missing vs present** for the top missing columns. ✔ 2026-11-14 20:03
 - [x] **T1.3 Negative/impossible values** in `rev_Mean, mou_Mean, totmrc_Mean, eqpdays, avg6rev` etc.: counts, minima, churn rate of those rows; Decision-log entry per column (clip/flag/keep). Explain the tutorial's `log1p` RuntimeWarnings. ✔ 2026-11-14 20:05
-- [~] **T1.4 Outliers & skew:** p1/p50/p99/max for numeric columns; list extreme cases (`uniqsubs`, `totcalls`, `totmou`).
-  - Computing p1/p50/p99/max and skewness across numeric columns and auditing extreme right-tail cases (`uniqsubs` up to 196, `totcalls` up to 98,874, `totmou` up to 233,419).
-- [ ] **T1.5 Near-duplicates & near-empty columns:** Spearman |ρ| > 0.97 pairs (top 20), columns ≥ 90% zeros; quick CV test of whether dropping duplicates changes AUC.
+- [x] **T1.4 Outliers & skew:** p1/p50/p99/max for numeric columns; list extreme cases (`uniqsubs`, `totcalls`, `totmou`). ✔ 2026-11-14 20:07
+- [~] **T1.5 Near-duplicates & near-empty columns:** Spearman |ρ| > 0.97 pairs (top 20), columns ≥ 90% zeros; quick CV test of whether dropping duplicates changes AUC.
+  - Computing Spearman |ρ| > 0.97 pairs, columns with ≥ 90% zeros, and 5-fold CV AUC comparison with vs. without near-duplicate columns.
 - [ ] **T1.6 Documentation vs data:** test the "percent" claim for `change_mou/change_rev`; check `recv_sms_Mean`, `iwylis_vce_Mean`, `infobase`; fill **Data-doc discrepancies** in `docs/NOTES.md` with the wording to use on slides.
 - [ ] **T1.7 Target audit:** churn counts/rate (expect 49.56%); why accuracy is meaningful here but misleading at 5% churn; store in `results.json → data`.
 - [ ] **T1.8 Phase wrap-up** (Arabic section, commit, tag `phase-1-done`). *Done when:* all tables/figures/numbers saved, anomalies explained.
