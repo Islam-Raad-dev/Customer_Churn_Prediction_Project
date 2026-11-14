@@ -38,5 +38,26 @@
       "joblib": "1.5.3",
       "lightgbm": "4.7.0"
     }
+  },
+  "tutorial_baseline": {
+    "majority_class": 0,
+    "majority_test_acc": 0.504367,
+    "test_acc": 0.6357,
+    "test_auc": 0.693773,
+    "train_acc": 0.734857,
+    "train_auc": 0.815095,
+    "test_precision": 0.628809,
+    "test_recall": 0.646782,
+    "test_f1": 0.637669,
+    "confusion_matrix": [
+      [
+        9454,
+        5677
+      ],
+      [
+        5252,
+        9617
+      ]
+    ]
   }
 }
