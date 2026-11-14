@@ -2340,6 +2340,68 @@
           "rev_mean_all": 63.1
         }
       ]
+    },
+    "revenue_value": {
+      "rev_Mean": {
+        "stayed_mean": 59.38,
+        "stayed_median": 49.02,
+        "stayed_p75": 71.52,
+        "churn_mean": 58.26,
+        "churn_median": 47.63,
+        "churn_p75": 70.0,
+        "overall_mean_all": 58.72,
+        "overall_median_all": 48.2
+      },
+      "totmrc_Mean": {
+        "stayed_mean": 47.87,
+        "stayed_median": 44.99,
+        "stayed_p75": 59.99,
+        "churn_mean": 44.59,
+        "churn_median": 44.06,
+        "churn_p75": 57.49,
+        "overall_mean_all": 46.18,
+        "overall_median_all": 44.99
+      },
+      "avg3rev": {
+        "stayed_mean": 59.95,
+        "stayed_median": 49.0,
+        "stayed_p75": 72.0,
+        "churn_mean": 58.71,
+        "churn_median": 48.0,
+        "churn_p75": 70.0,
+        "overall_mean_all": 59.19,
+        "overall_median_all": 48.0
+      },
+      "avg6rev": {
+        "stayed_mean": 59.55,
+        "stayed_median": 50.0,
+        "stayed_p75": 72.0,
+        "churn_mean": 58.04,
+        "churn_median": 49.0,
+        "churn_p75": 70.0,
+        "overall_mean_all": 58.68,
+        "overall_median_all": 50.0
+      },
+      "totrev": {
+        "stayed_mean": 1035.55,
+        "stayed_median": 783.98,
+        "stayed_p75": 1267.72,
+        "churn_mean": 1030.19,
+        "churn_median": 824.2,
+        "churn_p75": 1260.02,
+        "overall_mean_all": 1031.92,
+        "overall_median_all": 804.53
+      },
+      "ovrrev_Mean": {
+        "stayed_mean": 12.9,
+        "stayed_median": 0.8,
+        "stayed_p75": 13.3,
+        "churn_mean": 14.3,
+        "churn_median": 1.27,
+        "churn_p75": 15.57,
+        "overall_mean_all": 13.56,
+        "overall_median_all": 1.0
+      }
     }
   },
   "models": [],

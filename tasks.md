@@ -51,9 +51,9 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T2.3 `months` vs churn:** per-month rate 6–61 with counts; locate the cliff (~10–12). ✔ 2026-11-14 20:36
 - [x] **T2.4 Entanglement:** matplotlib heat-map (`imshow`) of churn by tenure bucket × device-age bucket with counts; device-age effect within tenure ≥ 10 only. ✔ 2026-11-14 20:39
 - [x] **T2.5 Usage-collapse segments:** `mou_Mean` = 0, ≤ 10, ≤ 30, ≤ 65, missing `change_mou`: size, churn, mean revenue, revenue share, lifetime totals; stand-alone target or "already gone"? ✔ 2026-11-14 20:44
-- [~] **T2.6 Revenue and "value":** distributions/medians by class; implication for defining a valuable customer.
-  - Analyzing `rev_Mean`, `totmrc_Mean`, and `totrev` distributions/medians across `churn=1` vs. `churn=0` on the 70% training split and deriving implications for defining customer value.
-- [ ] **T2.7 Customer-care calls vs churn:** buckets; ≥ 3 competing explanations (hypotheses only).
+- [x] **T2.6 Revenue and "value":** distributions/medians by class; implication for defining a valuable customer. ✔ 2026-11-14 20:46
+- [~] **T2.7 Customer-care calls vs churn:** buckets; ≥ 3 competing explanations (hypotheses only).
+  - Computing churn rates across `custcare_Mean` buckets on the 70% training split and formulating 3 competing non-causal hypotheses for the negative association.
 - [ ] **T2.8 Call quality, overage, roaming vs churn.**
 - [ ] **T2.9 Demographics vs churn** + fairness note for `ethnic` and proxies.
 - [ ] **T2.10 Select 4–6 final EDA charts** for slides 4–6 (PRD §10 style; exact placement sizes; PNG 200 dpi; open each PNG and inspect).
