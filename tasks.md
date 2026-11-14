@@ -64,9 +64,9 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T3.2 Collect ≥ 8 sources (target 10–12):** open each page, verify the fact, log in `research/sources_log.md` (ID · title · publisher · publication date · URL · access date · fact used · reliability). Paraphrase; quotes ≤ 15 words only if essential. ✔ 2026-11-14 21:05
 - [x] **T3.3 Answer each research question** in 3–6 lines with `[ID]` citations; where Iraqi data are missing, say so and label regional/global data. ✔ 2026-11-14 21:06
 - [x] **T3.4 Choose 3 facts for slide 3** and numeric inputs for the impact model (churn prior, success rate, offer cost, margin, horizon); anything unsourced → **ASSUMPTION** in `docs/NOTES.md → Assumptions`. ✔ 2026-11-14 21:08
-- [~] **T3.5 Draft `references.txt`** (order = citation order; stable IDs).
-  - Creating `submission/references.txt` (and root/reference copy synced with `research/sources_log.md`) in exact citation order (`[1]`–`[18]`, including software libraries, dataset citation, and AI chat link placeholders).
-- [ ] **T3.6 Phase wrap-up** (Arabic section, commit, tag `phase-3-done`).
+- [x] **T3.5 Draft `references.txt`** (order = citation order; stable IDs). ✔ 2026-11-14 21:09
+- [~] **T3.6 Phase wrap-up** (Arabic section, commit, tag `phase-3-done`).
+  - Appending Phase 3 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`, committing, and tagging `phase-3-done`.
 
 ## Phase 4 — Problem definition / Decision Gate  (type: `docs`)
 - [ ] **T4.1 Decision matrix** for options A–E (1–5 on evidence, actionability, measurability, risk, market fit) in `docs/NOTES.md`.
