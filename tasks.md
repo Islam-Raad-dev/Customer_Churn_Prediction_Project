@@ -65,11 +65,11 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T3.3 Answer each research question** in 3–6 lines with `[ID]` citations; where Iraqi data are missing, say so and label regional/global data. ✔ 2026-11-14 21:06
 - [x] **T3.4 Choose 3 facts for slide 3** and numeric inputs for the impact model (churn prior, success rate, offer cost, margin, horizon); anything unsourced → **ASSUMPTION** in `docs/NOTES.md → Assumptions`. ✔ 2026-11-14 21:08
 - [x] **T3.5 Draft `references.txt`** (order = citation order; stable IDs). ✔ 2026-11-14 21:09
-- [~] **T3.6 Phase wrap-up** (Arabic section, commit, tag `phase-3-done`).
-  - Appending Phase 3 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`, committing, and tagging `phase-3-done`.
+- [x] **T3.6 Phase wrap-up** (Arabic section, commit, tag `phase-3-done`). ✔ 2026-11-14 21:11
 
 ## Phase 4 — Problem definition / Decision Gate  (type: `docs`)
-- [ ] **T4.1 Decision matrix** for options A–E (1–5 on evidence, actionability, measurability, risk, market fit) in `docs/NOTES.md`.
+- [~] **T4.1 Decision matrix** for options A–E (1–5 on evidence, actionability, measurability, risk, market fit) in `docs/NOTES.md`.
+  - Scoring candidate framings A–E across the 5 criteria in `docs/NOTES.md → 1. Decision Log`.
 - [ ] **T4.2 Decide:** (i) default two-lane proposal, or (ii) risk ranking + value-at-risk only (if T2.2 says "likely artifact"). Log decision and reasons.
 - [ ] **T4.3 Write the problem paragraph (3–5 sentences):** problem · for whom · target · ML task type and why · expected decision/action. *If it isn't clear to a non-technical manager, do not proceed to modeling.*
 - [ ] **T4.4 Define KPI and decision owner** (e.g., incremental retention in a pilot; owner = retention/CRM).

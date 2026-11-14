@@ -1,8 +1,8 @@
 # PROGRESS
-Updated: 2026-11-14 21:09
-Last completed task: T3.5 — Draft `references.txt`
-Current task: T3.6 — Phase 3 wrap-up   | status: [~] in progress (appending Phase 3 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`)
-Next concrete action: Append Phase 3 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`, commit, and tag `phase-3-done`.
+Updated: 2026-11-14 21:11
+Last completed task: T3.6 — Phase 3 wrap-up (tagged `phase-3-done`)
+Current task: T4.1 — Decision matrix for options A–E   | status: [~] in progress (scoring candidate framings A–E in `docs/NOTES.md`)
+Next concrete action: Score candidate framings A–E (1–5 on evidence, actionability, measurability, risk, market fit) in `docs/NOTES.md`, then execute `T4.2`–`T4.5` (Decision Gate, manager-friendly problem paragraph, KPI/owner, Notebook Section 5, and Phase 4 Arabic walkthrough).
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
@@ -11,7 +11,7 @@ Key decisions so far:
 - Reproduced exact tutorial baseline (`0.6357` test accuracy, `0.6938` test AUC).
 - Completed Phase 1 Data Audit (`T1.1`–`T1.8`, tagged `phase-1-done`).
 - Completed Phase 2 Exploratory Data Analysis (`T2.1`–`T2.12`, tagged `phase-2-done`).
-- Completed T3.1–T3.5: verified 12 external sources (`[1]`–`[12]`) + software/dataset/AI citations (`[13]`–`[16]`), answered all 7 PRD §7 research questions, logged Slide 3 KPI facts and impact-model assumptions, and created `submission/references.txt`.
+- Completed Phase 3 Market Research (`T3.1`–`T3.6`, tagged `phase-3-done`): verified 12 external sources (`[1]`–`[12]`) + software/dataset/AI citations (`[13]`–`[16]`), answered all 7 PRD §7 research questions, logged Slide 3 KPI facts and impact-model assumptions, and created `submission/references.txt`.
 Key numbers so far (from results.json):
 - `data.n_rows`: `100,000`, `data.n_cols`: `100`, `data.n_features_raw`: `98`.
 - `data.churn_count`: `49,562` (`49.562%`), `data.stayed_count`: `50,438` (`50.438%`), `data.imbalance_ratio`: `1.0177`.
