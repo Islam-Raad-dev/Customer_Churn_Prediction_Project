@@ -1,13 +1,13 @@
 # PROGRESS
 Updated: 2026-11-14 19:57
-Last completed task: T0.6 — Reproduce the tutorial baseline exactly
-Current task: T0.7 — Consolidate leftovers   | status: [~] in progress (auditing workspace tree with ls -R)
-Next concrete action: Run `ls -R` to confirm the workspace matches PRD §3 with zero extra stubs, update `PROGRESS.md`, and commit T0.7.
+Last completed task: T0.7 — Consolidate leftovers
+Current task: T0.8 — Phase wrap-up   | status: [~] in progress (appending Phase 0 Arabic section to docs/UNDERSTANDING_AR.md)
+Next concrete action: Append Phase 0 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`, mark T0.8 done, commit, and tag `phase-0-done`.
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
 - Logged matplotlib font fallback (`DejaVu Sans`) and pinned `python3` Jupyter kernelspec to `/home/islam-raad/ai_workspace/bin/python3.12`.
-- Initialized local-only git repository on `main` with strict `.gitignore` and PRD §3 lean workspace.
+- Initialized local-only git repository on `main` with strict `.gitignore` and verified via `ls -R` that the workspace strictly matches PRD §3.
 - Verified 1-to-1 inner merge of `Client.csv` (100,000 × 50) and `Record.csv` (100,000 × 51) on `Customer_ID` (`1000001`–`1100000`) → `(100000, 100)`.
 - Reproduced exact tutorial baseline (`LabelEncoder` + `XGBClassifier`), matching Islam's prior calibration (`0.6357` test accuracy, `0.6938` test AUC).
 Key numbers so far (from results.json):
