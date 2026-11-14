@@ -1,8 +1,8 @@
 # PROGRESS
-Updated: 2026-11-14 21:13
-Last completed task: T4.1 — Decision matrix for options A–E
-Current task: T4.2 — Decide: (i) default two-lane proposal, or (ii) risk ranking + value-at-risk only   | status: [~] in progress (logging Decision Gate choice in `docs/NOTES.md`)
-Next concrete action: Log the Decision Gate choice (Two-Lane Retention Program with Lane 2 as an A/B holdout pilot) in `docs/NOTES.md`, then complete `T4.3`–`T4.5` (problem paragraph, KPI/owner, Notebook Section 5, and Phase 4 Arabic walkthrough).
+Updated: 2026-11-14 21:14
+Last completed task: T4.2 — Decide: Two-Lane Retention Program with Lane 2 as controlled A/B holdout pilot
+Current task: T4.3 — Write the problem paragraph (3–5 sentences)   | status: [~] in progress (writing manager-friendly problem paragraph in `docs/NOTES.md` and `Islam-Raad.ipynb`)
+Next concrete action: Write the 3–5 sentence manager-friendly problem statement (`T4.3`) and define KPI and decision owner (`T4.4`) in `docs/NOTES.md` and `Islam-Raad.ipynb` Section 5, then complete `T4.5` (Phase 4 Arabic walkthrough and tag `phase-4-done`).
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
@@ -12,7 +12,7 @@ Key decisions so far:
 - Completed Phase 1 Data Audit (`T1.1`–`T1.8`, tagged `phase-1-done`).
 - Completed Phase 2 Exploratory Data Analysis (`T2.1`–`T2.12`, tagged `phase-2-done`).
 - Completed Phase 3 Market Research (`T3.1`–`T3.6`, tagged `phase-3-done`).
-- Scored candidate framings A–E in `docs/NOTES.md` (`T4.1`): Options A (Risk-Ranked Retention, `25/25`) + D (Value-at-Risk, `25/25`) form Lane 1, Option C (`21/25`) integrates into features/offer design, Option B (`20/25`) forms Lane 2 (A/B pilot), and Option E (`12/25`) is rejected.
+- Scored candidate framings A–E (`T4.1`) and confirmed the Two-Lane Retention Program (`T4.2`): Lane 1 = monthly ML risk-ranking + Value-at-Risk targeting; Lane 2 = pre-300-day handset refresh & month-9 loyalty check launched as a controlled 90-day A/B holdout pilot.
 Key numbers so far (from results.json):
 - `data.n_rows`: `100,000`, `data.n_cols`: `100`, `data.n_features_raw`: `98`.
 - `data.churn_count`: `49,562` (`49.562%`), `data.stayed_count`: `50,438` (`50.438%`), `data.imbalance_ratio`: `1.0177`.
