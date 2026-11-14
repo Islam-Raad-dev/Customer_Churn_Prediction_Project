@@ -1076,7 +1076,220 @@
       }
     ],
     "hnd_price_n_tiers": 17,
-    "uniqsubs_gt_10_n": 13
+    "uniqsubs_gt_10_n": 13,
+    "near_duplicates": [
+      {
+        "col_1": "totmou",
+        "col_2": "adjmou",
+        "spearman_rho": 0.9995
+      },
+      {
+        "col_1": "totcalls",
+        "col_2": "adjqty",
+        "spearman_rho": 0.9995
+      },
+      {
+        "col_1": "plcd_vce_Mean",
+        "col_2": "attempt_Mean",
+        "spearman_rho": 0.9994
+      },
+      {
+        "col_1": "comp_vce_Mean",
+        "col_2": "complete_Mean",
+        "spearman_rho": 0.9992
+      },
+      {
+        "col_1": "peak_dat_Mean",
+        "col_2": "mou_pead_Mean",
+        "spearman_rho": 0.9992
+      },
+      {
+        "col_1": "comp_dat_Mean",
+        "col_2": "mou_cdat_Mean",
+        "spearman_rho": 0.9989
+      },
+      {
+        "col_1": "opk_dat_Mean",
+        "col_2": "mou_opkd_Mean",
+        "spearman_rho": 0.9988
+      },
+      {
+        "col_1": "ccrndmou_Mean",
+        "col_2": "cc_mou_Mean",
+        "spearman_rho": 0.9981
+      },
+      {
+        "col_1": "ovrmou_Mean",
+        "col_2": "ovrrev_Mean",
+        "spearman_rho": 0.9978
+      },
+      {
+        "col_1": "totrev",
+        "col_2": "adjrev",
+        "spearman_rho": 0.9956
+      },
+      {
+        "col_1": "attempt_Mean",
+        "col_2": "complete_Mean",
+        "spearman_rho": 0.9923
+      },
+      {
+        "col_1": "plcd_vce_Mean",
+        "col_2": "comp_vce_Mean",
+        "spearman_rho": 0.9922
+      },
+      {
+        "col_1": "comp_vce_Mean",
+        "col_2": "attempt_Mean",
+        "spearman_rho": 0.9915
+      },
+      {
+        "col_1": "plcd_vce_Mean",
+        "col_2": "complete_Mean",
+        "spearman_rho": 0.9915
+      },
+      {
+        "col_1": "mou_Mean",
+        "col_2": "avg3mou",
+        "spearman_rho": 0.983
+      },
+      {
+        "col_1": "custcare_Mean",
+        "col_2": "ccrndmou_Mean",
+        "spearman_rho": 0.9821
+      },
+      {
+        "col_1": "recv_vce_Mean",
+        "col_2": "inonemin_Mean",
+        "spearman_rho": 0.9816
+      },
+      {
+        "col_1": "ovrrev_Mean",
+        "col_2": "vceovr_Mean",
+        "spearman_rho": 0.9772
+      },
+      {
+        "col_1": "ovrmou_Mean",
+        "col_2": "vceovr_Mean",
+        "spearman_rho": 0.9765
+      },
+      {
+        "col_1": "custcare_Mean",
+        "col_2": "cc_mou_Mean",
+        "spearman_rho": 0.9728
+      }
+    ],
+    "near_empty_cols": [
+      {
+        "column": "callfwdv_Mean",
+        "n_zero": 99567,
+        "n_nonzero": 433,
+        "pct_zero": 99.57
+      },
+      {
+        "column": "recv_sms_Mean",
+        "n_zero": 99128,
+        "n_nonzero": 872,
+        "pct_zero": 99.13
+      },
+      {
+        "column": "blck_dat_Mean",
+        "n_zero": 98772,
+        "n_nonzero": 1228,
+        "pct_zero": 98.77
+      },
+      {
+        "column": "drop_dat_Mean",
+        "n_zero": 97400,
+        "n_nonzero": 2600,
+        "pct_zero": 97.4
+      },
+      {
+        "column": "unan_dat_Mean",
+        "n_zero": 96880,
+        "n_nonzero": 3120,
+        "pct_zero": 96.88
+      },
+      {
+        "column": "forgntvl",
+        "n_zero": 92571,
+        "n_nonzero": 5697,
+        "pct_zero": 94.2
+      },
+      {
+        "column": "rv",
+        "n_zero": 90153,
+        "n_nonzero": 8115,
+        "pct_zero": 91.74
+      },
+      {
+        "column": "peak_dat_Mean",
+        "n_zero": 91058,
+        "n_nonzero": 8942,
+        "pct_zero": 91.06
+      },
+      {
+        "column": "mou_pead_Mean",
+        "n_zero": 91060,
+        "n_nonzero": 8940,
+        "pct_zero": 91.06
+      },
+      {
+        "column": "opk_dat_Mean",
+        "n_zero": 90394,
+        "n_nonzero": 9606,
+        "pct_zero": 90.39
+      },
+      {
+        "column": "mou_opkd_Mean",
+        "n_zero": 90382,
+        "n_nonzero": 9618,
+        "pct_zero": 90.38
+      },
+      {
+        "column": "comp_dat_Mean",
+        "n_zero": 86607,
+        "n_nonzero": 13393,
+        "pct_zero": 86.61
+      },
+      {
+        "column": "mou_cdat_Mean",
+        "n_zero": 86607,
+        "n_nonzero": 13393,
+        "pct_zero": 86.61
+      },
+      {
+        "column": "datovr_Mean",
+        "n_zero": 85970,
+        "n_nonzero": 13673,
+        "pct_zero": 86.28
+      },
+      {
+        "column": "plcd_dat_Mean",
+        "n_zero": 85020,
+        "n_nonzero": 14980,
+        "pct_zero": 85.02
+      }
+    ],
+    "drop10_cv_check": {
+      "dropped_cols": [
+        "adjqty",
+        "adjmou",
+        "adjrev",
+        "plcd_vce_Mean",
+        "comp_vce_Mean",
+        "comp_dat_Mean",
+        "peak_dat_Mean",
+        "opk_dat_Mean",
+        "ovrmou_Mean",
+        "ccrndmou_Mean"
+      ],
+      "auc_98_mean": 0.693706,
+      "auc_98_std": 0.001912,
+      "auc_88_mean": 0.694435,
+      "auc_88_std": 0.001857,
+      "auc_98_native_cat_mean": 0.6909
+    }
   },
   "eda": {},
   "models": [],
