@@ -91,11 +91,11 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T6.7 Phase wrap-up** (Arabic section, commit, tag `phase-6-done`). ✔ 2026-11-14 22:15
 
 ## Phase 7 — Evaluation and interpretation  (type: `eval`)
-- [~] **T7.1 Confusion matrix** at the stated threshold (matplotlib), explained in words (FP = wasted offer; FN = lost customer).
-  - Generating the matplotlib confusion matrix (`fig_11_confusion.png`) and explaining TN, FP, FN, and TP in business terms.
-- [ ] **T7.2 Top-k table** k ∈ {1,2,5,10,15,20,30,50} (customers, precision, recall, lift) + gain/lift curve (matplotlib) → `results.json → topk`.
-- [ ] **T7.3 Calibration** curve (matplotlib); isotonic calibration if probabilities enter money terms.
-- [ ] **T7.4 Importance:** gain **and** permutation (held-out); explain gain vs weight; optional SHAP.
+- [x] **T7.1 Confusion matrix** at the stated threshold (matplotlib), explained in words (FP = wasted offer; FN = lost customer). ✔ 2026-11-14 22:20
+- [x] **T7.2 Top-k table** k ∈ {1,2,5,10,15,20,30,50} (customers, precision, recall, lift) + gain/lift curve (matplotlib) → `results.json → topk`. ✔ 2026-11-14 22:20
+- [x] **T7.3 Calibration** curve (matplotlib); isotonic calibration if probabilities enter money terms. ✔ 2026-11-14 22:20
+- [~] **T7.4 Importance:** gain **and** permutation (held-out); explain gain vs weight; optional SHAP.
+  - Computing XGBoost Gain vs. Weight importance and held-out Test Permutation importance (`n_repeats=5`), and plotting `outputs/figures/fig_10_importance.png`.
 - [ ] **T7.5 Partial dependence** for `eqpdays` and `months` (matplotlib) — do thresholds show in the model?
 - [ ] **T7.6 Ablation:** drop the top feature, retrain, compare CV AUC; conclude "one strong signal" vs "many weak ones".
 - [ ] **T7.7 Lever table:** top 3–5 drivers → can the company change it? → implied action.

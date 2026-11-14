@@ -119,6 +119,15 @@
     - **Touch #1 (`M4` — XGBoost + 28 Engineered Features, default params):** Test ROC-AUC = **`0.6992`**, Test Acc = **`0.6398`**, Precision = `0.6360`, Recall = `0.6386`, F1 = `0.6373`, Train–Test Acc Gap = `10.12 pp`.
     - **Touch #2 (`M5` — Final Regularized & Tuned XGBoost + 28 Engineered Features):** Test ROC-AUC = **`0.7029`**, Test Acc = **`0.6409`**, Precision = **`0.6382`**, Recall = **`0.6360`**, F1 = **`0.6371`**, Brier Score = **`0.2180`**, Train Acc = `0.7203` (Train–Test Acc Gap = **`7.94 pp`**, down from `9.92 pp` in the tutorial baseline and `10.12 pp` in `M4`). Confusion matrix at threshold `0.50`: `TN = 9,769`, `FP = 5,362`, `FN = 5,412`, `TP = 9,457`.
   - Saved fitted pipeline to `outputs/models/final_xgb_m5_pipeline.joblib` (git-ignored), exported `outputs/tables/test_predictions.csv` (`30,000` rows: `Customer_ID, y_true, p_churn`), updated `outputs/results.json → models, final_model`, and generated `outputs/figures/fig_09_model_comparison.png` (`4.4 × 3.3` in, 200 DPI).
+- **2026-11-14 (T7.1–T7.3 — Confusion Matrix, Top-$k$ Targeting Table, and Calibration Reliability):**
+  - **`T7.1` Confusion Matrix (`outputs/figures/fig_11_confusion.png`):** At threshold `p >= 0.50` (`n = 30,000`), `TN = 9,769` (`32.6%`, stayed uncontacted), `FP = 5,362` (`17.9%`, wasted offer cost paid to a stayer), `FN = 5,412` (`18.0%`, lost customer missed by campaign), `TP = 9,457` (`31.5%`, true churner reached). At the operational Top-10% cutoff (`p >= 0.7214`, `n = 3,000` test / `10,000` full base), `TP = 2,439` (`81.30%` precision, `16.40%` recall of all churners) and `FP = 561` (`18.70%` wasted offers).
+  - **`T7.2` Top-$k$ Targeting Power (`outputs/figures/fig_11_lift.png`):**
+    - `Top 1%` (`n=1,000`): raw precision **`93.67%`** (`1.89x` lift); re-based ($\pi_r=10\%$): **`62.58%`** (`6.26x` lift); re-based ($\pi_r=5\%$): **`44.20%`** (`8.84x` lift).
+    - `Top 5%` (`n=5,000`): raw precision **`86.40%`** (`1.74x` lift, `8.72%` recall); re-based ($\pi_r=10\%$): **`41.80%`** (`4.18x` lift); re-based ($\pi_r=5\%$): **`25.39%`** (`5.08x` lift).
+    - `Top 10%` (`n=10,000`): raw precision **`81.30%`** (`1.64x` lift, `16.40%` recall); re-based ($\pi_r=10\%$): **`32.96%`** (`3.30x` lift); re-based ($\pi_r=5\%$): **`18.89%`** (`3.78x` lift).
+    - `Top 20%` (`n=20,000`): raw precision **`74.58%`** (`1.50x` lift, `30.10%` recall); re-based ($\pi_r=10\%$): **`24.91%`** (`2.49x` lift); re-based ($\pi_r=5\%$): **`13.58%`** (`2.72x` lift).
+    - `Bottom 10%` (`n=10,000` lowest-risk decile): churn rate = **`17.67%`**, giving a **`4.60x` top-vs-bottom decile risk ratio** (`81.30% / 17.67%`).
+  - **`T7.3` Calibration (`outputs/figures/fig_11_calibration.png`):** `M5` probabilities are well-calibrated out of the box (`Test Brier = 0.2180`, 10-bin Expected Calibration Error `ECE = 0.0075`); post-hoc isotonic regression yields identical holdout Brier (`0.2181` vs. `0.2177` raw), confirming `M5` logloss probabilities can enter the `Value-at-Risk` and label-shift re-basing formulas directly.
 
 ---
 
