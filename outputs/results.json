@@ -1,5 +1,22 @@
 {
-  "data": {},
+  "data": {
+    "n_rows": 100000,
+    "n_cols": 100,
+    "n_features_raw": 98,
+    "client_shape": [
+      100000,
+      50
+    ],
+    "record_shape": [
+      100000,
+      51
+    ],
+    "id_min": 1000001,
+    "id_max": 1100000,
+    "months_min": 6,
+    "months_median": 16.0,
+    "months_max": 61
+  },
   "eda": {},
   "models": [],
   "final_model": {},
