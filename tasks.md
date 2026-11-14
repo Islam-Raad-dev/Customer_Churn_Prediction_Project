@@ -46,9 +46,9 @@
 
 ## Phase 2 — Exploratory data analysis  (type: `eda`)
 Split first (stratified 70/30, seed 42); **discover thresholds on the training part only**; replicate on all rows only descriptively. Each analysis = one matplotlib chart + one-sentence finding (in the notebook and `docs/NOTES.md → Hypotheses`).
-- [~] **T2.1 `eqpdays` vs churn:** bins ≤ 25 days with CI bands; negatives handled per T1.3; `fig_05_device_age.png`.
-  - Splitting stratified 70/30 (seed 42), analyzing `eqpdays` vs. churn on the 70% training split in 25-day bins with 95% Wilson/binomial CI bands, and generating `outputs/figures/fig_05_device_age.png`.
-- [ ] **T2.2 Robustness of the ~300-day jump:** bootstrap 95% CI of churn(301–340) − churn(260–300); local linear fit on each side; repeat within tenure ≥ 10, by `area`, by `crclscod`; **covariate-balance check** at 300 days (`rev_Mean, hnd_price, months, mou_Mean, uniqsubs`). Write a verdict: *real-looking / uncertain / likely artifact* + reasons. **This verdict drives T4.2.**
+- [x] **T2.1 `eqpdays` vs churn:** bins ≤ 25 days with CI bands; negatives handled per T1.3; `fig_05_device_age.png`. ✔ 2026-11-14 20:31
+- [~] **T2.2 Robustness of the ~300-day jump:** bootstrap 95% CI of churn(301–340) − churn(260–300); local linear fit on each side; repeat within tenure ≥ 10, by `area`, by `crclscod`; **covariate-balance check** at 300 days (`rev_Mean, hnd_price, months, mou_Mean, uniqsubs`). Write a verdict: *real-looking / uncertain / likely artifact* + reasons. **This verdict drives T4.2.**
+  - Running bootstrap 95% CI, local linear RDD-style fits on both sides of 300 days, subgroup checks (`months >= 10`, `area`, `crclscod`), and covariate balance tests on `rev_Mean, hnd_price, months, mou_Mean, uniqsubs`.
 - [ ] **T2.3 `months` vs churn:** per-month rate 6–61 with counts; locate the cliff (~10–12).
 - [ ] **T2.4 Entanglement:** matplotlib heat-map (`imshow`) of churn by tenure bucket × device-age bucket with counts; device-age effect within tenure ≥ 10 only.
 - [ ] **T2.5 Usage-collapse segments:** `mou_Mean` = 0, ≤ 10, ≤ 30, ≤ 65, missing `change_mou`: size, churn, mean revenue, revenue share, lifetime totals; stand-alone target or "already gone"?
