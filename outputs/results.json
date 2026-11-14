@@ -2522,6 +2522,222 @@
           "churn_train": 0.413677
         }
       ]
+    },
+    "demographics": {
+      "income": {
+        "min_churn_pct": 46.32,
+        "max_churn_pct": 51.58,
+        "spread_pp": 5.26,
+        "top_groups": [
+          {
+            "group": "MISSING",
+            "n_train": 17830,
+            "churn_pct": 51.58
+          },
+          {
+            "group": "6.0",
+            "n_train": 13062,
+            "churn_pct": 49.06
+          },
+          {
+            "group": "7.0",
+            "n_train": 8239,
+            "churn_pct": 50.53
+          },
+          {
+            "group": "9.0",
+            "n_train": 7600,
+            "churn_pct": 48.74
+          },
+          {
+            "group": "5.0",
+            "n_train": 5808,
+            "churn_pct": 48.43
+          },
+          {
+            "group": "4.0",
+            "n_train": 5407,
+            "churn_pct": 48.22
+          }
+        ]
+      },
+      "marital": {
+        "min_churn_pct": 46.57,
+        "max_churn_pct": 51.4,
+        "spread_pp": 4.82,
+        "top_groups": [
+          {
+            "group": "U",
+            "n_train": 26115,
+            "churn_pct": 51.4
+          },
+          {
+            "group": "M",
+            "n_train": 21586,
+            "churn_pct": 48.9
+          },
+          {
+            "group": "S",
+            "n_train": 12384,
+            "churn_pct": 47.41
+          },
+          {
+            "group": "B",
+            "n_train": 5020,
+            "churn_pct": 49.26
+          },
+          {
+            "group": "A",
+            "n_train": 3669,
+            "churn_pct": 49.06
+          },
+          {
+            "group": "MISSING",
+            "n_train": 1226,
+            "churn_pct": 46.57
+          }
+        ]
+      },
+      "prizm_social_one": {
+        "min_churn_pct": 48.48,
+        "max_churn_pct": 52.66,
+        "spread_pp": 4.19,
+        "top_groups": [
+          {
+            "group": "S",
+            "n_train": 22586,
+            "churn_pct": 49.13
+          },
+          {
+            "group": "U",
+            "n_train": 16424,
+            "churn_pct": 48.48
+          },
+          {
+            "group": "C",
+            "n_train": 11944,
+            "churn_pct": 49.1
+          },
+          {
+            "group": "T",
+            "n_train": 10460,
+            "churn_pct": 50.64
+          },
+          {
+            "group": "MISSING",
+            "n_train": 5189,
+            "churn_pct": 51.72
+          },
+          {
+            "group": "R",
+            "n_train": 3397,
+            "churn_pct": 52.66
+          }
+        ]
+      },
+      "dwlltype": {
+        "min_churn_pct": 48.54,
+        "max_churn_pct": 51.22,
+        "spread_pp": 2.68,
+        "top_groups": [
+          {
+            "group": "S",
+            "n_train": 34147,
+            "churn_pct": 48.54
+          },
+          {
+            "group": "MISSING",
+            "n_train": 22393,
+            "churn_pct": 51.22
+          },
+          {
+            "group": "M",
+            "n_train": 13460,
+            "churn_pct": 49.38
+          }
+        ]
+      },
+      "ownrent": {
+        "min_churn_pct": 48.7,
+        "max_churn_pct": 51.51,
+        "spread_pp": 2.8,
+        "top_groups": [
+          {
+            "group": "O",
+            "n_train": 44979,
+            "churn_pct": 48.7
+          },
+          {
+            "group": "MISSING",
+            "n_train": 23627,
+            "churn_pct": 51.08
+          },
+          {
+            "group": "R",
+            "n_train": 1394,
+            "churn_pct": 51.51
+          }
+        ]
+      },
+      "infobase": {
+        "min_churn_pct": 48.87,
+        "max_churn_pct": 52.17,
+        "spread_pp": 3.3,
+        "top_groups": [
+          {
+            "group": "M",
+            "n_train": 54385,
+            "churn_pct": 48.87
+          },
+          {
+            "group": "MISSING",
+            "n_train": 15457,
+            "churn_pct": 52.17
+          },
+          {
+            "group": "N",
+            "n_train": 158,
+            "churn_pct": 33.54
+          }
+        ]
+      },
+      "ethnic": {
+        "min_churn_pct": 39.2,
+        "max_churn_pct": 58.08,
+        "spread_pp": 18.88,
+        "top_groups": [
+          {
+            "group": "N",
+            "n_train": 23269,
+            "churn_pct": 48.92
+          },
+          {
+            "group": "H",
+            "n_train": 9513,
+            "churn_pct": 50.57
+          },
+          {
+            "group": "S",
+            "n_train": 8949,
+            "churn_pct": 49.37
+          },
+          {
+            "group": "U",
+            "n_train": 7696,
+            "churn_pct": 49.69
+          },
+          {
+            "group": "G",
+            "n_train": 4188,
+            "churn_pct": 49.67
+          },
+          {
+            "group": "Z",
+            "n_train": 3058,
+            "churn_pct": 40.42
+          }
+        ]
+      }
     }
   },
   "models": [],
