@@ -32,8 +32,7 @@
 - [x] **T0.5 Load and merge.** Read both CSVs; **print `df.columns`**; assert shapes (100000×50, 100000×51), `Customer_ID` unique, 1-to-1 inner merge → (100000, 100). Add to notebook section 2. *Done when:* assertions pass in the notebook. ✔ 2026-11-14 19:55
 - [x] **T0.6 Reproduce the tutorial baseline exactly** (LabelEncoder on text columns; `XGBClassifier(n_estimators=300, learning_rate=0.05, max_depth=6, eval_metric='logloss', random_state=42)`; stratified 70/30, seed 42). Record test accuracy (expect ≈ 0.636; Islam's run 0.6357), **AUC (≈ 0.694), train accuracy (≈ 0.735)**, precision/recall/F1, confusion matrix, majority baseline (≈ 0.504) in `results.json`. *Done when:* within ±0.01 of expectations, or the difference is explained in the Decision log. ✔ 2026-11-14 19:57
 - [x] **T0.7 Consolidate leftovers.** (In a fresh folder this is just a check that nothing extra exists.) If any extra files exist (stubs, digests, logs, `src/`, `config.py`, duplicate notebooks…), **merge useful content into `docs/NOTES.md` / the notebook and delete the rest**, so the workspace matches PRD §3. Reconstruct `PROGRESS.md` from what exists. *Done when:* `ls -R` matches PRD §3 (plus outputs). ✔ 2026-11-14 19:57
-- [~] **T0.8 Phase wrap-up:** Arabic section "Phase 0" in `docs/UNDERSTANDING_AR.md`; commit; `git tag phase-0-done`.
-  - Writing Phase 0 Arabic explanation (what, why, how, results, pitfalls, interview Q&A) in `docs/UNDERSTANDING_AR.md` and tagging `phase-0-done`.
+- [x] **T0.8 Phase wrap-up:** Arabic section "Phase 0" in `docs/UNDERSTANDING_AR.md`; commit; `git tag phase-0-done`. ✔ 2026-11-14 19:58
 
 ## Phase 1 — Data audit  (type: `data`)
 - [ ] **T1.1 Structure & types:** dtype counts (expect float64 69 / int64 10 / object 21), memory, duplicates, ID checks. Notebook §3.

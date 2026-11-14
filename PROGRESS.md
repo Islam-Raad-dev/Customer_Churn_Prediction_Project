@@ -1,8 +1,8 @@
 # PROGRESS
-Updated: 2026-11-14 19:57
-Last completed task: T0.7 — Consolidate leftovers
-Current task: T0.8 — Phase wrap-up   | status: [~] in progress (appending Phase 0 Arabic section to docs/UNDERSTANDING_AR.md)
-Next concrete action: Append Phase 0 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`, mark T0.8 done, commit, and tag `phase-0-done`.
+Updated: 2026-11-14 19:58
+Last completed task: T0.8 — Phase wrap-up (Phase 0 complete)
+Current task: T1.1 — Structure & types   | status: [ ] next
+Next concrete action: Start Phase 1 (Data audit) with T1.1 — audit dtype counts, memory footprint, row/column duplicates, and ID integrity in Section 3 of `Islam-Raad.ipynb`.
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
