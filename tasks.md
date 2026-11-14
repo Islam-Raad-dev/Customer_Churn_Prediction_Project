@@ -70,9 +70,9 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 ## Phase 4 — Problem definition / Decision Gate  (type: `docs`)
 - [x] **T4.1 Decision matrix** for options A–E (1–5 on evidence, actionability, measurability, risk, market fit) in `docs/NOTES.md`. ✔ 2026-11-14 21:13
 - [x] **T4.2 Decide:** (i) default two-lane proposal, or (ii) risk ranking + value-at-risk only (if T2.2 says "likely artifact"). Log decision and reasons. ✔ 2026-11-14 21:14
-- [~] **T4.3 Write the problem paragraph (3–5 sentences):** problem · for whom · target · ML task type and why · expected decision/action. *If it isn't clear to a non-technical manager, do not proceed to modeling.*
-  - Writing the 3–5 sentence manager-friendly problem statement in `docs/NOTES.md` and `Islam-Raad.ipynb` Section 5.
-- [ ] **T4.4 Define KPI and decision owner** (e.g., incremental retention in a pilot; owner = retention/CRM).
+- [x] **T4.3 Write the problem paragraph (3–5 sentences):** problem · for whom · target · ML task type and why · expected decision/action. *If it isn't clear to a non-technical manager, do not proceed to modeling.* ✔ 2026-11-14 21:15
+- [~] **T4.4 Define KPI and decision owner** (e.g., incremental retention in a pilot; owner = retention/CRM).
+  - Defining primary/secondary KPIs and decision owners for Lanes 1 & 2 in `docs/NOTES.md` and `Islam-Raad.ipynb` Section 5.
 - [ ] **T4.5 Phase wrap-up** (Arabic section, commit, tag `phase-4-done`).
 
 ## Phase 5 — Preprocessing and feature engineering  (type: `feat`)
