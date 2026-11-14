@@ -81,7 +81,16 @@
 ---
 
 ## 5. Data-Doc Discrepancies
-*(To be populated in T1.6 — comparing `ENG_Company _A_ Dataset Overview.docx` against `telecom/*.csv`.)*
+| Column / Item | `ENG_Company _A_ Dataset Overview.docx` Claim | Empirical Reality in `telecom/*.csv` | Exact Wording to Use on Slides & Notebook |
+|---|---|---|---|
+| `change_mou` | "Percentage change in monthly minutes of use vs previous three month average" | **`22,585` rows (`22.79%` of non-null / `22.59%` of total) are `< -100`** (min `-3,875.00`), which is impossible for a percentage decrease of non-negative minutes. Tracks `mou_Mean - avg3mou` (`Spearman ρ = 0.9881`, `Pearson r = 0.9025`). | **"Change in monthly minutes vs. 3-month average (minutes)"** — never say "%" or "percentage change". |
+| `change_rev` | "Percentage change in monthly revenue vs previous three month average" | `1,108` rows (`1.12%`) are `< -100` (min `-1,107.74`, max `9,963.66`). Tracks `rev_Mean - avg3rev` (`Spearman ρ = 0.9561`, `Pearson r = 0.9440`). | **"Change in monthly revenue vs. 3-month average (MU)"** — never say "%". |
+| `recv_sms_Mean` | `NaN` (undocumented) | Non-zero in only `872` of `100,000` rows (`0.87%`; `99.13%` zeros); churn `46.67%` when `> 0` vs. `49.59%` when `== 0`. | **"Mean received SMS count (99.1% zeros; near-empty)"**. |
+| `iwylis_vce_Mean` | `NaN` (undocumented) | Correlates `ρ = 0.9687` with `mouiwylisv_Mean` (inbound wireless-to-wireless minutes) and `ρ = 0.8046` with `owylis_vce_Mean` (outbound wireless-to-wireless calls). | **"Mean inbound wireless-to-wireless voice calls (inferred from schema & correlation)"**. |
+| `Customer_ID` | `NaN` (undocumented) | Unique primary join key (`1,000,001` to `1,100,000`), 1-to-1 across `Client.csv` and `Record.csv`. | **"Unique customer identifier (`Customer_ID`)"**. |
+| `infobase` | "InfoBase match" | Categorical match flag: `M` (`77,697`, `48.92%` churn), `MISSING` (`22,079`, `51.98%` churn), `N` (`224`, `33.04%` churn). Captures whether customer record matched external demographic registry. | **"External demographic registry match indicator (`infobase`)"**. |
+| `months` location | Listed in `tutorial.ipynb` §2.3 table under `Client.csv` | Actually stored in `Record.csv` (`min = 6`, `median = 16`, `max = 61`). | **"Service tenure in months (`months`, 6–61 months)"**. |
+| Currency units | No currency symbol or country specified (`rev_Mean`, `totmrc_Mean`, `hnd_price`, etc.) | Undocumented currency scale (`rev_Mean` mean `58.72`, median `48.20`). | **"Monetary Units (MU)"**. |
 
 ---
 

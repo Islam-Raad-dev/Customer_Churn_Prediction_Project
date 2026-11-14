@@ -1289,6 +1289,32 @@
       "auc_88_mean": 0.694435,
       "auc_88_std": 0.001857,
       "auc_98_native_cat_mean": 0.6909
+    },
+    "doc_vs_data": {
+      "change_mou_lt_m100_n": 22585,
+      "change_mou_lt_m100_pct": 22.79,
+      "change_rev_lt_m100_n": 1108,
+      "change_rev_lt_m100_pct": 1.12,
+      "corr_change_mou_abs_diff_spearman": 0.9881,
+      "corr_change_rev_abs_diff_spearman": 0.9561,
+      "recv_sms_nonzero_n": 872,
+      "recv_sms_nonzero_pct": 0.87,
+      "corr_iwylis_mouiwylisv_spearman": 0.9687,
+      "corr_iwylis_owylis_spearman": 0.8046,
+      "infobase_breakdown": {
+        "M": {
+          "count": 77697,
+          "churn_pct": 48.92
+        },
+        "MISSING": {
+          "count": 22079,
+          "churn_pct": 51.98
+        },
+        "N": {
+          "count": 224,
+          "churn_pct": 33.04
+        }
+      }
     }
   },
   "eda": {},
