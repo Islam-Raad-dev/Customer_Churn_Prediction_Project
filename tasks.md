@@ -61,9 +61,9 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 
 ## Phase 3 — Market research  (type: `research`)
 - [x] **T3.1 Search plan:** queries per PRD §7 question (Iraq mobile market, subscribers/penetration, operators, CMC, ITU/GSMA/DataReportal, retention vs acquisition, handset cycle & churn, campaign success rates, academic churn-prediction papers). ✔ 2026-11-14 20:59
-- [~] **T3.2 Collect ≥ 8 sources (target 10–12):** open each page, verify the fact, log in `research/sources_log.md` (ID · title · publisher · publication date · URL · access date · fact used · reliability). Paraphrase; quotes ≤ 15 words only if essential.
-  - Searching and opening 10–12 primary/credible web and academic sources, verifying facts, and logging in `research/sources_log.md`.
-- [ ] **T3.3 Answer each research question** in 3–6 lines with `[ID]` citations; where Iraqi data are missing, say so and label regional/global data.
+- [x] **T3.2 Collect ≥ 8 sources (target 10–12):** open each page, verify the fact, log in `research/sources_log.md` (ID · title · publisher · publication date · URL · access date · fact used · reliability). Paraphrase; quotes ≤ 15 words only if essential. ✔ 2026-11-14 21:05
+- [~] **T3.3 Answer each research question** in 3–6 lines with `[ID]` citations; where Iraqi data are missing, say so and label regional/global data.
+  - Writing 3–6 line cited answers to all 7 PRD §7 research questions in `research/sources_log.md`.
 - [ ] **T3.4 Choose 3 facts for slide 3** and numeric inputs for the impact model (churn prior, success rate, offer cost, margin, horizon); anything unsourced → **ASSUMPTION** in `docs/NOTES.md → Assumptions`.
 - [ ] **T3.5 Draft `references.txt`** (order = citation order; stable IDs).
 - [ ] **T3.6 Phase wrap-up** (Arabic section, commit, tag `phase-3-done`).

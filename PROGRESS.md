@@ -1,8 +1,8 @@
 # PROGRESS
-Updated: 2026-11-14 20:59
-Last completed task: T3.1 — Search plan
-Current task: T3.2 — Collect ≥ 8 sources (target 10–12)   | status: [~] in progress (searching and opening primary/credible sources for Iraq telecom market and churn prediction)
-Next concrete action: Execute web searches and open URLs to verify 10–12 sources (DataReportal Iraq, Zain Group / Ooredoo Asiacell reports, CMC Iraq / ITU / GSMA, Verbeke et al. 2012, Neslin et al. 2006, Ascarza 2018, Chen & Guestrin 2016, Grinsztajn et al. 2022, Saerens et al. 2002) and log them in `research/sources_log.md`.
+Updated: 2026-11-14 21:05
+Last completed task: T3.2 — Collect ≥ 8 sources (12 verified sources logged in `research/sources_log.md`)
+Current task: T3.3 — Answer each research question   | status: [~] in progress (writing 3–6 line cited answers for all 7 PRD §7 research questions)
+Next concrete action: Write 3–6 line cited answers (`[1]`–`[12]`) to all 7 PRD §7 research questions in `research/sources_log.md`, clearly distinguishing verified Iraqi market metrics from global/academic benchmarks and labeling unsourced campaign parameters as `ASSUMPTION`.
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
@@ -11,7 +11,7 @@ Key decisions so far:
 - Reproduced exact tutorial baseline (`0.6357` test accuracy, `0.6938` test AUC).
 - Completed Phase 1 Data Audit (`T1.1`–`T1.8`, tagged `phase-1-done`).
 - Completed Phase 2 Exploratory Data Analysis (`T2.1`–`T2.12`, tagged `phase-2-done`).
-- Completed T3.1: documented structured search plan for all 7 PRD §7 research questions in `research/sources_log.md`.
+- Completed T3.1–T3.2: collected, opened, and verified 12 sources (`[1]`–`[12]`: DataReportal 2025/2024 Iraq, CMC Iraq, Zain Iraq, Asiacell, GSMA MENA, Neslin et al. 2006, Verbeke et al. 2012, Ascarza 2018, Saerens et al. 2002, Grinsztajn et al. 2022, Chen & Guestrin 2016) in `research/sources_log.md`.
 Key numbers so far (from results.json):
 - `data.n_rows`: `100,000`, `data.n_cols`: `100`, `data.n_features_raw`: `98`.
 - `data.churn_count`: `49,562` (`49.562%`), `data.stayed_count`: `50,438` (`50.438%`), `data.imbalance_ratio`: `1.0177`.
