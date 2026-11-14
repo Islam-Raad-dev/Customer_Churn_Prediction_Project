@@ -2801,5 +2801,13 @@
         9617
       ]
     ]
+  },
+  "problem_definition": {
+    "selected_framing": "Two-Lane Retention Program (Lane 1: Monthly ML Risk-Ranked + Value-at-Risk Targeting; Lane 2: Controlled 90-Day A/B Holdout Pilot at Months 8-9 & eqpdays 240-290)",
+    "ml_task_type": "Supervised binary classification and calibrated probability ranking (target: churn in {0, 1} during days 31-60)",
+    "exclusion_rule": "Exclude silent SIMs (mou_Mean == 0, n=1,600 all / 1,120 train, 22.89 MU/mo, 0.62% of total revenue) from paid incentives",
+    "primary_online_kpi": "Incremental Retention Rate (r_treatment - r_holdout) and Net Retained Margin (MU) in 90-day randomized holdout pilot",
+    "primary_offline_kpi": "ROC-AUC, Precision@10%, Lift@10% (raw pi_s=49.562% and re-based pi_r in {5%, 10%}), and Brier calibration score",
+    "decision_owner": "Head of Customer Value Management (CVM) & Retention (supported by CRM Operations, Device/Commercial Product, and Network/Care Triage)"
   }
 }

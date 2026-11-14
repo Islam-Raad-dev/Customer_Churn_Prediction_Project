@@ -1,8 +1,8 @@
 # PROGRESS
-Updated: 2026-11-14 21:15
-Last completed task: T4.3 — Write the problem paragraph (3–5 sentences)
-Current task: T4.4 — Define KPI and decision owner   | status: [~] in progress (defining KPIs and decision owner in `docs/NOTES.md` and `Islam-Raad.ipynb` Section 5)
-Next concrete action: Log KPIs and decision owners (`T4.4`) in `docs/NOTES.md` and populate `Islam-Raad.ipynb` Section 5, then complete `T4.5` (Phase 4 Arabic walkthrough and tag `phase-4-done`).
+Updated: 2026-11-14 21:16
+Last completed task: T4.4 — Define KPI and decision owner
+Current task: T4.5 — Phase 4 wrap-up   | status: [~] in progress (appending Phase 4 Arabic walkthrough to `docs/UNDERSTANDING_AR.md` and tagging `phase-4-done`)
+Next concrete action: Append Phase 4 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`, commit `T4.5`, tag `phase-4-done`, and begin Phase 5 (`T5.1`).
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
@@ -12,7 +12,7 @@ Key decisions so far:
 - Completed Phase 1 Data Audit (`T1.1`–`T1.8`, tagged `phase-1-done`).
 - Completed Phase 2 Exploratory Data Analysis (`T2.1`–`T2.12`, tagged `phase-2-done`).
 - Completed Phase 3 Market Research (`T3.1`–`T3.6`, tagged `phase-3-done`).
-- Scored candidate framings A–E (`T4.1`), confirmed the Two-Lane Retention Program (`T4.2`), and wrote the 4-sentence manager-friendly problem statement (`T4.3`).
+- Completed Phase 4 Decision Gate (`T4.1`–`T4.4`): confirmed Two-Lane Retention Program, wrote 4-sentence manager-friendly problem statement, and defined online/offline KPIs and decision owners (`Head of CVM & Retention`).
 Key numbers so far (from results.json):
 - `data.n_rows`: `100,000`, `data.n_cols`: `100`, `data.n_features_raw`: `98`.
 - `data.churn_count`: `49,562` (`49.562%`), `data.stayed_count`: `50,438` (`50.438%`), `data.imbalance_ratio`: `1.0177`.
