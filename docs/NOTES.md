@@ -100,6 +100,8 @@
     1. **`FEATURES_FULL` (`126` features = `98` raw + `28` engineered):** Retains all columns solely for the offline fairness comparison in `T7.8`.
     2. **`FEATURES_NO_ETHNIC` (`125` features = `97` raw + `28` engineered):** Excludes `ethnic` (`18.88 pp` raw churn spread); selected as our **default production feature set** per PRD §8.7 (*"We target on behavior, not identity"*).
     3. **`FEATURES_NO_PROXIES` (`117` features = `89` raw + `28` engineered):** Excludes `ethnic` plus `8` socioeconomic/family proxy columns (`income`, `marital`, `kid0_2`, `kid3_5`, `kid6_10`, `kid11_15`, `kid16_17`, `dwllsize`) to test in `T7.8` whether removing all socioeconomic proxies materially changes ranking performance.
+- **2026-11-14 (T6.1 — Stratified 70/30 Split Verification):**
+  - Confirmed exact stratified 70/30 split (`seed = 42`, identical to `tutorial.ipynb`): `n_train = 70,000` (`34,693` churn = `49.5614%`) and `n_test = 30,000` (`14,869` churn = `49.5633%`), with zero overlap (`len(set(train_idx) & set(test_idx)) == 0`). All cross-validation and hyperparameter/feature selection in `T6.2`–`T6.4` use only `train_idx` (`70,000` rows).
 
 ---
 

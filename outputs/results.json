@@ -2885,5 +2885,29 @@
         "engineered": true
       }
     ]
+  },
+  "split": {
+    "seed": 42,
+    "test_size": 0.3,
+    "n_train": 70000,
+    "n_test": 30000,
+    "train_churn_count": 34693,
+    "train_churn_rate": 0.495614,
+    "test_churn_count": 14869,
+    "test_churn_rate": 0.495633,
+    "train_first5_customer_ids": [
+      1049014,
+      1005429,
+      1070533,
+      1099154,
+      1036030
+    ],
+    "test_first5_customer_ids": [
+      1087135,
+      1085409,
+      1017865,
+      1070587,
+      1084232
+    ]
   }
 }
