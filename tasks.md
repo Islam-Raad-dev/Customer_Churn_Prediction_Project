@@ -72,11 +72,11 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T4.2 Decide:** (i) default two-lane proposal, or (ii) risk ranking + value-at-risk only (if T2.2 says "likely artifact"). Log decision and reasons. ✔ 2026-11-14 21:14
 - [x] **T4.3 Write the problem paragraph (3–5 sentences):** problem · for whom · target · ML task type and why · expected decision/action. *If it isn't clear to a non-technical manager, do not proceed to modeling.* ✔ 2026-11-14 21:15
 - [x] **T4.4 Define KPI and decision owner** (e.g., incremental retention in a pilot; owner = retention/CRM). ✔ 2026-11-14 21:16
-- [~] **T4.5 Phase wrap-up** (Arabic section, commit, tag `phase-4-done`).
-  - Appending Phase 4 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`, committing, and tagging `phase-4-done`.
+- [x] **T4.5 Phase wrap-up** (Arabic section, commit, tag `phase-4-done`). ✔ 2026-11-14 21:18
 
 ## Phase 5 — Preprocessing and feature engineering  (type: `feat`)
-- [ ] **T5.1 Leakage-safe preprocessing pipelines:** trees (native NaN + categorical handling) and logistic regression (median impute + missing flags + scaling + one-hot); compare vs tutorial LabelEncoder.
+- [~] **T5.1 Leakage-safe preprocessing pipelines:** trees (native NaN + categorical handling) and logistic regression (median impute + missing flags + scaling + one-hot); compare vs tutorial LabelEncoder.
+  - Building leakage-safe sklearn pipelines for trees and logistic regression and comparing via 5-fold Stratified CV on the 70% training split.
 - [ ] **T5.2 Engineer ≥ 10 features** (PRD §8.3); safe division with epsilon; negatives per T1.3; fill **Feature dictionary** (name · formula · business reason · leakage check · kept?).
 - [ ] **T5.3 Leakage review:** each feature available before the churn window; none uses `churn`; target statistics only inside CV folds; no single feature gives unexpectedly high AUC (prior max ≈ 0.57).
 - [ ] **T5.4 Fairness variants:** feature sets with/without `ethnic, income, marital, kid*, dwllsize`.
