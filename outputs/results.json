@@ -2738,7 +2738,27 @@
           }
         ]
       }
-    }
+    },
+    "hypotheses": [
+      {
+        "rank": 1,
+        "id": "H1",
+        "title": "Pre-300-Day Handset & First-Year Commitment Expiry",
+        "statement": "Customers whose current handset approaches or passes 300 days (301-340d churn = 60.69% vs 260-300d = 36.85%, +23.83 pp) and who enter months 10-12 of service (57.83% churn, peaking at 64.57% in month 11) are substantially more likely to churn because their initial 12-month promotional commitment or handset replacement cycle expires; we test this with lifecycle features (dev_age_gt_300, tenure_10_12, eqp_per_tenure), partial dependence, and a controlled A/B pilot (Lane 2)."
+      },
+      {
+        "rank": 2,
+        "id": "H2",
+        "title": "Active Usage Drop Before Silent-SIM Abandonment",
+        "statement": "Customers whose monthly voice minutes drop sharply relative to their 3- and 6-month baseline (change_mou < 0, missing change_mou at 76.03% churn, or 10 < mou_Mean <= 65 at 54.74% churn) are more likely to churn because they are shifting primary call volume to a competing SIM before going silent (whereas mou_Mean == 0 at 78.48% churn contributes only 0.62% of revenue and is already gone); we test this with usage-trend ratios and missingness flags."
+      },
+      {
+        "rank": 3,
+        "id": "H3",
+        "title": "Bill Shock (Overage Share) & Uncapped Spend Exposure",
+        "statement": "Customers whose overage charges exceed 40% of their monthly bill (churn = 54.20% vs 47.44% at 0%-20%), who lack an Account Spending Limit (asl_flag=N churn = 50.90% vs 41.37% for Y), or who face top-quartile call drop/block rates (>8.85%, churn = 51.71% vs 46.75% in Q1) are more likely to churn due to bill shock and network friction; we test this with recurring_share, overage_share, roam_share, and drop_blk_rate features."
+      }
+    ]
   },
   "models": [],
   "final_model": {},

@@ -56,9 +56,9 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T2.8 Call quality, overage, roaming vs churn.** ✔ 2026-11-14 20:49
 - [x] **T2.9 Demographics vs churn** + fairness note for `ethnic` and proxies. ✔ 2026-11-14 20:50
 - [x] **T2.10 Select 4–6 final EDA charts** for slides 4–6 (PRD §10 style; exact placement sizes; PNG 200 dpi; open each PNG and inspect). ✔ 2026-11-14 20:53
-- [~] **T2.11 Write 3 hypotheses** (full sentences, ranked by actionability) in `docs/NOTES.md → Hypotheses`; store key stats in `results.json → eda`.
-  - Writing the 3 ranked full-sentence hypotheses ("Segment X is more likely to churn because Y; we test with Z") in `docs/NOTES.md → 3. Hypotheses` and `Islam-Raad.ipynb` Section 4.11, and verifying `outputs/results.json → eda`.
-- [ ] **T2.12 Phase wrap-up** (Arabic section, commit, tag `phase-2-done`).
+- [x] **T2.11 Write 3 hypotheses** (full sentences, ranked by actionability) in `docs/NOTES.md → Hypotheses`; store key stats in `results.json → eda`. ✔ 2026-11-14 20:54
+- [~] **T2.12 Phase wrap-up** (Arabic section, commit, tag `phase-2-done`).
+  - Appending Phase 2 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`, committing, and tagging `phase-2-done`.
 
 ## Phase 3 — Market research  (type: `research`)
 - [ ] **T3.1 Search plan:** queries per PRD §7 question (Iraq mobile market, subscribers/penetration, operators, CMC, ITU/GSMA/DataReportal, retention vs acquisition, handset cycle & churn, campaign success rates, academic churn-prediction papers).

@@ -74,7 +74,25 @@
 ---
 
 ## 3. Hypotheses
-*(To be populated in Phase 2 — ranked by actionability.)*
+*(Ranked by business actionability; discovered strictly on the 70% stratified training split `n = 70,000`.)*
+
+1. **H1 — Pre-300-Day Handset & First-Year Commitment Expiry (Rank 1 — Highest Actionability, Lane 2 + Features):**
+   - **Full-sentence hypothesis:** *"Customers whose current handset approaches or passes `300` days (`eqpdays` `301–340d` churn = `60.69%` vs. `260–300d` = `36.85%`, `+23.83 pp`, 95% CI `[+22.12, +25.62] pp`) and who enter months `10–12` of service (`57.83%` churn, peaking at `64.57%` in month 11 vs. `29.25%` in month 9) are substantially more likely to churn because their initial 12-month promotional commitment or handset replacement cycle expires (`+28.43 pp` jump in `months 10–12`, plus `+5.60 pp` among multi-handset upgraders `phones >= 2`); we test this by engineering threshold/ratio features (`dev_age_gt_300`, `tenure_10_12`, `eqp_per_tenure`), inspecting partial dependence and permutation importance, and designing a controlled holdout A/B pilot offering a pre-300-day device refresh / month-9 loyalty check."*
+2. **H2 — Active Usage Drop Before Silent-SIM Abandonment (Rank 2 — High Actionability, Early Warning & Lane 1 Features):**
+   - **Full-sentence hypothesis:** *"Customers whose monthly voice minutes drop sharply relative to their 3- and 6-month baseline (`change_mou < 0`, missing `change_mou` churn = `76.03%`, or `10 < mou_Mean <= 65` churn = `54.74%`) are more likely to churn because they are shifting primary call volume to a competing SIM before abandoning the line altogether (whereas `mou_Mean == 0` lines at `78.48%` churn contribute only `0.62%` of monthly revenue and are already silent); we test this by adding usage-trend ratios (`mou_trend_3m`, `mou_trend_6m`, `rev_trend_3m`), missingness flags, and zero/low-usage indicators in 5-fold cross-validation and prioritizing declining-usage accounts that still carry meaningful recurring revenue (`totmrc_Mean`)."*
+3. **H3 — Bill Shock (Overage Share) & Uncapped Spend Exposure (Rank 3 — Medium-High Actionability, Tariff Right-Sizing):**
+   - **Full-sentence hypothesis:** *"Customers whose overage charges exceed `40%` of their monthly bill (`ovrrev_Mean / rev_Mean > 0.40`, churn = `54.20%` vs. `47.44%` at `0%–20%`), who lack an Account Spending Limit (`asl_flag == 'N'` churn = `50.90%` vs. `41.37%` for `'Y'`), or who experience top-quartile call drop/block rates (`> 8.85%` of attempts, churn = `51.71%` vs. `46.75%` in Q1) are more likely to churn due to bill shock and service friction; we test this by engineering `recurring_share`, `overage_share`, `roam_share`, and `drop_blk_rate` features and evaluating their contribution to top-$k$ risk ranking and tariff-plan right-sizing."*
+
+### Summary of All Section 4 EDA One-Sentence Findings
+- **4.1 (`eqpdays`):** Churn stays around `36.9%–38.3%` up to `300` days (`39.40%` overall `<= 300d`), jumps **`+23.75 pp`** from `261–300d` (`36.93%`) to `301–340d` (`60.69%`), and peaks at **`64.34%`** in `321–340d`.
+- **4.2 (Robustness):** The `+23.83 pp` jump (`260–300d` vs. `301–340d`, 95% CI `[+22.12, +25.62] pp`, local linear `+23.22 pp`) holds across `19/19` areas and `8/8` credit classes with smooth covariates (`|SMD| <= 0.12`), driven by first-year contract/device maturity (`+28.43 pp` in `months 10–12`) plus multi-handset replacement (`+5.60 pp` for `phones >= 2`).
+- **4.3 (`months`):** Churn jumps from `29.25%` at month 9 to `40.18%` at month 10, peaks at **`64.57%` at month 11** and **`61.49%` at month 12**, and declines to `47.15%` at `37+` months.
+- **4.4 (Entanglement):** Zero customers with `6–9` months of tenure have `eqpdays > 300`, yet within `months >= 10` (`n = 60,090`), churn still rises **`+12.95 pp`** from `43.44%` (`<= 300d`) to `56.39%` (`> 300d`) and increases with device age inside every tenure band.
+- **4.5 (Usage Collapse):** `mou_Mean == 0` (`n = 1,120` train / `1,600` all) churns at `78.48%` (`79.81%` all) but represents only `0.62%` of monthly revenue (`22.89 MU`) — silent SIMs that are already gone — whereas declining active users (`change_mou < 0`, `10 < mou_Mean <= 65`) are actionable before silence.
+- **4.6 (Revenue & Value):** `rev_Mean` barely separates stayers (`59.38 MU`) from churners (`58.26 MU`), while churners have lower `totmrc_Mean` (`44.59` vs. `47.87 MU`) and higher `ovrrev_Mean` (`14.30` vs. `12.90 MU`), requiring Value-at-Risk ($P(\text{churn}) \times \text{Value}$) targeting.
+- **4.7 (Customer Care):** Zero-call customers (`55.72%`) churn at `51.70%` vs. `43.64%` for `> 6` calls, reflecting active-usage confounding (`mou_Mean = 1,135.5` vs. `336.4`), issue resolution/upgrades (`eqpdays = 255.8d` vs. `447.6d`), and self-selection.
+- **4.8 (Quality, Overage, Roaming):** Bill shock (`ovrrev_Mean / rev_Mean > 40%`) raises churn to `54.20%` (vs. `47.44%` at `0%–20%`), top-quartile dropped/blocked call rate (`> 8.85%`) raises churn to `51.71%` (vs. `46.75%`), and `asl_flag == 'Y'` lowers churn by `-9.53 pp` (`41.37%` vs. `50.90%`).
+- **4.9 (Demographics & Fairness):** Household demographics have narrow spread (`2.68–5.26 pp`) and heavy missingness (`22%–49%`), whereas `ethnic` spans `18.88 pp` (`39.20%–58.08%`) and is excluded per our behavior-not-identity policy.
 
 ---
 
