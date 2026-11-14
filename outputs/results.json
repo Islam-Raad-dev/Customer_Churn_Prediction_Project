@@ -2809,5 +2809,22 @@
     "primary_online_kpi": "Incremental Retention Rate (r_treatment - r_holdout) and Net Retained Margin (MU) in 90-day randomized holdout pilot",
     "primary_offline_kpi": "ROC-AUC, Precision@10%, Lift@10% (raw pi_s=49.562% and re-based pi_r in {5%, 10%}), and Brier calibration score",
     "decision_owner": "Head of Customer Value Management (CVM) & Retention (supported by CRM Operations, Device/Commercial Product, and Network/Care Triage)"
+  },
+  "preprocessing": {
+    "xgb_tutorial_labelencoder": {
+      "cv_auc_mean": 0.6935,
+      "cv_auc_std": 0.0024,
+      "cv_acc_mean": 0.6387
+    },
+    "xgb_leakage_safe_ordinal_nan": {
+      "cv_auc_mean": 0.6938,
+      "cv_auc_std": 0.0016,
+      "cv_acc_mean": 0.6392
+    },
+    "logreg_leakage_safe_raw": {
+      "cv_auc_mean": 0.6321,
+      "cv_auc_std": 0.0037,
+      "cv_acc_mean": 0.5957
+    }
   }
 }

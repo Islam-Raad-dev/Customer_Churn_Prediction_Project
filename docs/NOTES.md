@@ -85,6 +85,12 @@
   - **Guardrail KPIs:** Offer backfire check ($\Delta r \ge 0$ across sub-segments, avoiding proactive-contact backfire `[9]`) and 6-month post-campaign ARPU retention.
   - **Offline ML KPIs:** **ROC-AUC** (primary model selection metric), **Precision@$10\%$** and **Lift@$10\%$** (reported both on raw $\pi_s = 49.562\%$ and re-based to $\pi_r \in \{5\%, 10\%\}$ `[11]`), and **Calibration Brier Score** (since $P(\text{churn})$ enters `Value-at-Risk` multiplication).
   - **Decision Owner:** **Head of Customer Value Management (CVM) & Retention** (budget & offer allocation owner), supported by **CRM Campaign Operations** (monthly batch scoring & outreach delivery), **Commercial / Device Product Team** (Lane 2 handset refresh & Month-9 loyalty offers), and **Customer Care / Network Quality** (care follow-up for high `drop_blk_rate` accounts).
+- **2026-11-14 (T5.1 — Leakage-Safe Preprocessing Pipelines vs. Tutorial `LabelEncoder`):**
+  - **Comparison (5-fold Stratified CV on 70% train, `n = 70,000`, `seed = 42`):**
+    1. **Tutorial `LabelEncoder` (baseline):** Fits on full dataset before splitting and converts `NaN` via `.astype(str)` into a literal `'nan'` category $\rightarrow$ CV ROC-AUC = **`0.6935 ± 0.0024`**, CV Acc = **`0.6387`**.
+    2. **Leakage-Safe Tree Pipeline (`OrdinalEncoder` inside `ColumnTransformer`):** Encodes the 21 categorical columns strictly inside each training fold with `handle_unknown='use_encoded_value'`, `unknown_value=-1`, and `encoded_missing_value=np.nan`, preserving true `np.nan` values so XGBoost/LightGBM learn optimal default split directions (`Chen & Guestrin 2016 [13]`) $\rightarrow$ CV ROC-AUC = **`0.6938 ± 0.0016`**, CV Acc = **`0.6392`**.
+    3. **Leakage-Safe Linear Pipeline (`LogisticRegression`):** Applies `SimpleImputer(strategy='median', add_indicator=True)` + `StandardScaler()` to numeric columns and `SimpleImputer(strategy='constant', fill_value='MISSING')` + `OneHotEncoder(handle_unknown='ignore', min_frequency=0.01)` to categoricals strictly inside each fold $\rightarrow$ CV ROC-AUC = **`0.6321 ± 0.0037`**, CV Acc = **`0.5957`** on raw unengineered features (confirming `Grinsztajn et al. 2022 [12]` that linear models struggle with raw non-monotone thresholds like `eqpdays > 300` and `months 10–12` without explicit indicator features).
+  - **Decision:** Adopt the **Leakage-Safe Tree Pipeline** (`OrdinalEncoder` preserving `np.nan` inside `Pipeline`) for all tree models and the **Leakage-Safe Linear Pipeline** for `M1 (Logistic Regression)`.
 
 ---
 
