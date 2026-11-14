@@ -35,8 +35,9 @@
 - [x] **T0.8 Phase wrap-up:** Arabic section "Phase 0" in `docs/UNDERSTANDING_AR.md`; commit; `git tag phase-0-done`. ✔ 2026-11-14 19:58
 
 ## Phase 1 — Data audit  (type: `data`)
-- [ ] **T1.1 Structure & types:** dtype counts (expect float64 69 / int64 10 / object 21), memory, duplicates, ID checks. Notebook §3.
-- [ ] **T1.2 Missing values:** full table, **matplotlib** bar of top 20 (`fig_04_missing.png`), the "same rows missing across demographic columns" block (~1.7%), and **churn rate when missing vs present** for the top missing columns.
+- [x] **T1.1 Structure & types:** dtype counts (expect float64 69 / int64 10 / object 21), memory, duplicates, ID checks. Notebook §3. ✔ 2026-11-14 20:00
+- [~] **T1.2 Missing values:** full table, **matplotlib** bar of top 20 (`fig_04_missing.png`), the "same rows missing across demographic columns" block (~1.7%), and **churn rate when missing vs present** for the top missing columns.
+  - Computing missingness table, co-missing demographic block (~1.73%), churn-when-missing vs present, and generating `outputs/figures/fig_04_missing.png` in matplotlib.
 - [ ] **T1.3 Negative/impossible values** in `rev_Mean, mou_Mean, totmrc_Mean, eqpdays, avg6rev` etc.: counts, minima, churn rate of those rows; Decision-log entry per column (clip/flag/keep). Explain the tutorial's `log1p` RuntimeWarnings.
 - [ ] **T1.4 Outliers & skew:** p1/p50/p99/max for numeric columns; list extreme cases (`uniqsubs`, `totcalls`, `totmou`).
 - [ ] **T1.5 Near-duplicates & near-empty columns:** Spearman |ρ| > 0.97 pairs (top 20), columns ≥ 90% zeros; quick CV test of whether dropping duplicates changes AUC.
