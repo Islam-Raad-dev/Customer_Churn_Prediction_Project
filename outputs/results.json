@@ -1315,7 +1315,12 @@
           "churn_pct": 33.04
         }
       }
-    }
+    },
+    "churn_count": 49562,
+    "stayed_count": 50438,
+    "churn_rate": 0.49562,
+    "churn_pct": 49.56,
+    "stayed_pct": 50.44
   },
   "eda": {},
   "models": [],

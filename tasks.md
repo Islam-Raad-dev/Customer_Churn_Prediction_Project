@@ -41,9 +41,9 @@
 - [x] **T1.4 Outliers & skew:** p1/p50/p99/max for numeric columns; list extreme cases (`uniqsubs`, `totcalls`, `totmou`). ✔ 2026-11-14 20:07
 - [x] **T1.5 Near-duplicates & near-empty columns:** Spearman |ρ| > 0.97 pairs (top 20), columns ≥ 90% zeros; quick CV test of whether dropping duplicates changes AUC. ✔ 2026-11-14 20:19
 - [x] **T1.6 Documentation vs data:** test the "percent" claim for `change_mou/change_rev`; check `recv_sms_Mean`, `iwylis_vce_Mean`, `infobase`; fill **Data-doc discrepancies** in `docs/NOTES.md` with the wording to use on slides. ✔ 2026-11-14 20:21
-- [~] **T1.7 Target audit:** churn counts/rate (expect 49.56%); why accuracy is meaningful here but misleading at 5% churn; store in `results.json → data`.
-  - Auditing `churn` target balance (`49,562` churned = `49.562%` vs. `50,438` stayed = `50.438%`), explaining metric implications at 49.6% vs. 5% realistic churn, and storing in `outputs/results.json`.
-- [ ] **T1.8 Phase wrap-up** (Arabic section, commit, tag `phase-1-done`). *Done when:* all tables/figures/numbers saved, anomalies explained.
+- [x] **T1.7 Target audit:** churn counts/rate (expect 49.56%); why accuracy is meaningful here but misleading at 5% churn; store in `results.json → data`. ✔ 2026-11-14 20:23
+- [~] **T1.8 Phase wrap-up** (Arabic section, commit, tag `phase-1-done`). *Done when:* all tables/figures/numbers saved, anomalies explained.
+  - Writing Phase 1 Arabic walkthrough in `docs/UNDERSTANDING_AR.md`, committing, and tagging `phase-1-done`.
 
 ## Phase 2 — Exploratory data analysis  (type: `eda`)
 Split first (stratified 70/30, seed 42); **discover thresholds on the training part only**; replicate on all rows only descriptively. Each analysis = one matplotlib chart + one-sentence finding (in the notebook and `docs/NOTES.md → Hypotheses`).
