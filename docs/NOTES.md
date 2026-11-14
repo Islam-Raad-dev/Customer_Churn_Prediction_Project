@@ -102,6 +102,16 @@
     3. **`FEATURES_NO_PROXIES` (`117` features = `89` raw + `28` engineered):** Excludes `ethnic` plus `8` socioeconomic/family proxy columns (`income`, `marital`, `kid0_2`, `kid3_5`, `kid6_10`, `kid11_15`, `kid16_17`, `dwllsize`) to test in `T7.8` whether removing all socioeconomic proxies materially changes ranking performance.
 - **2026-11-14 (T6.1 — Stratified 70/30 Split Verification):**
   - Confirmed exact stratified 70/30 split (`seed = 42`, identical to `tutorial.ipynb`): `n_train = 70,000` (`34,693` churn = `49.5614%`) and `n_test = 30,000` (`14,869` churn = `49.5633%`), with zero overlap (`len(set(train_idx) & set(test_idx)) == 0`). All cross-validation and hyperparameter/feature selection in `T6.2`–`T6.4` use only `train_idx` (`70,000` rows).
+- **2026-11-14 (T6.2 & T6.3 — 5-Fold Stratified CV Across M0–M6 on 70% Training Split):**
+  - Logged `17` experiment rows (`M0`, `M1`, `M2`, `M3a`, `M3`, `M4`, `M5_c01`–`M5_c10`, `M5`, `M6`) to `outputs/tables/experiment_log.csv` using 5-fold Stratified CV (`seed = 42`) on the 70% training split (`n = 70,000`):
+    - **`M0` (Majority Class Baseline):** CV ROC-AUC = **`0.5000 ± 0.0000`**, CV Acc = **`0.5044`**.
+    - **`M1` (Logistic Regression + 28 Engineered Features, `125` cols):** CV ROC-AUC = **`0.6603 ± 0.0040`**, CV Acc = **`0.6163`** (up `+0.0282` AUC over raw linear pipeline `0.6321` thanks to explicit lifecycle/trend indicators).
+    - **`M2` (Shallow Decision Tree `max_depth=4`, `125` cols):** CV ROC-AUC = **`0.6400 ± 0.0030`**, CV Acc = **`0.5940`** (16-leaf explanation model).
+    - **`M3a` (XGBoost Tutorial Baseline, `LabelEncoder` on `98` raw cols):** CV ROC-AUC = **`0.6935 ± 0.0024`**, CV Acc = **`0.6387`**.
+    - **`M3` (XGBoost Tutorial Params, Leakage-Safe Pipeline, Raw `97` cols without `ethnic`):** CV ROC-AUC = **`0.6925 ± 0.0021`**, CV Acc = **`0.6395`** (train Acc `0.7507`, gap `11.12 pp`).
+    - **`M4` (XGBoost + 28 Engineered Features, `125` cols, tutorial params):** CV ROC-AUC = **`0.7002 ± 0.0015`**, CV Acc = **`0.6424`** (`+0.0077` AUC = **`+5.1` fold stds** above `M3`, proving feature engineering adds statistically meaningful signal).
+    - **`M5` (XGBoost Tuned & Regularized — Best of 10 Random Configs `M5_c05`: `n_estimators=400, lr=0.04, max_depth=6, min_child_weight=15, subsample=0.75, colsample_bytree=0.80, reg_alpha=1.0, reg_lambda=10.0`):** CV ROC-AUC = **`0.7020 ± 0.0013`**, CV Acc = **`0.6444`** (train Acc `0.7325`, shrinking the train–CV accuracy gap from `11.58 pp` in `M4` to `8.81 pp` while achieving the highest CV AUC).
+    - **`M6` (LightGBM + 28 Engineered Features, `num_leaves=31, min_child_samples=50`):** CV ROC-AUC = **`0.7010 ± 0.0017`**, CV Acc = **`0.6427`**.
 
 ---
 

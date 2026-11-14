@@ -83,10 +83,10 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 
 ## Phase 6 — Modeling and experiments  (type: `model`)
 - [x] **T6.1 Split:** stratified 70/30, seed 42 (identical to the tutorial); save indices. ✔ 2026-11-14 21:49
-- [~] **T6.2 Models (≥ 4):** M0 majority · M1 logistic regression · M2 decision tree depth ≤ 4 (explanation) · M3 XGBoost tutorial params · M4 XGBoost + features · M5 XGBoost tuned (≤ 30 random configs, ≤ 20 min) · optional M6 LightGBM/RandomForest.
-  - Defining and evaluating M0, M1, M2, M3, M4, M5, and M6 via 5-fold Stratified CV on the 70% training split.
-- [ ] **T6.3 5-fold stratified CV on the 70% only;** log every experiment in `outputs/tables/experiment_log.csv` (id · change · features · params · CV AUC · std · accuracy); differences < 1 std = noise.
-- [ ] **T6.4 Choose the final model** (best CV AUC; ties → simpler); log reasoning.
+- [x] **T6.2 Models (≥ 4):** M0 majority · M1 logistic regression · M2 decision tree depth ≤ 4 (explanation) · M3 XGBoost tutorial params · M4 XGBoost + features · M5 XGBoost tuned (≤ 30 random configs, ≤ 20 min) · optional M6 LightGBM/RandomForest. ✔ 2026-11-14 22:08
+- [x] **T6.3 5-fold stratified CV on the 70% only;** log every experiment in `outputs/tables/experiment_log.csv` (id · change · features · params · CV AUC · std · accuracy); differences < 1 std = noise. ✔ 2026-11-14 22:08
+- [~] **T6.4 Choose the final model** (best CV AUC; ties → simpler); log reasoning.
+  - Selecting `M5` (Regularized & Tuned XGBoost + 28 Engineered Features, CV AUC = `0.7020 ± 0.0013`) as the final production model and `M4` (`0.7002 ± 0.0015`) as the second test comparison candidate.
 - [ ] **T6.5 Final test evaluation (≤ 2 touches, logged):** AUC, accuracy, precision, recall, F1, confusion matrix, train–test gap; accuracy ≥ 0.75 or AUC ≥ 0.80 ⇒ leakage hunt first.
 - [ ] **T6.6 Save** the model (`outputs/models/`, git-ignored) and `outputs/tables/test_predictions.csv` (row id · y_true · p_churn); fill `results.json → models, final_model`.
 - [ ] **T6.7 Phase wrap-up** (Arabic section, commit, tag `phase-6-done`).
