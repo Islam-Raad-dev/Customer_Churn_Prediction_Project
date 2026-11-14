@@ -59,7 +59,664 @@
     "memory_mb": 158.88,
     "duplicate_rows": 0,
     "duplicate_feature_rows": 0,
-    "id_sequential_1000001_1100000": true
+    "id_sequential_1000001_1100000": true,
+    "missing_summary": {
+      "n_cols_with_missing": 43,
+      "co_missing_demo_block_n": 1732,
+      "co_missing_demo_block_pct": 1.73,
+      "co_missing_demo_block_cols": [
+        "kid6_10",
+        "creditcd",
+        "kid16_17",
+        "kid11_15",
+        "rv",
+        "truck",
+        "kid0_2",
+        "kid3_5",
+        "ethnic",
+        "forgntvl",
+        "marital"
+      ],
+      "co_missing_demo_block_exact_match": true,
+      "co_missing_demo_block_churn_pct": 47.86,
+      "missing_change_mou_n": 891,
+      "missing_change_mou_pct": 0.89,
+      "missing_change_mou_churn_pct": 76.09
+    },
+    "missing_top": [
+      {
+        "column": "numbcars",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 49366,
+        "pct_missing": 49.37,
+        "churn_when_missing": 50.23,
+        "churn_when_present": 48.91,
+        "churn_diff_pp": 1.33
+      },
+      {
+        "column": "dwllsize",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 38308,
+        "pct_missing": 38.31,
+        "churn_when_missing": 51.03,
+        "churn_when_present": 48.65,
+        "churn_diff_pp": 2.39
+      },
+      {
+        "column": "HHstatin",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 37923,
+        "pct_missing": 37.92,
+        "churn_when_missing": 50.99,
+        "churn_when_present": 48.69,
+        "churn_diff_pp": 2.3
+      },
+      {
+        "column": "ownrent",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 33706,
+        "pct_missing": 33.71,
+        "churn_when_missing": 51.03,
+        "churn_when_present": 48.82,
+        "churn_diff_pp": 2.21
+      },
+      {
+        "column": "dwlltype",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 31909,
+        "pct_missing": 31.91,
+        "churn_when_missing": 51.16,
+        "churn_when_present": 48.81,
+        "churn_diff_pp": 2.35
+      },
+      {
+        "column": "lor",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 30190,
+        "pct_missing": 30.19,
+        "churn_when_missing": 51.36,
+        "churn_when_present": 48.79,
+        "churn_diff_pp": 2.57
+      },
+      {
+        "column": "income",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 25436,
+        "pct_missing": 25.44,
+        "churn_when_missing": 51.43,
+        "churn_when_present": 48.92,
+        "churn_diff_pp": 2.51
+      },
+      {
+        "column": "adults",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 23019,
+        "pct_missing": 23.02,
+        "churn_when_missing": 51.72,
+        "churn_when_present": 48.92,
+        "churn_diff_pp": 2.8
+      },
+      {
+        "column": "infobase",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 22079,
+        "pct_missing": 22.08,
+        "churn_when_missing": 51.98,
+        "churn_when_present": 48.88,
+        "churn_diff_pp": 3.11
+      },
+      {
+        "column": "hnd_webcap",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 10189,
+        "pct_missing": 10.19,
+        "churn_when_missing": 59.15,
+        "churn_when_present": 48.47,
+        "churn_diff_pp": 10.68
+      },
+      {
+        "column": "prizm_social_one",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 7388,
+        "pct_missing": 7.39,
+        "churn_when_missing": 51.57,
+        "churn_when_present": 49.4,
+        "churn_diff_pp": 2.17
+      },
+      {
+        "column": "avg6mou",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 2839,
+        "pct_missing": 2.84,
+        "churn_when_missing": 40.23,
+        "churn_when_present": 49.83,
+        "churn_diff_pp": -9.61
+      },
+      {
+        "column": "avg6rev",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 2839,
+        "pct_missing": 2.84,
+        "churn_when_missing": 40.23,
+        "churn_when_present": 49.83,
+        "churn_diff_pp": -9.61
+      },
+      {
+        "column": "avg6qty",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 2839,
+        "pct_missing": 2.84,
+        "churn_when_missing": 40.23,
+        "churn_when_present": 49.83,
+        "churn_diff_pp": -9.61
+      },
+      {
+        "column": "kid6_10",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "creditcd",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "kid16_17",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "kid11_15",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "rv",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "truck",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      }
+    ],
+    "missing_all": [
+      {
+        "column": "numbcars",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 49366,
+        "pct_missing": 49.37,
+        "churn_when_missing": 50.23,
+        "churn_when_present": 48.91,
+        "churn_diff_pp": 1.33
+      },
+      {
+        "column": "dwllsize",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 38308,
+        "pct_missing": 38.31,
+        "churn_when_missing": 51.03,
+        "churn_when_present": 48.65,
+        "churn_diff_pp": 2.39
+      },
+      {
+        "column": "HHstatin",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 37923,
+        "pct_missing": 37.92,
+        "churn_when_missing": 50.99,
+        "churn_when_present": 48.69,
+        "churn_diff_pp": 2.3
+      },
+      {
+        "column": "ownrent",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 33706,
+        "pct_missing": 33.71,
+        "churn_when_missing": 51.03,
+        "churn_when_present": 48.82,
+        "churn_diff_pp": 2.21
+      },
+      {
+        "column": "dwlltype",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 31909,
+        "pct_missing": 31.91,
+        "churn_when_missing": 51.16,
+        "churn_when_present": 48.81,
+        "churn_diff_pp": 2.35
+      },
+      {
+        "column": "lor",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 30190,
+        "pct_missing": 30.19,
+        "churn_when_missing": 51.36,
+        "churn_when_present": 48.79,
+        "churn_diff_pp": 2.57
+      },
+      {
+        "column": "income",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 25436,
+        "pct_missing": 25.44,
+        "churn_when_missing": 51.43,
+        "churn_when_present": 48.92,
+        "churn_diff_pp": 2.51
+      },
+      {
+        "column": "adults",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 23019,
+        "pct_missing": 23.02,
+        "churn_when_missing": 51.72,
+        "churn_when_present": 48.92,
+        "churn_diff_pp": 2.8
+      },
+      {
+        "column": "infobase",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 22079,
+        "pct_missing": 22.08,
+        "churn_when_missing": 51.98,
+        "churn_when_present": 48.88,
+        "churn_diff_pp": 3.11
+      },
+      {
+        "column": "hnd_webcap",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 10189,
+        "pct_missing": 10.19,
+        "churn_when_missing": 59.15,
+        "churn_when_present": 48.47,
+        "churn_diff_pp": 10.68
+      },
+      {
+        "column": "prizm_social_one",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 7388,
+        "pct_missing": 7.39,
+        "churn_when_missing": 51.57,
+        "churn_when_present": 49.4,
+        "churn_diff_pp": 2.17
+      },
+      {
+        "column": "avg6mou",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 2839,
+        "pct_missing": 2.84,
+        "churn_when_missing": 40.23,
+        "churn_when_present": 49.83,
+        "churn_diff_pp": -9.61
+      },
+      {
+        "column": "avg6rev",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 2839,
+        "pct_missing": 2.84,
+        "churn_when_missing": 40.23,
+        "churn_when_present": 49.83,
+        "churn_diff_pp": -9.61
+      },
+      {
+        "column": "avg6qty",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 2839,
+        "pct_missing": 2.84,
+        "churn_when_missing": 40.23,
+        "churn_when_present": 49.83,
+        "churn_diff_pp": -9.61
+      },
+      {
+        "column": "kid6_10",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "creditcd",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "kid16_17",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "kid11_15",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "rv",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "truck",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "kid0_2",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "kid3_5",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "ethnic",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "forgntvl",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "marital",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1732,
+        "pct_missing": 1.73,
+        "churn_when_missing": 47.86,
+        "churn_when_present": 49.59,
+        "churn_diff_pp": -1.73
+      },
+      {
+        "column": "change_mou",
+        "source_table": "Record",
+        "dtype": "float64",
+        "n_missing": 891,
+        "pct_missing": 0.89,
+        "churn_when_missing": 76.09,
+        "churn_when_present": 49.32,
+        "churn_diff_pp": 26.77
+      },
+      {
+        "column": "change_rev",
+        "source_table": "Record",
+        "dtype": "float64",
+        "n_missing": 891,
+        "pct_missing": 0.89,
+        "churn_when_missing": 76.09,
+        "churn_when_present": 49.32,
+        "churn_diff_pp": 26.77
+      },
+      {
+        "column": "hnd_price",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 847,
+        "pct_missing": 0.85,
+        "churn_when_missing": 36.72,
+        "churn_when_present": 49.67,
+        "churn_diff_pp": -12.95
+      },
+      {
+        "column": "rev_Mean",
+        "source_table": "Record",
+        "dtype": "float64",
+        "n_missing": 357,
+        "pct_missing": 0.36,
+        "churn_when_missing": 68.63,
+        "churn_when_present": 49.49,
+        "churn_diff_pp": 19.13
+      },
+      {
+        "column": "mou_Mean",
+        "source_table": "Record",
+        "dtype": "float64",
+        "n_missing": 357,
+        "pct_missing": 0.36,
+        "churn_when_missing": 68.63,
+        "churn_when_present": 49.49,
+        "churn_diff_pp": 19.13
+      },
+      {
+        "column": "roam_Mean",
+        "source_table": "Record",
+        "dtype": "float64",
+        "n_missing": 357,
+        "pct_missing": 0.36,
+        "churn_when_missing": 68.63,
+        "churn_when_present": 49.49,
+        "churn_diff_pp": 19.13
+      },
+      {
+        "column": "datovr_Mean",
+        "source_table": "Record",
+        "dtype": "float64",
+        "n_missing": 357,
+        "pct_missing": 0.36,
+        "churn_when_missing": 68.63,
+        "churn_when_present": 49.49,
+        "churn_diff_pp": 19.13
+      },
+      {
+        "column": "vceovr_Mean",
+        "source_table": "Record",
+        "dtype": "float64",
+        "n_missing": 357,
+        "pct_missing": 0.36,
+        "churn_when_missing": 68.63,
+        "churn_when_present": 49.49,
+        "churn_diff_pp": 19.13
+      },
+      {
+        "column": "ovrrev_Mean",
+        "source_table": "Record",
+        "dtype": "float64",
+        "n_missing": 357,
+        "pct_missing": 0.36,
+        "churn_when_missing": 68.63,
+        "churn_when_present": 49.49,
+        "churn_diff_pp": 19.13
+      },
+      {
+        "column": "ovrmou_Mean",
+        "source_table": "Record",
+        "dtype": "float64",
+        "n_missing": 357,
+        "pct_missing": 0.36,
+        "churn_when_missing": 68.63,
+        "churn_when_present": 49.49,
+        "churn_diff_pp": 19.13
+      },
+      {
+        "column": "da_Mean",
+        "source_table": "Record",
+        "dtype": "float64",
+        "n_missing": 357,
+        "pct_missing": 0.36,
+        "churn_when_missing": 68.63,
+        "churn_when_present": 49.49,
+        "churn_diff_pp": 19.13
+      },
+      {
+        "column": "totmrc_Mean",
+        "source_table": "Record",
+        "dtype": "float64",
+        "n_missing": 357,
+        "pct_missing": 0.36,
+        "churn_when_missing": 68.63,
+        "churn_when_present": 49.49,
+        "churn_diff_pp": 19.13
+      },
+      {
+        "column": "area",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 40,
+        "pct_missing": 0.04,
+        "churn_when_missing": 65.0,
+        "churn_when_present": 49.56,
+        "churn_diff_pp": 15.44
+      },
+      {
+        "column": "models",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 1,
+        "pct_missing": 0.0,
+        "churn_when_missing": 0.0,
+        "churn_when_present": 49.56,
+        "churn_diff_pp": -49.56
+      },
+      {
+        "column": "phones",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 1,
+        "pct_missing": 0.0,
+        "churn_when_missing": 0.0,
+        "churn_when_present": 49.56,
+        "churn_diff_pp": -49.56
+      },
+      {
+        "column": "refurb_new",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1,
+        "pct_missing": 0.0,
+        "churn_when_missing": 0.0,
+        "churn_when_present": 49.56,
+        "churn_diff_pp": -49.56
+      },
+      {
+        "column": "dualband",
+        "source_table": "Client",
+        "dtype": "object",
+        "n_missing": 1,
+        "pct_missing": 0.0,
+        "churn_when_missing": 0.0,
+        "churn_when_present": 49.56,
+        "churn_diff_pp": -49.56
+      },
+      {
+        "column": "eqpdays",
+        "source_table": "Client",
+        "dtype": "float64",
+        "n_missing": 1,
+        "pct_missing": 0.0,
+        "churn_when_missing": 0.0,
+        "churn_when_present": 49.56,
+        "churn_diff_pp": -49.56
+      }
+    ]
   },
   "eda": {},
   "models": [],
