@@ -91,6 +91,8 @@
     2. **Leakage-Safe Tree Pipeline (`OrdinalEncoder` inside `ColumnTransformer`):** Encodes the 21 categorical columns strictly inside each training fold with `handle_unknown='use_encoded_value'`, `unknown_value=-1`, and `encoded_missing_value=np.nan`, preserving true `np.nan` values so XGBoost/LightGBM learn optimal default split directions (`Chen & Guestrin 2016 [13]`) $\rightarrow$ CV ROC-AUC = **`0.6938 ± 0.0016`**, CV Acc = **`0.6392`**.
     3. **Leakage-Safe Linear Pipeline (`LogisticRegression`):** Applies `SimpleImputer(strategy='median', add_indicator=True)` + `StandardScaler()` to numeric columns and `SimpleImputer(strategy='constant', fill_value='MISSING')` + `OneHotEncoder(handle_unknown='ignore', min_frequency=0.01)` to categoricals strictly inside each fold $\rightarrow$ CV ROC-AUC = **`0.6321 ± 0.0037`**, CV Acc = **`0.5957`** on raw unengineered features (confirming `Grinsztajn et al. 2022 [12]` that linear models struggle with raw non-monotone thresholds like `eqpdays > 300` and `months 10–12` without explicit indicator features).
   - **Decision:** Adopt the **Leakage-Safe Tree Pipeline** (`OrdinalEncoder` preserving `np.nan` inside `Pipeline`) for all tree models and the **Leakage-Safe Linear Pipeline** for `M1 (Logistic Regression)`.
+- **2026-11-14 (T5.2 — Domain Feature Engineering, 28 Features Across 6 Families):**
+  - Engineered `28` domain features (`dev_age_gt_300`, `dev_age_301_360`, `eqpdays_neg_flag`, `tenure_le_9`, `tenure_10_12`, `eqp_per_tenure`, `months_per_phone`, `active_sub_ratio`, `zero_mou_flag`, `low_mou_flag`, `mou_ratio_3m`, `mou_ratio_6m`, `rev_ratio_3m`, `rev_ratio_6m`, `mou_delta_3v6`, `drop_rate`, `block_rate`, `drop_blk_rate`, `unanswered_rate`, `completion_rate`, `recurring_share`, `overage_share`, `roam_share`, `rev_per_mou`, `has_custcare`, `custcare_per_call`, `change_mou_missing_flag`, `n_missing_demographics`) using safe division (`+ 1.0` or `+ 1e-3`) and explicit clipping of negative values (`.clip(lower=0)` per `T1.3`); documented all 28 in `docs/NOTES.md → 4. Feature Dictionary`.
 
 ---
 
@@ -133,7 +135,38 @@
 ---
 
 ## 4. Feature Dictionary
-*(To be populated in Phase 5 — name, formula, business reason, leakage check, kept?)*
+All `28` engineered features below are computed row-wise from pre-window customer history (`eps = 1e-3` or `+ 1.0` for safe division; negative billing/device anomalies clipped via `.clip(lower=0)` per `T1.3`), use **zero target information**, and are available before the 31–60 day churn outcome window:
+
+| # | Feature Name | Formula (Safe Division & `T1.3` Negative Handling) | Business Reason & Hypothesis (`H1`–`H3`) | Leakage Check | Train 1-Feat AUC | Kept? |
+|---|---|---|---|---|---|---|
+| 1 | `dev_age_gt_300` | `(eqpdays > 300).astype(float)` | `H1`: Captures the `+23.83 pp` handset aging / commitment cliff past 300 days (`39.40%` $\rightarrow$ `56.39%`). | Pre-window snapshot; no target used | `0.5817` | **Yes** |
+| 2 | `dev_age_301_360` | `((eqpdays > 300) & (eqpdays <= 360)).astype(float)` | `H1`: Isolates the acute 301–360 day window where churn peaks (`60.69%–64.34%`). | Pre-window snapshot; no target used | `0.5313` | **Yes** |
+| 3 | `eqpdays_neg_flag` | `(eqpdays < 0).astype(float)` | `T1.3 / H1`: Flags recent handset replacement / pending activation (`n = 133` all, `35.34%` churn) before clipping `eqpdays` at `0`. | Pre-window snapshot; no target used | `0.5004` | **Yes** |
+| 4 | `tenure_le_9` | `(months <= 9).astype(float)` | `H1`: Early onboarding / commitment lock-in period (`29.25%` churn at month 9). | Pre-window snapshot; no target used | `0.5498` | **Yes** |
+| 5 | `tenure_10_12` | `((months >= 10) & (months <= 12)).astype(float)` | `H1`: First-year contract/promotional expiry cliff (`64.57%` churn at month 11, `61.49%` at month 12). | Pre-window snapshot; no target used | `0.5305` | **Yes** |
+| 6 | `eqp_per_tenure` | `clip(eqpdays, 0) / (months * 30.4375 + 1e-3)` | `H1`: Share of total tenure spent on the current handset (`~1.0` = original signup phone; `< 0.5` = upgraded mid-tenure). | Pre-window snapshot; no target used | `0.5423` | **Yes** |
+| 7 | `months_per_phone` | `months / (clip(phones, 1) + 1e-3)` | `H1`: Average months of service per handset issued on the account (distinguishes frequent upgraders from aging-device holders). | Pre-window snapshot; no target used | `0.5498` | **Yes** |
+| 8 | `active_sub_ratio` | `actvsubs / (clip(uniqsubs, 1) + 1e-3)` | `H1 / H2`: Ratio of active lines to total unique lines on the account (`< 1.0` signals partial multi-line deactivation). | Pre-window snapshot; no target used | `0.5097` | **Yes** |
+| 9 | `zero_mou_flag` | `(mou_Mean == 0).astype(float)` | `H2`: Flags silent SIMs (`78.48%` churn, `22.89 MU/mo`) that have already stopped all voice usage. | Pre-window snapshot; no target used | `0.5093` | **Yes** |
+| 10 | `low_mou_flag` | `((mou_Mean > 0) & (mou_Mean <= 10)).astype(float)` | `H2`: Flags near-silent SIMs (`66.13%` churn) transitioning toward abandonment. | Pre-window snapshot; no target used | `0.5025` | **Yes** |
+| 11 | `mou_ratio_3m` | `clip(mou_Mean, 0) / (clip(avg3mou, 0) + 1.0)` | `H2`: Relative voice usage trend vs. prior 3-month average (`< 1.0` captures acute multi-SIM usage drop). | Pre-window snapshot; no target used | `0.5544` | **Yes** |
+| 12 | `mou_ratio_6m` | `clip(mou_Mean, 0) / (clip(avg6mou, 0) + 1.0)` | `H2`: Relative voice usage trend vs. prior 6-month baseline. | Pre-window snapshot; no target used | `0.5445` | **Yes** |
+| 13 | `rev_ratio_3m` | `clip(rev_Mean, 0) / (clip(avg3rev, 0) + 1.0)` | `H2 / H3`: Relative monthly bill change vs. prior 3-month average (`> 1.0` = bill spike; `< 1.0` = spend drop). | Pre-window snapshot; no target used | `0.5147` | **Yes** |
+| 14 | `rev_ratio_6m` | `clip(rev_Mean, 0) / (clip(avg6rev, 0) + 1.0)` | `H2 / H3`: Relative monthly bill change vs. prior 6-month baseline. | Pre-window snapshot; no target used | `0.5064` | **Yes** |
+| 15 | `mou_delta_3v6` | `avg3mou - avg6mou` | `H2`: Medium-term usage trajectory (whether 3-month average was already falling below 6-month average). | Pre-window snapshot; no target used | `0.5206` | **Yes** |
+| 16 | `drop_rate` | `clip(drop_vce_Mean, 0) / (clip(attempt_Mean, 0) + 1.0)` | `H3`: Dropped voice calls per attempted call (network quality friction). | Pre-window snapshot; no target used | `0.5084` | **Yes** |
+| 17 | `block_rate` | `clip(blck_vce_Mean, 0) / (clip(attempt_Mean, 0) + 1.0)` | `H3`: Blocked voice calls per attempted call (congestion friction). | Pre-window snapshot; no target used | `0.5058` | **Yes** |
+| 18 | `drop_blk_rate` | `clip(drop_blk_Mean, 0) / (clip(attempt_Mean, 0) + 1.0)` | `H3`: Combined dropped + blocked call rate (Q4 `> 8.85%` churns at `51.71%` vs. Q1 `46.75%`). | Pre-window snapshot; no target used | `0.5057` | **Yes** |
+| 19 | `unanswered_rate` | `clip(unan_vce_Mean, 0) / (clip(attempt_Mean, 0) + 1.0)` | `H3`: Share of attempted calls that go unanswered. | Pre-window snapshot; no target used | `0.5070` | **Yes** |
+| 20 | `completion_rate` | `clip(complete_Mean, 0) / (clip(attempt_Mean, 0) + 1.0)` | `H3`: Call completion efficiency (`complete_Mean / attempt_Mean`). | Pre-window snapshot; no target used | `0.5331` | **Yes** |
+| 21 | `recurring_share` | `clip(clip(totmrc_Mean, 0) / (clip(rev_Mean, 0) + 1.0), 0, 2)` | `H3`: Predictable base-plan share of monthly bill (higher among stayers: `47.87` vs. `44.59 MU`). | Pre-window snapshot; no target used | `0.5324` | **Yes** |
+| 22 | `overage_share` | `clip(clip(ovrrev_Mean, 0) / (clip(rev_Mean, 0) + 1.0), 0, 2)` | `H3`: Bill-shock share of monthly bill (`> 40%` overage share churns at `54.20%` vs. `47.44%`). | Pre-window snapshot; no target used | `0.5161` | **Yes** |
+| 23 | `roam_share` | `clip(clip(roam_Mean, 0) / (clip(rev_Mean, 0) + 1.0), 0, 2)` | `H3`: Roaming revenue share of monthly bill. | Pre-window snapshot; no target used | `0.5032` | **Yes** |
+| 24 | `rev_per_mou` | `clip(rev_Mean, 0) / (clip(mou_Mean, 0) + 1.0)` | `H2 / H3`: Effective price paid per minute of use (high values indicate poor plan fit or inactive fixed charges). | Pre-window snapshot; no target used | `0.5477` | **Yes** |
+| 25 | `has_custcare` | `(custcare_Mean > 0).astype(float)` | `H3`: Indicator for any customer-care contact (`0` calls churns at `51.70%` vs. `43.64%` for `> 6` calls). | Pre-window snapshot; no target used | `0.5239` | **Yes** |
+| 26 | `custcare_per_call` | `clip(custcare_Mean, 0) / (clip(attempt_Mean, 0) + 1.0)` | `H3`: Customer-care call intensity normalized by overall call volume. | Pre-window snapshot; no target used | `0.5248` | **Yes** |
+| 27 | `change_mou_missing_flag` | `change_mou.isna().astype(float)` | `H2`: Captures the `0.89%` missing-trend block (`n = 891` all) that churns at `76.03%`. | Pre-window snapshot; no target used | `0.5048` | **Yes** |
+| 28 | `n_missing_demographics` | `df[DEMO_COLS].isna().sum(axis=1).astype(float)` | Data-audit signal (`T1.2`): Counts missing demographic fields across the 22 demographic attributes. | Pre-window snapshot; no target used | `0.5154` | **Yes** |
 
 ---
 

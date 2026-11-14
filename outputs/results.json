@@ -2826,5 +2826,64 @@
       "cv_auc_std": 0.0037,
       "cv_acc_mean": 0.5957
     }
+  },
+  "feature_engineering": {
+    "n_raw_features": 98,
+    "n_engineered_features": 28,
+    "n_total_features_full": 126,
+    "n_total_features_no_ethnic": 125,
+    "n_total_features_no_proxies": 117,
+    "top_single_feature_aucs_train": [
+      {
+        "feature": "dev_age_gt_300",
+        "auc_sym": 0.5817,
+        "engineered": true
+      },
+      {
+        "feature": "eqpdays",
+        "auc_sym": 0.5751,
+        "engineered": false
+      },
+      {
+        "feature": "hnd_price",
+        "auc_sym": 0.5599,
+        "engineered": false
+      },
+      {
+        "feature": "mou_ratio_3m",
+        "auc_sym": 0.5544,
+        "engineered": true
+      },
+      {
+        "feature": "tenure_le_9",
+        "auc_sym": 0.5498,
+        "engineered": true
+      },
+      {
+        "feature": "months_per_phone",
+        "auc_sym": 0.5498,
+        "engineered": true
+      },
+      {
+        "feature": "rev_per_mou",
+        "auc_sym": 0.5477,
+        "engineered": true
+      },
+      {
+        "feature": "mou_ratio_6m",
+        "auc_sym": 0.5445,
+        "engineered": true
+      },
+      {
+        "feature": "totmrc_Mean",
+        "auc_sym": 0.5428,
+        "engineered": false
+      },
+      {
+        "feature": "eqp_per_tenure",
+        "auc_sym": 0.5423,
+        "engineered": true
+      }
+    ]
   }
 }
