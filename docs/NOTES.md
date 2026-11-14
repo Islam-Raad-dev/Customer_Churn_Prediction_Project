@@ -95,6 +95,11 @@
   - Engineered `28` domain features (`dev_age_gt_300`, `dev_age_301_360`, `eqpdays_neg_flag`, `tenure_le_9`, `tenure_10_12`, `eqp_per_tenure`, `months_per_phone`, `active_sub_ratio`, `zero_mou_flag`, `low_mou_flag`, `mou_ratio_3m`, `mou_ratio_6m`, `rev_ratio_3m`, `rev_ratio_6m`, `mou_delta_3v6`, `drop_rate`, `block_rate`, `drop_blk_rate`, `unanswered_rate`, `completion_rate`, `recurring_share`, `overage_share`, `roam_share`, `rev_per_mou`, `has_custcare`, `custcare_per_call`, `change_mou_missing_flag`, `n_missing_demographics`) using safe division (`+ 1.0` or `+ 1e-3`) and explicit clipping of negative values (`.clip(lower=0)` per `T1.3`); documented all 28 in `docs/NOTES.md → 4. Feature Dictionary`.
 - **2026-11-14 (T5.3 — Leakage Audit Across All 126 Features):**
   - Verified that (1) every feature is a deterministic row-wise function of pre-window snapshot attributes ($t_0$, 30 days prior to the 31–60 day churn measurement window), (2) zero features reference `churn` or out-of-fold statistics, and (3) the maximum single-feature symmetric train ROC-AUC across all numeric features is **`0.5817`** (`dev_age_gt_300`) and **`0.5751`** (`eqpdays` raw), followed by `hnd_price` (`0.5599`) and `mou_ratio_3m` (`0.5544`) — well below the `0.65` leakage alarm threshold.
+- **2026-11-14 (T5.4 — Fairness Feature-Set Variants):**
+  - Defined three explicit feature sets in `Islam-Raad.ipynb` (§6.3):
+    1. **`FEATURES_FULL` (`126` features = `98` raw + `28` engineered):** Retains all columns solely for the offline fairness comparison in `T7.8`.
+    2. **`FEATURES_NO_ETHNIC` (`125` features = `97` raw + `28` engineered):** Excludes `ethnic` (`18.88 pp` raw churn spread); selected as our **default production feature set** per PRD §8.7 (*"We target on behavior, not identity"*).
+    3. **`FEATURES_NO_PROXIES` (`117` features = `89` raw + `28` engineered):** Excludes `ethnic` plus `8` socioeconomic/family proxy columns (`income`, `marital`, `kid0_2`, `kid3_5`, `kid6_10`, `kid11_15`, `kid16_17`, `dwllsize`) to test in `T7.8` whether removing all socioeconomic proxies materially changes ranking performance.
 
 ---
 
