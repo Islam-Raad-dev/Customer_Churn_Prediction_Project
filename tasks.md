@@ -55,9 +55,9 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T2.7 Customer-care calls vs churn:** buckets; ≥ 3 competing explanations (hypotheses only). ✔ 2026-11-14 20:47
 - [x] **T2.8 Call quality, overage, roaming vs churn.** ✔ 2026-11-14 20:49
 - [x] **T2.9 Demographics vs churn** + fairness note for `ethnic` and proxies. ✔ 2026-11-14 20:50
-- [~] **T2.10 Select 4–6 final EDA charts** for slides 4–6 (PRD §10 style; exact placement sizes; PNG 200 dpi; open each PNG and inspect).
-  - Verifying the 5 EDA charts (`fig_04_missing.png`, `fig_05_device_age.png`, `fig_06a_tenure.png`, `fig_06b_entanglement.png`, `fig_06c_usage_collapse.png`) plus combined Slide 6 panel `fig_06_tenure_usage.png` at exact PRD §10 placement sizes (200 DPI).
-- [ ] **T2.11 Write 3 hypotheses** (full sentences, ranked by actionability) in `docs/NOTES.md → Hypotheses`; store key stats in `results.json → eda`.
+- [x] **T2.10 Select 4–6 final EDA charts** for slides 4–6 (PRD §10 style; exact placement sizes; PNG 200 dpi; open each PNG and inspect). ✔ 2026-11-14 20:53
+- [~] **T2.11 Write 3 hypotheses** (full sentences, ranked by actionability) in `docs/NOTES.md → Hypotheses`; store key stats in `results.json → eda`.
+  - Writing the 3 ranked full-sentence hypotheses ("Segment X is more likely to churn because Y; we test with Z") in `docs/NOTES.md → 3. Hypotheses` and `Islam-Raad.ipynb` Section 4.11, and verifying `outputs/results.json → eda`.
 - [ ] **T2.12 Phase wrap-up** (Arabic section, commit, tag `phase-2-done`).
 
 ## Phase 3 — Market research  (type: `research`)
