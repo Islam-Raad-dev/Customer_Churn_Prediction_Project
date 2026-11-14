@@ -57,11 +57,11 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T2.9 Demographics vs churn** + fairness note for `ethnic` and proxies. ✔ 2026-11-14 20:50
 - [x] **T2.10 Select 4–6 final EDA charts** for slides 4–6 (PRD §10 style; exact placement sizes; PNG 200 dpi; open each PNG and inspect). ✔ 2026-11-14 20:53
 - [x] **T2.11 Write 3 hypotheses** (full sentences, ranked by actionability) in `docs/NOTES.md → Hypotheses`; store key stats in `results.json → eda`. ✔ 2026-11-14 20:54
-- [~] **T2.12 Phase wrap-up** (Arabic section, commit, tag `phase-2-done`).
-  - Appending Phase 2 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`, committing, and tagging `phase-2-done`.
+- [x] **T2.12 Phase wrap-up** (Arabic section, commit, tag `phase-2-done`). ✔ 2026-11-14 20:57
 
 ## Phase 3 — Market research  (type: `research`)
-- [ ] **T3.1 Search plan:** queries per PRD §7 question (Iraq mobile market, subscribers/penetration, operators, CMC, ITU/GSMA/DataReportal, retention vs acquisition, handset cycle & churn, campaign success rates, academic churn-prediction papers).
+- [~] **T3.1 Search plan:** queries per PRD §7 question (Iraq mobile market, subscribers/penetration, operators, CMC, ITU/GSMA/DataReportal, retention vs acquisition, handset cycle & churn, campaign success rates, academic churn-prediction papers).
+  - Formulating the structured search plan across all 7 PRD §7 research questions in `docs/NOTES.md` and `research/sources_log.md`.
 - [ ] **T3.2 Collect ≥ 8 sources (target 10–12):** open each page, verify the fact, log in `research/sources_log.md` (ID · title · publisher · publication date · URL · access date · fact used · reliability). Paraphrase; quotes ≤ 15 words only if essential.
 - [ ] **T3.3 Answer each research question** in 3–6 lines with `[ID]` citations; where Iraqi data are missing, say so and label regional/global data.
 - [ ] **T3.4 Choose 3 facts for slide 3** and numeric inputs for the impact model (churn prior, success rate, offer cost, margin, horizon); anything unsourced → **ASSUMPTION** in `docs/NOTES.md → Assumptions`.

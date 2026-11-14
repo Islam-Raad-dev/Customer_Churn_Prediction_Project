@@ -1,8 +1,8 @@
 # PROGRESS
-Updated: 2026-11-14 20:54
-Last completed task: T2.11 — Write 3 hypotheses in `docs/NOTES.md → Hypotheses`
-Current task: T2.12 — Phase 2 wrap-up   | status: [~] in progress (appending Phase 2 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`)
-Next concrete action: Append Phase 2 Arabic walkthrough to `docs/UNDERSTANDING_AR.md`, commit, and tag `phase-2-done`.
+Updated: 2026-11-14 20:57
+Last completed task: T2.12 — Phase 2 wrap-up (tagged `phase-2-done`)
+Current task: T3.1 — Search plan   | status: [~] in progress (designing structured search queries across all 7 PRD §7 research questions)
+Next concrete action: Document the Phase 3 search plan covering all 7 PRD §7 questions in `research/sources_log.md`, then execute web searches and verify ≥ 8 primary/credible sources (`T3.2`).
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
@@ -10,7 +10,7 @@ Key decisions so far:
 - Verified 1-to-1 inner merge of `Client.csv` (100,000 × 50) and `Record.csv` (100,000 × 51) on `Customer_ID` (`1000001`–`1100000`) → `(100000, 100)`.
 - Reproduced exact tutorial baseline (`0.6357` test accuracy, `0.6938` test AUC).
 - Completed Phase 1 Data Audit (`T1.1`–`T1.8`, tagged `phase-1-done`).
-- Completed T2.1–T2.11: completed all 9 EDA investigations, produced and visually inspected 6 matplotlib PNGs (`fig_04`–`fig_06`), and documented 3 ranked full-sentence hypotheses (`H1`–`H3`) in `docs/NOTES.md`, `Islam-Raad.ipynb`, and `outputs/results.json`.
+- Completed Phase 2 Exploratory Data Analysis (`T2.1`–`T2.12`, tagged `phase-2-done`): verified the `+23.83 pp` 300-day jump (`fig_05_device_age.png`), the months 10–12 tenure cliff (`64.57%` at month 11, `fig_06a_tenure.png`), tenure × device-age entanglement (`fig_06b_entanglement.png`), usage-collapse segments (`fig_06c_usage_collapse.png`), combined Slide 6 small-multiples (`fig_06_tenure_usage.png`), and 3 ranked hypotheses (`H1`–`H3`).
 Key numbers so far (from results.json):
 - `data.n_rows`: `100,000`, `data.n_cols`: `100`, `data.n_features_raw`: `98`.
 - `data.churn_count`: `49,562` (`49.562%`), `data.stayed_count`: `50,438` (`50.438%`), `data.imbalance_ratio`: `1.0177`.
