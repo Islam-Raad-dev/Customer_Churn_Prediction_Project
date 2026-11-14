@@ -149,21 +149,52 @@
     - `Variant B (No ethnic, 125 cols — Final Production Model)`: CV AUC = **`0.7020 ± 0.0013`**, Test AUC = **`0.7029`** (`-0.0001` Test AUC difference — noise).
     - `Variant C (No ethnic + 8 socioeconomic/family proxies, 117 cols)`: CV AUC = **`0.7018 ± 0.0013`**, Test AUC = **`0.7020`** (`-0.0009` Test AUC difference).
     - **Decision:** Retain `Variant B (FEATURES_NO_ETHNIC)` as production default and document `Variant C` as a zero-loss strict alternative (*"We target on behavior, not identity"*).
+- **2026-11-14 (T8.1–T8.8 — Business-Impact Model, Label-Shift Re-Basing, Tornado Sensitivity & Lane 2 Pilot Sizing):**
+  - **`T8.1 & T8.2` Label-Shift Re-Basing & Unit Test (`Saerens et al. 2002 [11]`):**
+    - Verified label-shift re-weighting ($w_+ = \pi_r / \pi_s$, $w_- = (1 - \pi_r) / (1 - \pi_s)$) on a deterministic 10-row unit test (`prec_raw = 0.8000` at $\pi_s = 0.50 \rightarrow$ exact closed-form `prec_adj = 4/13 = 0.3077`, `lift = 3.0769x` at $\pi_r = 0.10$).
+    - At `k = 10%` (`n = 10,000` in Company A's `100,000`-customer base), raw test precision is **`81.30%`** (`1.64x` lift), which re-bases to **`32.96%`** (`3.30x` lift) at **`π_r = 10%`** and **`18.89%`** (`3.78x` lift) at **`π_r = 5%`**.
+  - **`T8.3 & T8.4` Net Benefit Scenarios, Break-Even `s*`, and Optimal Targeting Depth `k*` (`outputs/figures/fig_13_scenarios.png`):**
+    - Formula (`PRD §9.1`): $\text{Net}(k) = n \cdot p_{\text{adj}}(k) \cdot s \cdot V - n \cdot c$, where $n = k \cdot N$ (`N = 100,000`) and $V = \text{ARPU} \times m \times H$.
+    - **Base Scenario (`π_r = 10%`, `ARPU = 58.72 MU`, `m = 70%`, `H = 6 mos` $\rightarrow$ `V = 246.62 MU`, `s = 20%`, `c = 8.00 MU`):**
+      - At `k = 10%` (`n = 10,000`): saves **`659` churners**, generating **`162,557 MU` gross retained margin** minus **`80,000 MU` offer cost** = **`+82,557 MU` net benefit** (`ROI = +103.2%`, **break-even save rate `s* = 9.84%`**).
+      - At **optimal depth `k* = 15%` (`n = 15,000`, `p_adj = 28.51%`)**: nets **`+90,940 MU`** (`s* = 11.38%`).
+    - **Base Scenario at `π_r = 5%` (`V = 246.62 MU, s = 20%, c = 8.00 MU`):**
+      - At `k = 10%` (`n = 10,000`, `p_adj = 18.89%`): nets **`+13,160 MU`** (`s* = 17.17%`).
+      - At **optimal depth `k* = 4%` (`n = 4,000`, `p_adj = 27.67%`; `+22,611 MU` at `k = 5%`)**: nets **`+23,955 MU`** (`s* = 11.72%`).
+    - **Conservative Scenario (`ARPU = 48.20 MU` median, `m = 65%`, `H = 6 mos` $\rightarrow$ `V = 187.98 MU`, `s = 15%`, `c = 9.00 MU`):**
+      - At `π_r = 10%`: nets **`+2,929 MU` at `k = 10%`** (`s* = 14.53%`) and **`+15,349 MU` at optimal `k* = 4%`** (`+13,932 MU` at `k = 5%`). At `π_r = 5%`, broad `k = 10%` loses `-36,743 MU`, proving why CVM must tighten targeting to `k* = 1%` (`+3,463 MU`, `s* = 10.83%`) when market churn and save rates are simultaneously depressed.
+    - **Optimistic Scenario (`π_r = 10%`, `ARPU = 58.72 MU`, `m = 80%`, `H = 9 mos` $\rightarrow$ `V = 422.78 MU`, `s = 30%`, `c = 5.00 MU`):**
+      - At `k = 10%` (`n = 10,000`): nets **`+368,006 MU`** (`s* = 3.59%`), rising to **`+531,969 MU` at `k = 20%`**.
+    - **Why Re-Basing Matters (`PRD §9.4`):** Evaluating the Base campaign on the unadjusted `49.56%` sample churn rate inflates `k = 10%` net benefit by **`3.89x`** (`+321,004 MU` raw vs. `+82,557 MU` re-based at `π_r = 10%` and `+13,160 MU` at `π_r = 5%`).
+  - **`T8.5` Tornado Sensitivity (`outputs/figures/fig_13_tornado.png`, `outputs/figures/fig_13_impact.png`):**
+    - One-way sensitivity around Base (`k = 10%, π_r = 10%, Net = +82,557 MU`) ranks drivers by total swing:
+      1. **Offer Save Rate `s` (`10%` to `30%`):** `+1,278 MU` to `+163,835 MU` (**`162,557 MU` swing**).
+      2. **Retained Value `V` (`187.98` to `422.78 MU`):** `+43,905 MU` to `+198,670 MU` (**`154,766 MU` swing**).
+      3. **Real-World Churn Prior `π_r` (`5%` to `15%`):** `+13,160 MU` to `+136,254 MU` (**`123,094 MU` swing**).
+      4. **Offer Cost `c` (`12.0` to `5.0 MU`):** `+42,557 MU` to `+112,557 MU` (**`70,000 MU` swing**).
+      5. **Targeting Depth `k%` (`5%` to `15%`):** `+63,096 MU` to `+90,940 MU` (**`27,844 MU` swing**).
+  - **`T8.6 & T8.7` Lane 2 Pilot Sizing & Zero Double-Counting Verification:**
+    - In the full `100,000` customer base, `13,385` active (`mou_Mean > 0`) accounts sit in the pre-cliff window (`eqpdays ∈ [240, 300]` [`n = 9,983`] or `months ∈ [8, 9]` [`n = 7,712`]).
+    - Only **`3.12%`** (`418` customers) overlap with Lane 1 Top-10% (`p >= 0.7214`) because pre-cliff accounts have not yet spiked in cross-sectional risk (`36.74%` sample churn before `300d` vs. `60.55%` after `300d`). Excluding the `3.12%` overlap leaves **`12,967` non-overlapping pre-cliff accounts** (zero double counting).
+    - Re-basing the observed `+23.83 pp` raw `300d` jump yields a **`+8.67 pp` jump at `π_r = 10%`** (`6.19%` $\rightarrow$ `14.86%`) and **`+4.61 pp` at `π_r = 5%`** (`3.03%` $\rightarrow$ `7.64%`).
+    - **90-Day Randomized 50/50 Holdout Pilot (`4,000` accounts: `2,000` treatment vs. `2,000` control):** Under Base assumptions (`25%` of the `+8.67 pp` gap closed = `+2.17 pp` incremental retention, `V = 246.62 MU`, conditional voucher cost `c = 3.00 MU`), the pilot treatment group saves `43.4` churners and nets **`+4,691 MU`** (scaling to **`+30,414 MU`** across all `12,967` non-overlapping accounts if validated).
+  - **`T8.8` Executive Impact Statement:**
+    > *"Under stated assumptions (`N = 100,000` accounts, mean `ARPU = 58.72 MU` [median `48.20 MU`], gross margin `65%–80%`, retained horizon `H = 6–9 months`, offer save rate `s = 15%–30%`, and per-customer offer cost `c = 5–9 MU`), contacting the top-10% highest-risk accounts (`n = 10,000`) in Lane 1 yields an estimated net benefit of **+82,557 MU** in our Base scenario at a realistic `10%` market churn rate (**+90,940 MU** at the optimal depth `k* = 15%`, break-even save rate `s* = 9.8%`), or **+13,160 MU** at a `5%` market churn rate (**+23,955 MU** at optimal `k* = 4%`, `s* = 17.2%`), spanning **+15,349 MU** (Conservative optimal `k* = 4%` at `π_r = 10%`) to **+368,006 MU** (Optimistic at `k = 10%`). Label-shift re-basing is essential: evaluating the same Base campaign on the unadjusted `49.6%` sample churn rate would overstate net profit nearly fourfold (`+321,004 MU` vs. `+82,557 MU`). Complementing Lane 1, the Lane 2 90-day randomized 50/50 holdout A/B pilot (`2,000` treatment vs. `2,000` control accounts in `eqpdays 240–300` and `months 8–9`, `96.9%` non-overlapping with Lane 1 Top-10%) tests an estimated **+4,691 MU** net pilot return (**+30,414 MU** if scaled to all `12,967` non-overlapping pre-cliff accounts)."*
 
 ---
 
 ## 2. Assumptions
 | Parameter | Symbol | Conservative | Base | Optimistic | Provenance (`SOURCED [ID]` vs. `ASSUMPTION`) & Rationale |
 |---|---|---|---|---|---|
-| Active customer base | $N$ | `100,000` | `100,000` | `100,000` | **SOURCED (Dataset)** — exact merged row count of `Client.csv` and `Record.csv`. |
+| Active customer base | $N$ | `100,000` | `100,000` | `100,000` | **SOURCED (Dataset)** — exact merged row count of `Client.csv` and `Record.csv` (`98,400` active with `mou_Mean > 0`; `1,600` silent SIMs). |
 | Monthly ARPU (Monetary Units) | $\text{ARPU}$ | `48.20 MU` (median `rev_Mean`) | `58.72 MU` (mean `rev_Mean`) | `58.72 MU` (mean `rev_Mean`) | **SOURCED (Dataset)** — empirical mean (`58.72 MU`) and median (`48.20 MU`) of `rev_Mean` across `99,643` non-null accounts. |
-| Sample churn rate | $\pi_s$ | `49.562%` | `49.562%` | `49.562%` | **SOURCED (Dataset `[7]`)** — oversampled/balanced case-control rate (`49,562 / 100,000`). |
-| Realistic operational churn prior | $\pi_r$ | `5.0%` | `10.0%` (also shown at `5.0%`) | `10.0%` | **SOURCED `[7, 10]` & Course Guide** — `tutorial.ipynb` §3.3 and `GCI_Final_Assignment_Guide.pdf` p. 19, 28 specify `5%–10%` realistic churn; Neslin et al. `[7]` report `~1.8%/mo` (`~5%–10%` over a 3–6 month campaign horizon). Re-based via Saerens et al. `[10]`. |
-| Gross contribution margin | $m$ | `60%` (`0.60`) | `70%` (`0.70`) | `80%` (`0.80`) | **ASSUMPTION** — wireless gross service margin after interconnect/direct variable costs; sensitivity-tested in Phase 8. |
-| Retained lifetime horizon | $H$ | `3 months` | `6 months` | `9 months` | **ASSUMPTION** — months of incremental cash flow preserved when a would-be churner is saved (anchored to Neslin et al. `[7]` 3–6 month model horizon). |
-| Retained value per saved churner | $V = \text{ARPU} \times m \times H$ | `86.76 MU` (`48.20 × 0.60 × 3`) | `246.62 MU` (`58.72 × 0.70 × 6`) | `422.78 MU` (`58.72 × 0.80 × 9`) | **DERIVED (`SOURCED` ARPU × `ASSUMPTION` $m, H$)** — gross margin preserved per successfully retained true churner. |
-| Retention offer success rate | $s$ | `10%` (`0.10`) | `20%` (`0.20`) | `30%` (`0.30`) | **ASSUMPTION** — fraction of targeted true churners persuaded to stay by the proactive offer (no Iraqi operator publishes internal save rates; anchored to literature ranges `[7, 8, 9]`). |
-| Cost per targeted customer | $c$ | `12.00 MU` | `8.00 MU` | `5.00 MU` | **ASSUMPTION** — incentive + outreach cost incurred for **every** targeted customer ($n = k \cdot N$), including false positives who would have stayed anyway (`~8.5%–20.4%` of monthly ARPU). |
+| Sample churn rate | $\pi_s$ | `49.562%` | `49.562%` | `49.562%` | **SOURCED (Dataset `[8]`)** — oversampled/balanced case-control rate (`49,562 / 100,000`). |
+| Realistic operational churn prior | $\pi_r$ | `5.0%` & `10.0%` | `10.0%` & `5.0%` | `10.0%` | **SOURCED `[8, 11]` & Course Guide** — `tutorial.ipynb` §3.3 and `GCI_Final_Assignment_Guide.pdf` p. 19, 28 specify `5%–10%` realistic churn; Neslin et al. `[8]` report `~1.8%/mo` (`~5%–10%` over a 3–6 month campaign horizon). Re-based via Saerens et al. `[11]`. |
+| Gross contribution margin | $m$ | `65%` (`0.65`) | `70%` (`0.70`) | `80%` (`0.80`) | **ASSUMPTION** — wireless gross service margin after interconnect/direct variable costs; sensitivity-tested (`60%–80%`) in Phase 8. |
+| Retained lifetime horizon | $H$ | `6 months` (`3m` in stress test) | `6 months` | `9 months` | **ASSUMPTION** — months of incremental cash flow preserved when a would-be churner is saved (anchored to Neslin et al. `[8]` 3–6 month model horizon). |
+| Retained value per saved churner | $V = \text{ARPU} \times m \times H$ | `187.98 MU` (`48.20 × 0.65 × 6`; `86.76 MU` in 3m stress test) | `246.62 MU` (`58.72 × 0.70 × 6`) | `422.78 MU` (`58.72 × 0.80 × 9`) | **DERIVED (`SOURCED` ARPU × `ASSUMPTION` $m, H$)** — gross margin preserved per successfully retained true churner. |
+| Retention offer success rate | $s$ | `15%` (`0.15`; `10%` in stress test) | `20%` (`0.20`) | `30%` (`0.30`) | **ASSUMPTION** — fraction of targeted true churners persuaded to stay by the proactive offer (anchored to literature ranges `[8, 9, 10]`). |
+| Cost per targeted customer | $c$ | `9.00 MU` (`12.00 MU` in stress test) | `8.00 MU` | `5.00 MU` | **ASSUMPTION** — incentive + outreach cost incurred for **every** targeted customer ($n = k \cdot N$), including false positives who would have stayed anyway (`~8.5%–18.7%` of monthly ARPU). |
 
 ---
 

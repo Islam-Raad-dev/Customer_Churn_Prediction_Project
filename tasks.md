@@ -102,19 +102,19 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T7.9 Phase wrap-up** (Arabic section, commit, tag `phase-7-done`). ✔ 2026-11-14 22:42
 
 ## Phase 8 — Business impact model  (type: `impact`)
-- [~] **T8.1 Assumptions table** in `docs/NOTES.md`: ARPU (mean & median of `rev_Mean`, unit MU), margin, horizon H, success rate `s`, cost `c`, base N = 100,000, churn priors π_r ∈ {5%, 10%} — each **SOURCED [ID]** or **ASSUMPTION** with rationale.
-  - Verifying and finalizing the Phase 8 business-impact assumptions table in `docs/NOTES.md → 2. Assumptions` and `outputs/results.json → impact.assumptions`.
-- [ ] **T8.2 Re-basing function** (label shift): positives × π_r/π_s, negatives × (1−π_r)/(1−π_s); weighted precision@k and lift@k on test predictions; **unit-test with a toy example** inside the notebook; keep raw vs re-based side by side.
-- [ ] **T8.3 Net-impact function** `Net = n·p_adj·s·V − n·c`, `V = ARPU × margin × H`; conservative/base/optimistic scenarios → `results.json → impact`.
-- [ ] **T8.4 Optimal k\*** per scenario and **break-even** `s* = c/(p_adj·V)`; matplotlib net-vs-k chart.
-- [ ] **T8.5 Sensitivity:** matplotlib tornado over `s, c, V, π_r, k`.
-- [ ] **T8.6 Lane 2 sizing** (only if the threshold survived T2.2): window size × churn gap × closable share (scenarios), labelled *hypothesis → pilot*; design the A/B pilot (treatment vs holdout, duration, KPI = incremental retention).
-- [ ] **T8.7 Sanity checks:** units (MU), no double counting, seed-independence beyond rounding, scenarios ordered logically.
-- [ ] **T8.8 One-paragraph impact statement** ("estimated … under stated assumptions") with the range and key assumptions.
-- [ ] **T8.9 Phase wrap-up** (Arabic section, commit, tag `phase-8-done`).
+- [x] **T8.1 Assumptions table** in `docs/NOTES.md`: ARPU (mean & median of `rev_Mean`, unit MU), margin, horizon H, success rate `s`, cost `c`, base N = 100,000, churn priors π_r ∈ {5%, 10%} — each **SOURCED [ID]** or **ASSUMPTION** with rationale. ✔ 2026-11-14 23:00
+- [x] **T8.2 Re-basing function** (label shift): positives × π_r/π_s, negatives × (1−π_r)/(1−π_s); weighted precision@k and lift@k on test predictions; **unit-test with a toy example** inside the notebook; keep raw vs re-based side by side. ✔ 2026-11-14 23:00
+- [x] **T8.3 Net-impact function** `Net = n·p_adj·s·V − n·c`, `V = ARPU × margin × H`; conservative/base/optimistic scenarios → `results.json → impact`. ✔ 2026-11-14 23:00
+- [x] **T8.4 Optimal k\*** per scenario and **break-even** `s* = c/(p_adj·V)`; matplotlib net-vs-k chart. ✔ 2026-11-14 23:00
+- [x] **T8.5 Sensitivity:** matplotlib tornado over `s, c, V, π_r, k`. ✔ 2026-11-14 23:00
+- [x] **T8.6 Lane 2 sizing** (only if the threshold survived T2.2): window size × churn gap × closable share (scenarios), labelled *hypothesis → pilot*; design the A/B pilot (treatment vs holdout, duration, KPI = incremental retention). ✔ 2026-11-14 23:00
+- [x] **T8.7 Sanity checks:** units (MU), no double counting, seed-independence beyond rounding, scenarios ordered logically. ✔ 2026-11-14 23:00
+- [x] **T8.8 One-paragraph impact statement** ("estimated … under stated assumptions") with the range and key assumptions. ✔ 2026-11-14 23:00
+- [x] **T8.9 Phase wrap-up** (Arabic section, commit, tag `phase-8-done`). ✔ 2026-11-14 23:00
 
 ## Phase 9 — Notebook finalization  (type: `notebook`)
-- [ ] **T9.1 Review the notebook as a whole:** headers mirror slides; first cell explains purpose, folder structure, how to run; each section ends with a one-line "so what"; helper functions (incl. matplotlib style) in section 1.
+- [~] **T9.1 Review the notebook as a whole:** headers mirror slides; first cell explains purpose, folder structure, how to run; each section ends with a one-line "so what"; helper functions (incl. matplotlib style) in section 1.
+  - Auditing `Islam-Raad.ipynb` structure, adding Sections 10 (`Export & Verification`) and 11 (`Conclusion, Limitations & Next Steps`), verifying `DATA_DIR` auto-detection, and executing full notebook via `nbconvert`.
 - [ ] **T9.2 Self-containment:** `DATA_DIR` auto-detection (`./telecom/` → `../telecom/` → Colab path, with a clear error message if none found; PRD §3); seed once; no absolute paths (except documented interpreter notes outside the notebook); optional libs guarded; no web calls; **no keys/personal data**.
 - [ ] **T9.3 Export check:** the notebook writes `results.json`, figures and tables; every figure on a slide exists as `fig_<slide>_<topic>.png` at the exact placement size.
 - [ ] **T9.4 Restart-and-run-all** with `…python3.12 -m jupyter nbconvert --to notebook --execute`; runtime < ~10 min; regenerated `results.json` equals the previous one (up to float rounding).
