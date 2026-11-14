@@ -77,9 +77,9 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 ## Phase 5 — Preprocessing and feature engineering  (type: `feat`)
 - [x] **T5.1 Leakage-safe preprocessing pipelines:** trees (native NaN + categorical handling) and logistic regression (median impute + missing flags + scaling + one-hot); compare vs tutorial LabelEncoder. ✔ 2026-11-14 21:32
 - [x] **T5.2 Engineer ≥ 10 features** (PRD §8.3); safe division with epsilon; negatives per T1.3; fill **Feature dictionary** (name · formula · business reason · leakage check · kept?). ✔ 2026-11-14 21:40
-- [~] **T5.3 Leakage review:** each feature available before the churn window; none uses `churn`; target statistics only inside CV folds; no single feature gives unexpectedly high AUC (prior max ≈ 0.57).
-  - Verifying pre-window availability, zero target usage, and single-feature train AUCs across all 126 features.
-- [ ] **T5.4 Fairness variants:** feature sets with/without `ethnic, income, marital, kid*, dwllsize`.
+- [x] **T5.3 Leakage review:** each feature available before the churn window; none uses `churn`; target statistics only inside CV folds; no single feature gives unexpectedly high AUC (prior max ≈ 0.57). ✔ 2026-11-14 21:41
+- [~] **T5.4 Fairness variants:** feature sets with/without `ethnic, income, marital, kid*, dwllsize`.
+  - Defining and comparing the 3 fairness feature-set variants (Full 126, Behavior-First No-`ethnic` 125, and Strict No-Socioeconomic-Proxies 117) via 5-fold Stratified CV on the 70% training split.
 - [ ] **T5.5 Phase wrap-up** (Arabic section, commit, tag `phase-5-done`).
 
 ## Phase 6 — Modeling and experiments  (type: `model`)
