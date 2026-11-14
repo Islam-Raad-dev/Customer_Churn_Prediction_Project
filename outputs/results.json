@@ -2402,7 +2402,54 @@
         "overall_mean_all": 13.56,
         "overall_median_all": 1.0
       }
-    }
+    },
+    "custcare_buckets": [
+      {
+        "bucket": "0 calls",
+        "n_train": 39007,
+        "pct_train": 55.72,
+        "churn_train": 0.517035,
+        "mou_mean": 336.4,
+        "rev_mean": 49.08,
+        "eqpdays_mean": 447.6
+      },
+      {
+        "bucket": "(0, 1] calls",
+        "n_train": 11229,
+        "pct_train": 16.04,
+        "churn_train": 0.495057,
+        "mou_mean": 527.7,
+        "rev_mean": 62.91,
+        "eqpdays_mean": 363.0
+      },
+      {
+        "bucket": "(1, 3] calls",
+        "n_train": 8495,
+        "pct_train": 12.14,
+        "churn_train": 0.459682,
+        "mou_mean": 681.1,
+        "rev_mean": 70.27,
+        "eqpdays_mean": 326.2
+      },
+      {
+        "bucket": "(3, 6] calls",
+        "n_train": 5321,
+        "pct_train": 7.6,
+        "churn_train": 0.463259,
+        "mou_mean": 844.4,
+        "rev_mean": 75.34,
+        "eqpdays_mean": 299.0
+      },
+      {
+        "bucket": "> 6 calls",
+        "n_train": 5948,
+        "pct_train": 8.5,
+        "churn_train": 0.436449,
+        "mou_mean": 1135.5,
+        "rev_mean": 83.74,
+        "eqpdays_mean": 255.8
+      }
+    ]
   },
   "models": [],
   "final_model": {},
