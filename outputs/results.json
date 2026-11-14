@@ -1690,6 +1690,409 @@
         "uniqsubs": -0.04
       },
       "verdict": "real-looking (lifecycle commitment/upgrade threshold strongly coupled with months 10-12; retains Lane 2 as controlled A/B pilot)"
+    },
+    "tenure_curve": [
+      {
+        "months": 6,
+        "n_train": 915,
+        "churn_rate_train": 0.389071,
+        "n_all": 1295,
+        "churn_rate_all": 0.383784
+      },
+      {
+        "months": 7,
+        "n_train": 3494,
+        "churn_rate_train": 0.331425,
+        "n_all": 4979,
+        "churn_rate_all": 0.332597
+      },
+      {
+        "months": 8,
+        "n_train": 2645,
+        "churn_rate_train": 0.309641,
+        "n_all": 3728,
+        "churn_rate_all": 0.309549
+      },
+      {
+        "months": 9,
+        "n_train": 2855,
+        "churn_rate_train": 0.292469,
+        "n_all": 4066,
+        "churn_rate_all": 0.287998
+      },
+      {
+        "months": 10,
+        "n_train": 3036,
+        "churn_rate_train": 0.401845,
+        "n_all": 4313,
+        "churn_rate_all": 0.402736
+      },
+      {
+        "months": 11,
+        "n_train": 5645,
+        "churn_rate_train": 0.645704,
+        "n_all": 8029,
+        "churn_rate_all": 0.651264
+      },
+      {
+        "months": 12,
+        "n_train": 4233,
+        "churn_rate_train": 0.61493,
+        "n_all": 6033,
+        "churn_rate_all": 0.618598
+      },
+      {
+        "months": 13,
+        "n_train": 3881,
+        "churn_rate_train": 0.561969,
+        "n_all": 5651,
+        "churn_rate_all": 0.554415
+      },
+      {
+        "months": 14,
+        "n_train": 3188,
+        "churn_rate_train": 0.52729,
+        "n_all": 4552,
+        "churn_rate_all": 0.530316
+      },
+      {
+        "months": 15,
+        "n_train": 2689,
+        "churn_rate_train": 0.523243,
+        "n_all": 3835,
+        "churn_rate_all": 0.523598
+      },
+      {
+        "months": 16,
+        "n_train": 2510,
+        "churn_rate_train": 0.508367,
+        "n_all": 3600,
+        "churn_rate_all": 0.510278
+      },
+      {
+        "months": 17,
+        "n_train": 2445,
+        "churn_rate_train": 0.516155,
+        "n_all": 3505,
+        "churn_rate_all": 0.515549
+      },
+      {
+        "months": 18,
+        "n_train": 2086,
+        "churn_rate_train": 0.514382,
+        "n_all": 3020,
+        "churn_rate_all": 0.509934
+      },
+      {
+        "months": 19,
+        "n_train": 2728,
+        "churn_rate_train": 0.497801,
+        "n_all": 3895,
+        "churn_rate_all": 0.492426
+      },
+      {
+        "months": 20,
+        "n_train": 1944,
+        "churn_rate_train": 0.522119,
+        "n_all": 2789,
+        "churn_rate_all": 0.521692
+      },
+      {
+        "months": 21,
+        "n_train": 2497,
+        "churn_rate_train": 0.490188,
+        "n_all": 3561,
+        "churn_rate_all": 0.493401
+      },
+      {
+        "months": 22,
+        "n_train": 1719,
+        "churn_rate_train": 0.503781,
+        "n_all": 2508,
+        "churn_rate_all": 0.500797
+      },
+      {
+        "months": 23,
+        "n_train": 2561,
+        "churn_rate_train": 0.517766,
+        "n_all": 3623,
+        "churn_rate_all": 0.516975
+      },
+      {
+        "months": 24,
+        "n_train": 1602,
+        "churn_rate_train": 0.509363,
+        "n_all": 2329,
+        "churn_rate_all": 0.514813
+      },
+      {
+        "months": 25,
+        "n_train": 2156,
+        "churn_rate_train": 0.490724,
+        "n_all": 3071,
+        "churn_rate_all": 0.482253
+      },
+      {
+        "months": 26,
+        "n_train": 1388,
+        "churn_rate_train": 0.505764,
+        "n_all": 1929,
+        "churn_rate_all": 0.49352
+      },
+      {
+        "months": 27,
+        "n_train": 1335,
+        "churn_rate_train": 0.520599,
+        "n_all": 1883,
+        "churn_rate_all": 0.509825
+      },
+      {
+        "months": 28,
+        "n_train": 1090,
+        "churn_rate_train": 0.523853,
+        "n_all": 1545,
+        "churn_rate_all": 0.521036
+      },
+      {
+        "months": 29,
+        "n_train": 1252,
+        "churn_rate_train": 0.499201,
+        "n_all": 1781,
+        "churn_rate_all": 0.501404
+      },
+      {
+        "months": 30,
+        "n_train": 931,
+        "churn_rate_train": 0.519871,
+        "n_all": 1365,
+        "churn_rate_all": 0.523077
+      },
+      {
+        "months": 31,
+        "n_train": 1211,
+        "churn_rate_train": 0.487201,
+        "n_all": 1749,
+        "churn_rate_all": 0.500286
+      },
+      {
+        "months": 32,
+        "n_train": 853,
+        "churn_rate_train": 0.526377,
+        "n_all": 1194,
+        "churn_rate_all": 0.530988
+      },
+      {
+        "months": 33,
+        "n_train": 999,
+        "churn_rate_train": 0.502503,
+        "n_all": 1416,
+        "churn_rate_all": 0.497175
+      },
+      {
+        "months": 34,
+        "n_train": 695,
+        "churn_rate_train": 0.471942,
+        "n_all": 992,
+        "churn_rate_all": 0.485887
+      },
+      {
+        "months": 35,
+        "n_train": 902,
+        "churn_rate_train": 0.494457,
+        "n_all": 1298,
+        "churn_rate_all": 0.489985
+      },
+      {
+        "months": 36,
+        "n_train": 566,
+        "churn_rate_train": 0.459364,
+        "n_all": 801,
+        "churn_rate_all": 0.466916
+      },
+      {
+        "months": 37,
+        "n_train": 624,
+        "churn_rate_train": 0.480769,
+        "n_all": 907,
+        "churn_rate_all": 0.487321
+      },
+      {
+        "months": 38,
+        "n_train": 395,
+        "churn_rate_train": 0.460759,
+        "n_all": 563,
+        "churn_rate_all": 0.474245
+      },
+      {
+        "months": 39,
+        "n_train": 370,
+        "churn_rate_train": 0.508108,
+        "n_all": 525,
+        "churn_rate_all": 0.506667
+      },
+      {
+        "months": 40,
+        "n_train": 230,
+        "churn_rate_train": 0.473913,
+        "n_all": 335,
+        "churn_rate_all": 0.477612
+      },
+      {
+        "months": 41,
+        "n_train": 305,
+        "churn_rate_train": 0.491803,
+        "n_all": 426,
+        "churn_rate_all": 0.507042
+      },
+      {
+        "months": 42,
+        "n_train": 186,
+        "churn_rate_train": 0.5,
+        "n_all": 270,
+        "churn_rate_all": 0.474074
+      },
+      {
+        "months": 43,
+        "n_train": 239,
+        "churn_rate_train": 0.460251,
+        "n_all": 345,
+        "churn_rate_all": 0.466667
+      },
+      {
+        "months": 44,
+        "n_train": 174,
+        "churn_rate_train": 0.45977,
+        "n_all": 249,
+        "churn_rate_all": 0.457831
+      },
+      {
+        "months": 45,
+        "n_train": 181,
+        "churn_rate_train": 0.447514,
+        "n_all": 269,
+        "churn_rate_all": 0.446097
+      },
+      {
+        "months": 46,
+        "n_train": 150,
+        "churn_rate_train": 0.5,
+        "n_all": 220,
+        "churn_rate_all": 0.472727
+      },
+      {
+        "months": 47,
+        "n_train": 178,
+        "churn_rate_train": 0.460674,
+        "n_all": 260,
+        "churn_rate_all": 0.480769
+      },
+      {
+        "months": 48,
+        "n_train": 152,
+        "churn_rate_train": 0.506579,
+        "n_all": 222,
+        "churn_rate_all": 0.477477
+      },
+      {
+        "months": 49,
+        "n_train": 157,
+        "churn_rate_train": 0.44586,
+        "n_all": 223,
+        "churn_rate_all": 0.479821
+      },
+      {
+        "months": 50,
+        "n_train": 118,
+        "churn_rate_train": 0.474576,
+        "n_all": 166,
+        "churn_rate_all": 0.46988
+      },
+      {
+        "months": 51,
+        "n_train": 108,
+        "churn_rate_train": 0.592593,
+        "n_all": 143,
+        "churn_rate_all": 0.58042
+      },
+      {
+        "months": 52,
+        "n_train": 78,
+        "churn_rate_train": 0.512821,
+        "n_all": 111,
+        "churn_rate_all": 0.477477
+      },
+      {
+        "months": 53,
+        "n_train": 103,
+        "churn_rate_train": 0.378641,
+        "n_all": 145,
+        "churn_rate_all": 0.37931
+      },
+      {
+        "months": 54,
+        "n_train": 59,
+        "churn_rate_train": 0.389831,
+        "n_all": 82,
+        "churn_rate_all": 0.414634
+      },
+      {
+        "months": 55,
+        "n_train": 44,
+        "churn_rate_train": 0.386364,
+        "n_all": 65,
+        "churn_rate_all": 0.384615
+      },
+      {
+        "months": 56,
+        "n_train": 23,
+        "churn_rate_train": 0.391304,
+        "n_all": 39,
+        "churn_rate_all": 0.358974
+      },
+      {
+        "months": 57,
+        "n_train": 33,
+        "churn_rate_train": 0.272727,
+        "n_all": 41,
+        "churn_rate_all": 0.219512
+      },
+      {
+        "months": 58,
+        "n_train": 13,
+        "churn_rate_train": 0.384615,
+        "n_all": 15,
+        "churn_rate_all": 0.4
+      },
+      {
+        "months": 59,
+        "n_train": 19,
+        "churn_rate_train": 0.052632,
+        "n_all": 32,
+        "churn_rate_all": 0.09375
+      },
+      {
+        "months": 60,
+        "n_train": 8,
+        "churn_rate_train": 0.125,
+        "n_all": 10,
+        "churn_rate_all": 0.2
+      },
+      {
+        "months": 61,
+        "n_train": 2,
+        "churn_rate_train": 0.5,
+        "n_all": 2,
+        "churn_rate_all": 0.5
+      }
+    ],
+    "tenure_summary": {
+      "months_6_9_train_churn": 0.319709,
+      "month_9_train_churn": 0.292469,
+      "month_10_train_churn": 0.401845,
+      "month_11_train_churn": 0.645704,
+      "month_12_train_churn": 0.61493,
+      "months_10_12_train_churn": 0.578287,
+      "months_37_plus_train_churn": 0.471512
     }
   },
   "models": [],

@@ -48,9 +48,9 @@
 Split first (stratified 70/30, seed 42); **discover thresholds on the training part only**; replicate on all rows only descriptively. Each analysis = one matplotlib chart + one-sentence finding (in the notebook and `docs/NOTES.md → Hypotheses`).
 - [x] **T2.1 `eqpdays` vs churn:** bins ≤ 25 days with CI bands; negatives handled per T1.3; `fig_05_device_age.png`. ✔ 2026-11-14 20:31
 - [x] **T2.2 Robustness of the ~300-day jump:** bootstrap 95% CI of churn(301–340) − churn(260–300); local linear fit on each side; repeat within tenure ≥ 10, by `area`, by `crclscod`; **covariate-balance check** at 300 days (`rev_Mean, hnd_price, months, mou_Mean, uniqsubs`). Write a verdict: *real-looking / uncertain / likely artifact* + reasons. **This verdict drives T4.2.** ✔ 2026-11-14 20:34
-- [~] **T2.3 `months` vs churn:** per-month rate 6–61 with counts; locate the cliff (~10–12).
-  - Computing per-month churn rate and customer counts across `months` 6–61 on the 70% training split and full sample, locating the months 10–12 cliff.
-- [ ] **T2.4 Entanglement:** matplotlib heat-map (`imshow`) of churn by tenure bucket × device-age bucket with counts; device-age effect within tenure ≥ 10 only.
+- [x] **T2.3 `months` vs churn:** per-month rate 6–61 with counts; locate the cliff (~10–12). ✔ 2026-11-14 20:36
+- [~] **T2.4 Entanglement:** matplotlib heat-map (`imshow`) of churn by tenure bucket × device-age bucket with counts; device-age effect within tenure ≥ 10 only.
+  - Computing tenure bucket × device-age bucket churn rate and customer counts on the 70% training split, isolating the device-age effect within `months >= 10`, and generating `outputs/figures/fig_06b_entanglement.png`.
 - [ ] **T2.5 Usage-collapse segments:** `mou_Mean` = 0, ≤ 10, ≤ 30, ≤ 65, missing `change_mou`: size, churn, mean revenue, revenue share, lifetime totals; stand-alone target or "already gone"?
 - [ ] **T2.6 Revenue and "value":** distributions/medians by class; implication for defining a valuable customer.
 - [ ] **T2.7 Customer-care calls vs churn:** buckets; ≥ 3 competing explanations (hypotheses only).
