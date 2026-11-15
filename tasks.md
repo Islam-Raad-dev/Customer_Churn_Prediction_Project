@@ -146,16 +146,15 @@ Follow PRD §11 exactly (canvas 720 × 405 pt, grid, Montserrat + Open Sans, pal
 - [x] **T11.4 Phase wrap-up** (commit, tag `phase-11-done`). ✔ 2026-11-15 07:47
 
 ## Phase 12 — Human-Understanding Pack  (type: `docs`)
-- [~] **T12.1 Glossary** (PRD §14 list) in Arabic with English terms.
-  - Populating the full Arabic Human-Understanding Pack in `docs/UNDERSTANDING_AR.md`: Glossary, Numbers Cheat-Sheet, >=30 Interview Q&A + 2-Minute Story, 20-Question Self-Test + Answer Key, and Re-Run Guide (`T12.1`–`T12.5`).
-- [ ] **T12.2 Numbers cheat-sheet:** every slide number → value · notebook section · meaning · sensitivity.
-- [ ] **T12.3 Interview Q&A:** ≥ 30 questions (technical, business, ethics, limitations, "why not a better model?", "why this threshold?", "why re-basing?", "how did you use AI?") + 2-minute story.
-- [ ] **T12.4 Self-test:** 20 questions with answers at the end (take it before survey Q4).
-- [ ] **T12.5 Re-run guide:** exact commands/clicks (local with the venv, and Colab); how to rebuild charts and export the PDF.
-- [ ] **T12.6 Phase wrap-up** (commit, tag `phase-12-done`).
+- [x] **T12.1 Glossary** (PRD §14 list) in Arabic with English terms. ✔ 2026-11-15 07:51
+- [x] **T12.2 Numbers cheat-sheet:** every slide number → value · notebook section · meaning · sensitivity. ✔ 2026-11-15 07:51
+- [x] **T12.3 Interview Q&A:** ≥ 30 questions (technical, business, ethics, limitations, "why not a better model?", "why this threshold?", "why re-basing?", "how did you use AI?") + 2-minute story. ✔ 2026-11-15 07:51
+- [x] **T12.4 Self-test:** 20 questions with answers at the end (take it before survey Q4). ✔ 2026-11-15 07:51
+- [x] **T12.5 Re-run guide:** exact commands/clicks (local with the venv, and Colab); how to rebuild charts and export the PDF. ✔ 2026-11-15 07:51
+- [x] **T12.6 Phase wrap-up** (commit, tag `phase-12-done`). ✔ 2026-11-15 07:51
 
 ## Phase 13 — Final QA and packaging  (type: `qa`)
-- [ ] **T13.1 Requirements audit R1–R7** with evidence pointers (slide/section numbers) written into `docs/NOTES.md → Decision log`: R1 recommendation slide title states the decision + impact slide has numbers · R2 EDA charts specific to Company A + hypotheses · R3 model name/metric/result as **text** + why/how/learned · R4 documented market analysis with verified sources · R5 plain-language diagram + jargon defined · R6 multiple purposeful charts · R7 titles-only story coherent.
+- [~] **T13.1 Requirements audit R1–R7** with evidence pointers (slide/section numbers) written into `docs/NOTES.md → Decision log`: R1 recommendation slide title states the decision + impact slide has numbers · R2 EDA charts specific to Company A + hypotheses · R3 model name/metric/result as **text** + why/how/learned · R4 documented market analysis with verified sources · R5 plain-language diagram + jargon defined · R6 multiple purposeful charts · R7 titles-only story coherent.
 - [ ] **T13.2 Honesty audit:** search slides/notebook for causal language ("because", "causes", "drives") and revise to "indicator/hypothesis" unless tested; confirm "course project / estimated under assumptions" wording; no real-client claims.
 - [ ] **T13.3 Privacy audit:** no CSV/keys/personal data in the notebook, `submission/`, or git history; Drive images private again; no remote configured.
 - [ ] **T13.4 Package `submission/`:** copy the final `Islam-Raad.pdf`, the **executed** `Islam-Raad.ipynb` (outputs visible) and `references.txt` (exact names). The folder must contain **exactly these three files and nothing else**. Extend `scripts/check_submission.py` to fail if any other file is present, to confirm the notebook in `submission/` runs end-to-end from a clean kernel (it finds the data via `../telecom/`), and that PDF ⇔ `references.txt` ⇔ notebook numbers agree.
