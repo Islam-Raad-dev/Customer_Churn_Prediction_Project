@@ -113,17 +113,17 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 - [x] **T8.9 Phase wrap-up** (Arabic section, commit, tag `phase-8-done`). ✔ 2026-11-14 23:00
 
 ## Phase 9 — Notebook finalization  (type: `notebook`)
-- [~] **T9.1 Review the notebook as a whole:** headers mirror slides; first cell explains purpose, folder structure, how to run; each section ends with a one-line "so what"; helper functions (incl. matplotlib style) in section 1.
-  - Auditing `Islam-Raad.ipynb` structure, adding Sections 10 (`Export & Verification`) and 11 (`Conclusion, Limitations & Next Steps`), verifying `DATA_DIR` auto-detection, and executing full notebook via `nbconvert`.
-- [ ] **T9.2 Self-containment:** `DATA_DIR` auto-detection (`./telecom/` → `../telecom/` → Colab path, with a clear error message if none found; PRD §3); seed once; no absolute paths (except documented interpreter notes outside the notebook); optional libs guarded; no web calls; **no keys/personal data**.
-- [ ] **T9.3 Export check:** the notebook writes `results.json`, figures and tables; every figure on a slide exists as `fig_<slide>_<topic>.png` at the exact placement size.
-- [ ] **T9.4 Restart-and-run-all** with `…python3.12 -m jupyter nbconvert --to notebook --execute`; runtime < ~10 min; regenerated `results.json` equals the previous one (up to float rounding).
-- [ ] **T9.5 Clean-up:** remove dead cells and bulky outputs; keep outputs visible.
-- [ ] **T9.6 Phase wrap-up** (Arabic section, commit, tag `phase-9-done`).
+- [x] **T9.1 Review the notebook as a whole:** headers mirror slides; first cell explains purpose, folder structure, how to run; each section ends with a one-line "so what"; helper functions (incl. matplotlib style) in section 1. ✔ 2026-11-15 06:34
+- [x] **T9.2 Self-containment:** `DATA_DIR` auto-detection (`./telecom/` → `../telecom/` → Colab path, with a clear error message if none found; PRD §3); seed once; no absolute paths (except documented interpreter notes outside the notebook); optional libs guarded; no web calls; **no keys/personal data**. ✔ 2026-11-15 06:34
+- [x] **T9.3 Export check:** the notebook writes `results.json`, figures and tables; every figure on a slide exists as `fig_<slide>_<topic>.png` at the exact placement size. ✔ 2026-11-15 06:34
+- [x] **T9.4 Restart-and-run-all** with `…python3.12 -m jupyter nbconvert --to notebook --execute`; runtime < ~10 min; regenerated `results.json` equals the previous one (up to float rounding). ✔ 2026-11-15 06:34
+- [x] **T9.5 Clean-up:** remove dead cells and bulky outputs; keep outputs visible. ✔ 2026-11-15 06:34
+- [x] **T9.6 Phase wrap-up** (Arabic section, commit, tag `phase-9-done`). ✔ 2026-11-15 06:34
 
 ## Phase 10 — Slides in Google Slides → PDF  (type: `slides`)
 Follow PRD §11 exactly (canvas 720 × 405 pt, grid, Montserrat + Open Sans, palette, shapes, 15-slide order). All charts/diagrams = matplotlib PNGs; tables = native Slides tables.
-- [ ] **T10.1 Capability probe** of the connected Google Slides/Drive integration (create presentation, set size, text box, table, shape, insert image, read thumbnail, export PDF). Log what works and the chosen fallback (PRD §11.1 step 4) in `docs/NOTES.md → Slides`.
+- [~] **T10.1 Capability probe** of the connected Google Slides/Drive integration (create presentation, set size, text box, table, shape, insert image, read thumbnail, export PDF). Log what works and the chosen fallback (PRD §11.1 step 4) in `docs/NOTES.md → Slides`.
+  - Probing `gslides` and `gdrive` CLIs (account auth, create/mutate deck, insert image from file/Drive, thumbnail export, PDF export) and documenting results in `docs/NOTES.md → 7. Slides`.
 - [ ] **T10.2 Create the presentation** "Islam-Raad — GCI Final Assignment"; set 16:9; set theme fonts/colors (or apply directly); create reusable layouts (title, takeaway+chart, two-column, table, KPI cards, references); store URL/ID in `PROGRESS.md`.
 - [ ] **T10.3 Produce final matplotlib figures** for slides 4–13 at exact placement sizes (PRD §10); diagrams for slides 4, 7, 10, 12 also in matplotlib; open and inspect every PNG.
 - [ ] **T10.4 Upload the PNGs** to a Drive folder, make link-viewable only while embedding; after embedding, **revert sharing to private**.

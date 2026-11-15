@@ -401,6 +401,34 @@
 
 ---
 
+### المرحلة 9: المراجعة النهائية لدفتر العمل والتحقق من الاكتفاء الذاتي (Phase 9 — Notebook Finalization)
+
+#### 1. ماذا فعلنا في هذه المرحلة؟ (What we did)
+- راجعنا هيكل دفتر العمل `Islam-Raad.ipynb` بالكامل (`72` خلية موزعة على الأقسام `0` إلى `11` مطابقة تماماً لتسلسل الشرائح `1`–`15`، `T9.1`).
+- تحققنا من **الاكتفاء الذاتي الكامل (`Self-Containment`, `T9.2`)**: الكشف التلقائي عن مسار البيانات `DATA_DIR` عبر `./telecom/` ثم `../telecom/` ثم مسار `Google Colab` (`/content/telecom/`) مع رسالة خطأ واضحة إذا لم تُوجد الملفات؛ تثبيت البذرة العشوائية (`SEED = 42`) مرة واحدة؛ انعدام أي مسارات مطلقة (`/home/...`) أو مفاتيح سرية أو اتصالات شبكية داخل الدفتر.
+- أضفنا **القسم 10 (`Export Summary & Verification`, `T9.3`)** الذي يتحقق برمجياً من وجود جميع الأشكال والرسوم التوضيحية الـ `19` بصيغة `PNG` (`200 DPI`) في `outputs/figures/`، وجدولي `experiment_log.csv` و`test_predictions.csv` في `outputs/tables/`، وجميع المفاتيح الإلزامية في `outputs/results.json`.
+- أضفنا **القسم 11 (`Conclusion, Analytical Limitations, Ethical Safeguards & 90-Day Next Steps`)** الذي يلخص التوصية والقيود الأربعة وضمانات العدالة وخارطة طريق الـ `90` يوماً.
+- نفذنا إعادة تشغيل كاملة من الصفر (`Restart-and-Run-All`, `T9.4`) عبر `jupyter nbconvert --to notebook --execute --inplace Islam-Raad.ipynb` وتأكدنا من تطابق `outputs/results.json` وبقاء جميع المخرجات والجداول والرسوم مرئية داخل الدفتر (`T9.5`).
+
+#### 2. لماذا فعلنا ذلك بهذه الطريقة؟ (Why we did it this way)
+- لأن المقيّم في `GCI` قد يفتح `Islam-Raad.ipynb` إما لقراءة المخرجات المحفوظة مباشرة أو لإعادة تشغيله من مجلد `submission/` (حيث تكون البيانات في `../telecom/`) أو على `Google Colab`؛ لذا يجب أن يعمل الدفتر في جميع هذه البيئات دون تعديل سطر واحد ودون إنشاء ملفات إضافية داخل `submission/`.
+
+#### 3. كيف يعمل الكشف التلقائي للمسارات؟ (How path auto-detection works)
+- يفحص الدفتر قائمة المسارات المرشحة `[Path('./telecom'), Path('../telecom'), Path('/content/telecom'), Path('/content/drive/MyDrive/telecom')]` ويختار أول مسار يحتوي على `Client.csv` و`Record.csv`، ثم يحدد `PROJECT_ROOT = DATA_DIR.parent` ويكتب المخرجات في `PROJECT_ROOT / 'outputs'` بحيث تظل حزمة `submission/` نظيفة تماماً (تضم الملفات الثلاثة المطلوبة فقط).
+
+#### 4. ماذا وجدنا بالأرقام الحقيقية؟ (Real results with numbers)
+- إجمالي خلايا الدفتر: **`72` خلية** (`0` مسارات مطلقة، `0` خلايا ميتة، `11` قسماً ينتهي كل منها بسطر خلاصة تنفيذية `> **So what:**`).
+- إجمالي الأشكال المصدّرة والمتحقق منها: **`19` ملف `PNG`** بدقة `200 DPI` (منها `4` مخططات مفاهيمية مرسومة بـ `matplotlib.patches`: `fig_04_data_flow.png` و`fig_07_problem_flow.png` و`fig_10_model_diagram.png` و`fig_12_two_lane.png`).
+- تطابق `outputs/results.json` قبل وبعد التشغيل الكامل `100%` في جميع المقاييس (`Test AUC = 0.7029`, `Top-10% Precision = 81.30%`, `Re-based 10% = 32.96%`, `Base Net Impact = +82,557 MU`).
+
+#### 5. ما الذي قد يسير بشكل خاطئ؟ (What could go wrong / Pitfalls)
+- **فخ المسارات النسبية عند التشغيل من داخل `submission/`:** لو كتبنا `Path('outputs/results.json')` مباشرة لأنشأ الدفتر مجلد `submission/outputs/` عند تشغيله من داخل `submission/`، مما يخلّ بشرط وجود 3 ملفات فقط في `submission/`. حللنا ذلك بربط `OUTPUT_DIR = DATA_DIR.parent / 'outputs'`.
+
+#### 6. ماذا تقول لو سُئلت في المقابلة؟ (What to say if asked)
+> *"صممنا دفتر العمل `Islam-Raad.ipynb` ليكون مكتفياً ذاتياً بالكامل وقابلاً لإعادة الإنتاج (`Reproducible`) بضغطة واحدة في أقل من بضع دقائق، سواء شُغّل من المجلد الرئيسي أو من مجلد `submission/` أو على `Google Colab`. يتحقق القسم العاشر تلقائياً من توليد جميع الرسوم الـ 19 والجداول وملف الحقيقة الموحد `results.json`، مما يضمن أن كل رقم يظهر في شرائح العرض مطابق تماماً لمخرجات الكود."*
+
+---
+
 ## قاموس المصطلحات (Glossary)
 *(سيتم استكماله بالتفصيل في المرحلة 12 — T12.1)*
 
