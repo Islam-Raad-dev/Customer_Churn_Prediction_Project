@@ -1,26 +1,16 @@
-# PROGRESS
-Updated: 2026-11-15 10:56
-Last completed task: Final Revision Step A1-A3, B9-B10, C1-C2, D2 (notebook 2% prior, break-even 4.19%, chart overlap fixes, sources & references [1]-[16])
-Current task: Google Slides in-place revision (Batches 1-2: charts, wording, tables, definitions, Slide 15 references) & Final QA (E1-E5)
-Next concrete action: Apply Batch 1 (10 regenerated matplotlib PNGs) and Batch 2 (A3-A4, B1-B8, D1 text/table edits preserving manual Slide 2/13/15 styling), inspect all 15 thumbnails, re-export PDF, run clean nbconvert, and verify check_submission.py --strict-submission.
-Key decisions so far:
-- Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
-- Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
-- Initialized local-only git repository on `main` with strict `.gitignore` and PRD §3 lean workspace.
-- Verified 1-to-1 inner merge of `Client.csv` (100,000 × 50) and `Record.csv` (100,000 × 51) on `Customer_ID` (`1000001`–`1100000`) → `(100000, 100)`.
-- Reproduced exact tutorial baseline (`0.6357` test accuracy, `0.6938` test AUC).
-- Completed Phases 1–9 (`phase-1-done` through `phase-9-done`). Clean-kernel `Islam-Raad.ipynb` execution runs in `68.83s` with 21 verified matplotlib PNGs and 100% consistent `outputs/results.json`.
-- Completed T10.1–T10.4: Verified native `gslides` capabilities, created production deck `"Islam-Raad — GCI Final Assignment"`, tuned and visually verified all 11 slide charts/diagrams (`fig_04`–`fig_13`) at exact 1:1 placement dimensions (`200 DPI`, `>= 10 pt` fonts), and verified direct local PNG upload via `gslides mutate insert-image-from-file`.
-Key numbers so far (from results.json):
-- `data.n_rows`: `100,000`, `data.n_cols`: `100`, `data.n_features_raw`: `98`, `data.churn_count`: `49,562` (`49.562%`).
-- `eda.jump_ci`: `260–300d` (`36.85%`) vs `301–340d` (`60.69%`), `+23.83 pp` (`95% CI [+22.12, +25.62] pp`), `months 11`: `64.57%`, `mou_Mean == 0`: `n=1,615` all (`79.81%` all / `n=1,120` train `78.48%`).
-- `final_model`: `M5` (`cv_auc_mean`: `0.7020 ± 0.0013`, `test_auc`: `0.7029`, `test_acc`: `0.6409`, `test_brier`: `0.2180`).
-- `topk[k=10%]`: `precision=0.8130` (`lift=1.6403`), `precision_rebased_10=0.3296` (`lift=3.2957`), `precision_rebased_5=0.1889` (`lift=3.7775`).
-- `impact.scenarios.base_2pct`: `k=10%` Net = `-39,153 MU` (`p_adj=8.28%`, `s*=39.17%`), `k*=1%` Net = `+3,590 MU` (`k=2%` Net = `+1,120 MU`), break-even prior @ `k=10%` = `4.19%`.
-- `impact.scenarios.base_10pct`: `k=10%` Net = `+82,557 MU` (`s* = 9.84%`), `k*=15%` Net = `+90,940 MU`.
-- `impact.scenarios.base_5pct`: `k=10%` Net = `+13,160 MU` (`s* = 17.17%`), `k*=4%` Net = `+23,955 MU`.
-Files produced so far:
-- `.gitignore`, `PROGRESS.md`, `Islam-Raad.ipynb`, `docs/NOTES.md`, `docs/UNDERSTANDING_AR.md`, `research/sources_log.md`, `scripts/check_submission.py`, `outputs/results.json`, `outputs/tables/experiment_log.csv`, `outputs/tables/test_predictions.csv`, `outputs/models/final_xgb_m5_pipeline.joblib`, `outputs/figures/` (21 matplotlib PNGs), `submission/references.txt`
-Google Slides: ID `1AoRnogsahX7MrPD5clmipkLutkvfTW_5UuV4rFMhJqA` | URL `https://docs.google.com/presentation/d/1AoRnogsahX7MrPD5clmipkLutkvfTW_5UuV4rFMhJqA/edit`
-Open issues / assumptions pending:
-- AI chat link placeholders (`[15]`, `[16]`) to be replaced by Islam before submission.
+# Progress Tracker
+
+- **Current Phase:** Final Revision Round (A-E) COMPLETE (`final-revision-done`)
+- **Last Completed Step:** E1-E4 — Clean notebook execution (`nbconvert`), 15-slide visual QA fixes & PDF export (`submission/Islam-Raad.pdf`), `docs/UNDERSTANDING_AR.md` sync, and strict verification (`0 problems`)
+- **Next Step:** Hand off to Islam (`submission/` contains the exact 3 deliverables; replace `[15]` & `[16]` `[AI-CHAT-LINK: ...]` placeholders before submitting)
+- **Live Google Slides URL:** https://docs.google.com/presentation/d/1AoRnogsahX7MrPD5clmipkLutkvfTW_5UuV4rFMhJqA/edit
+- **Google Slides ID:** `1AoRnogsahX7MrPD5clmipkLutkvfTW_5UuV4rFMhJqA`
+- **Python Environment:** `/home/islam-raad/ai_workspace/bin/python3.12` (verified; no new packages installed)
+- **Dataset Summary:** `100,000` rows x `100` cols (`Client.csv` + `Record.csv`); `70,000` train / `30,000` test (`seed=42`); `1,615` zero-MOU silent SIMs (`98,385` active); `97` raw + `28` eng. (`ethnic` excluded) = `125` modeled inputs
+- **Model Summary:** `M5` XGBoost Tuned: 5-fold CV ROC-AUC `0.7020 ± 0.0013` (vs `M6` LightGBM `0.7010 ± 0.0017` within noise), Test ROC-AUC `0.7029` (Acc `64.09%`, `+4.15 pp` vs `M1` LogReg `0.6614`), ECE `0.0075`
+- **Re-Based Lift & Impact (`outputs/results.json`):**
+  - Top-10% lift: `3.30x` (`32.96%` @ `10%`), `3.78x` (`18.89%` @ `5%`), `4.14x` (`8.28%` @ `2%`); Raw `81.30%`
+  - Net @ `k=10%`: `-39,153 MU` (`2%`, `s*=39.17%`) | `+13,160 MU` (`5%`, `s*=17.17%`, `k*=4% +23,955`) | `+82,557 MU` (`10%`, `s*=9.84%`, `k*=15% +90,940`)
+  - Low-churn break-even prior @ `k=10%`: **`4.19%`** (at `2%`, safe pilot `k*=1%` nets `+3,590 MU`, `k=2%` `+1,120 MU`)
+  - Lane 2 A/B Pilot: `12,997` clean non-overlapping (`96.9%`), `4,000` sample (`+4,691 MU` pilot; `+30,484 MU` scaled)
+- **Strict Verifier Result:** `check_submission.py --strict-submission` -> `Verification PASSED: 0 problems.` (`15` PDF pages, `1.19 MB`, `73` NB cells / `27` code cells, `16` synced references, `2` `[AI-CHAT-LINK]` warnings expected)
