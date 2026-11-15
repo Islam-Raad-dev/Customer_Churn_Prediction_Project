@@ -1,8 +1,8 @@
 # PROGRESS
-Updated: 2026-11-15 08:02
-Last completed task: Phase 13 (T13.1–T13.8) — ALL DONE
-Current task: ALL DONE — Final submission folder `submission/` (`Islam-Raad.pdf`, executed `Islam-Raad.ipynb`, `references.txt`) verified with 0 errors and tagged `final-submission-ready`
-Next concrete action: Islam reads the 3 items first in `docs/UNDERSTANDING_AR.md`: (1) § المرحلة 12: Quick Numbers Cheat-Sheet & 2-Minute Story, (2) § المرحلة 12: 20-Question Self-Test (before answering Q4 of AI Survey), and (3) Top Keep/Delete Guide & § المرحلة 13 Omnicampus Submission Steps (plus inserting live AI chat links into `[15]`–`[16]` of `submission/references.txt` & Slide 15).
+Updated: 2026-11-15 10:56
+Last completed task: Final Revision Step A1-A3, B9-B10, C1-C2, D2 (notebook 2% prior, break-even 4.19%, chart overlap fixes, sources & references [1]-[16])
+Current task: Google Slides in-place revision (Batches 1-2: charts, wording, tables, definitions, Slide 15 references) & Final QA (E1-E5)
+Next concrete action: Apply Batch 1 (10 regenerated matplotlib PNGs) and Batch 2 (A3-A4, B1-B8, D1 text/table edits preserving manual Slide 2/13/15 styling), inspect all 15 thumbnails, re-export PDF, run clean nbconvert, and verify check_submission.py --strict-submission.
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
@@ -16,6 +16,7 @@ Key numbers so far (from results.json):
 - `eda.jump_ci`: `260–300d` (`36.85%`) vs `301–340d` (`60.69%`), `+23.83 pp` (`95% CI [+22.12, +25.62] pp`), `months 11`: `64.57%`, `mou_Mean == 0`: `n=1,615` all (`79.81%` all / `n=1,120` train `78.48%`).
 - `final_model`: `M5` (`cv_auc_mean`: `0.7020 ± 0.0013`, `test_auc`: `0.7029`, `test_acc`: `0.6409`, `test_brier`: `0.2180`).
 - `topk[k=10%]`: `precision=0.8130` (`lift=1.6403`), `precision_rebased_10=0.3296` (`lift=3.2957`), `precision_rebased_5=0.1889` (`lift=3.7775`).
+- `impact.scenarios.base_2pct`: `k=10%` Net = `-39,153 MU` (`p_adj=8.28%`, `s*=39.17%`), `k*=1%` Net = `+3,590 MU` (`k=2%` Net = `+1,120 MU`), break-even prior @ `k=10%` = `4.19%`.
 - `impact.scenarios.base_10pct`: `k=10%` Net = `+82,557 MU` (`s* = 9.84%`), `k*=15%` Net = `+90,940 MU`.
 - `impact.scenarios.base_5pct`: `k=10%` Net = `+13,160 MU` (`s* = 17.17%`), `k*=4%` Net = `+23,955 MU`.
 Files produced so far:

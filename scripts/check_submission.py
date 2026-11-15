@@ -113,9 +113,11 @@ def check_pdf(errors: list[str], warnings: list[str], results: dict) -> list[str
         "0.7029",
         "81.3%",
         "3.3×",
+        "-39,153",
         "+82,557",
         "+13,160",
         "9.8%",
+        "4.2%",
     ]
     missing_tokens = [tok for tok in expected_tokens if tok not in full_pdf_text]
     if missing_tokens:
@@ -232,7 +234,7 @@ def check_submission_folder(
                 elif "data" in o and "text/plain" in o["data"]:
                     out_chunks.append("".join(o["data"]["text/plain"]))
         out_text = "\n".join(out_chunks)
-        for tok in ("0.7029", "82,557", "13,160", "9.84%", "64.57%"):
+        for tok in ("0.7029", "82,557", "13,160", "-39,153", "4.19%", "9.84%", "64.57%"):
             if tok not in out_text:
                 errors.append(f"submission/Islam-Raad.ipynb outputs missing key metric '{tok}' (PDF <-> NB sync check)")
         print(f"[OK] Strict notebook check passed: {len(cells)} cells, {len(code_cells)} executed code cells, outputs synced with PDF/results.json")
