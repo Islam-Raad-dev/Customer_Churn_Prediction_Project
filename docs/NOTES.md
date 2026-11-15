@@ -297,4 +297,17 @@ All `28` engineered features below are computed row-wise from pre-window custome
 ---
 
 ## 7. Slides
-*(To be populated in Phase 10 — capability probe results, Google Slides presentation ID/URL, layout notes.)*
+
+### T10.1 Capability Probe Results (`2026-11-15`)
+- **Tooling verified:** `gslides` CLI (`cl/986250228`) authenticated via Google OAuth2 (connected inside Antigravity with `presentations` and `drive` scopes). Probe deck created: `1szrYGBAw5OcdDkLU3KIQFBlib_DtrRg_qrCEIMJ4NJQ` (`T10.1 Capability Probe`; account default `locale: ar`, so all textboxes and cells explicitly specify LTR/left alignment).
+- **Capabilities tested and verified (`RC=0` on all 6 operations):**
+  1. **(a) Create presentation:** `gslides mutate create --title ...` — works natively.
+  2. **(b) Page size:** Default canvas is already `9,144,000 × 5,143,500 EMU` (`720 × 405 pt`, exact 16:9 widescreen per PRD §11.2).
+  3. **(c) Batch shapes, textboxes & live tables:** `gslides mutate batch` executes `add-textbox` (`Montserrat`, `Open Sans`, explicit sizes, colors, hex fills, line spacing, alignment), `add-shape` (`RECTANGLE`, `ROUND_RECTANGLE`, `ELLIPSE`), `style-shape` (`background_color`, `outline_color`, `outline_weight`), `add-table`, `set-table-cell`, `style-table-cell`, `add-line`, and `set-notes` in single atomic API batches.
+  4. **(d) Insert local PNG images:** `gslides mutate insert-image-from-file PRES_ID --slide SLIDE_ID --file path.png --x ... --y ... --width ... --height ...` directly uploads and embeds local 200-DPI matplotlib PNGs into Google Slides with exact placement coordinates (no separate manual Drive public link step required; `gdrive` plugin was left disconnected since `gslides` already handles `insert-image-from-file` internally and copies images into Google Slides storage).
+  5. **(e) Visual thumbnail export:** `gslides readonly export-thumbnail PRES_ID out.png --slide SLIDE_ID` renders crisp slide PNGs for visual QA. Confirmed `Montserrat` Bold titles, `Open Sans` body/tables, `#F5F7FA` cards, `#0B1F3A` table headers, and `fig_04_missing.png` render cleanly without clipping.
+  6. **(f) PDF export & live text check:** `gslides readonly export PRES_ID out.pdf --format pdf` exports a valid PDF (`118 KB` for 1 probe slide) where `pdftotext` extracts live selectable text from both textboxes and native table cells (`"M5 XGBoost"`, `"0.7029"`).
+- **Design & layout decisions from probe:**
+  - Use `RECTANGLE` with `0.75 pt` `#D9E0E7` border and `#F5F7FA` fill for tall cards (since default `ROUND_RECTANGLE` corner adjustment scales with height and looks pill-shaped on tall boxes), and reserve `ROUND_RECTANGLE` for compact badges/callouts (`height <= 42 pt`).
+  - Explicitly apply `font_family`, `alignment`, `content_alignment`, and `line_spacing` on every textbox/cell to override the account's default `ar` locale layout hints.
+  - Because every required Google Slides API capability works natively via `gslides`, **no `python-pptx` fallback is needed**. The full 15-slide deck will be built directly in Google Slides, verified slide-by-slide via thumbnails, populated with speaker notes, and exported directly to `submission/Islam-Raad.pdf`.

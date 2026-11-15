@@ -122,9 +122,9 @@ Split first (stratified 70/30, seed 42); **discover thresholds on the training p
 
 ## Phase 10 — Slides in Google Slides → PDF  (type: `slides`)
 Follow PRD §11 exactly (canvas 720 × 405 pt, grid, Montserrat + Open Sans, palette, shapes, 15-slide order). All charts/diagrams = matplotlib PNGs; tables = native Slides tables.
-- [~] **T10.1 Capability probe** of the connected Google Slides/Drive integration (create presentation, set size, text box, table, shape, insert image, read thumbnail, export PDF). Log what works and the chosen fallback (PRD §11.1 step 4) in `docs/NOTES.md → Slides`.
-  - Probing `gslides` and `gdrive` CLIs (account auth, create/mutate deck, insert image from file/Drive, thumbnail export, PDF export) and documenting results in `docs/NOTES.md → 7. Slides`.
-- [ ] **T10.2 Create the presentation** "Islam-Raad — GCI Final Assignment"; set 16:9; set theme fonts/colors (or apply directly); create reusable layouts (title, takeaway+chart, two-column, table, KPI cards, references); store URL/ID in `PROGRESS.md`.
+- [x] **T10.1 Capability probe** of the connected Google Slides/Drive integration (create presentation, set size, text box, table, shape, insert image, read thumbnail, export PDF). Log what works and the chosen fallback (PRD §11.1 step 4) in `docs/NOTES.md → Slides`. ✔ 2026-11-15 07:10
+- [~] **T10.2 Create the presentation** "Islam-Raad — GCI Final Assignment"; set 16:9; set theme fonts/colors (or apply directly); create reusable layouts (title, takeaway+chart, two-column, table, KPI cards, references); store URL/ID in `PROGRESS.md`.
+  - Creating the production presentation "Islam-Raad — GCI Final Assignment", verifying 16:9 canvas, defining reusable Python slide-builder helpers matching PRD §11.2–11.4, and logging presentation URL/ID.
 - [ ] **T10.3 Produce final matplotlib figures** for slides 4–13 at exact placement sizes (PRD §10); diagrams for slides 4, 7, 10, 12 also in matplotlib; open and inspect every PNG.
 - [ ] **T10.4 Upload the PNGs** to a Drive folder, make link-viewable only while embedding; after embedding, **revert sharing to private**.
 - [ ] **T10.5 Build slides 1–4** (title, executive summary, market context, the data).  *Commit after the group.*
