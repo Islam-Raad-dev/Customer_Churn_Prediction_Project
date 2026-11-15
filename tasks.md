@@ -134,14 +134,14 @@ Follow PRD §11 exactly (canvas 720 × 405 pt, grid, Montserrat + Open Sans, pal
 - [x] **T10.9 Footnotes:** every external fact has `[n]`; every `[n]` exists on slide 15 and in `references.txt`. ✔ 2026-11-15 07:38
 - [x] **T10.10 Story test:** read only the 15 titles; rewrite until each leads to the next (problem → evidence → model → decision → impact → risks). ✔ 2026-11-15 07:38
 - [x] **T10.11 Visual QA of every slide** via thumbnails: overflow, overlaps, clipped labels, fonts (body ≥ 14 pt, chart text ≥ 10 pt), contrast, alignment to the grid, consistent colors; fix all issues. ✔ 2026-11-15 07:38
-- [~] **T10.12 Speaker notes** (60–90 s) in each slide's native notes pane; copy to `docs/UNDERSTANDING_AR.md`.
-  - Writing 60–90 s English speaker notes into Google Slides native notes panes (`set-notes`) for all 15 slides and documenting them in `docs/UNDERSTANDING_AR.md`.
-- [ ] **T10.13 Export PDF** → `submission/Islam-Raad.pdf` (Drive export or Islam: File → Download → PDF); confirm ≤ 15 pages, ≤ 10 MB.
-- [ ] **T10.14 Run `scripts/check_submission.py`** (page count, size, `pdftotext` finds model name/metric/result on slide 9, numbers vs `results.json`, `[n]` tags vs references): **0 problems**.
-- [ ] **T10.15 Phase wrap-up** (Arabic section, commit, tag `phase-10-done`).
+- [x] **T10.12 Speaker notes** (60–90 s) in each slide's native notes pane; copy to `docs/UNDERSTANDING_AR.md`. ✔ 2026-11-15 07:43
+- [x] **T10.13 Export PDF** → `submission/Islam-Raad.pdf` (Drive export or Islam: File → Download → PDF); confirm ≤ 15 pages, ≤ 10 MB. ✔ 2026-11-15 07:43
+- [x] **T10.14 Run `scripts/check_submission.py`** (page count, size, `pdftotext` finds model name/metric/result on slide 9, numbers vs `results.json`, `[n]` tags vs references): **0 problems**. ✔ 2026-11-15 07:43
+- [x] **T10.15 Phase wrap-up** (Arabic section, commit, tag `phase-10-done`). ✔ 2026-11-15 07:43
 
 ## Phase 11 — References and AI disclosure  (type: `docs`)
-- [ ] **T11.1 Finalize `references.txt`:** numbered, one per line; market/academic sources, libraries (scikit-learn, XGBoost, pandas, matplotlib), dataset line, **AI-chat-link placeholders**; re-open every URL; fix dead links.
+- [~] **T11.1 Finalize `references.txt`:** numbered, one per line; market/academic sources, libraries (scikit-learn, XGBoost, pandas, matplotlib), dataset line, **AI-chat-link placeholders**; re-open every URL; fix dead links.
+  - Re-verifying all live HTTP URLs across `[1]`–`[16]` in `submission/references.txt` and confirming exact formatting.
 - [ ] **T11.2 Cross-check** slide 15 ⇔ `references.txt` ⇔ `research/sources_log.md` ⇔ `[n]` tags (via `check_submission.py`).
 - [ ] **T11.3 Draft the AI-survey answers** in `docs/UNDERSTANDING_AR.md` (PRD §13) with the reminder: Q4 honest; no transcripts/personal data.
 - [ ] **T11.4 Phase wrap-up** (commit, tag `phase-11-done`).

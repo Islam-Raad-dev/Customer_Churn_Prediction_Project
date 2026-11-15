@@ -429,6 +429,35 @@
 
 ---
 
+### المرحلة 10: بناء العرض التقديمي في Google Slides وتصدير ملف PDF (Phase 10 — Slides & PDF Export)
+
+#### 1. ماذا فعلنا في هذه المرحلة؟ (What we did)
+- أجرينا فحص القدرات (`Capability Probe`, `T10.1`) على تكامل `gslides` المرتبط بحساب Google وتأكدنا من نجاح إنشاء العرض، وضبط حجم `16:9` الدقيق (`720 × 405 pt`)، وإضافة النصوص والأشكال والجداول الحية والملاحظات، ورفع الصور محلياً وتصدير الصور المصغرة وملف `PDF` بنص حي قابل للتحديد.
+- أنشأنا العرض الرسمي **`Islam-Raad — GCI Final Assignment`** (`ID: 1AoRnogsahX7MrPD5clmipkLutkvfTW_5UuV4rFMhJqA`) وضبطنا أشكال `matplotlib` الـ `11` على المقاسات الدقيقة المطلوبة (`200 DPI`, خطوط `>= 10 pt`)، ودمجناها مباشرة (`T10.2`–`T10.4`).
+- بنينا الشرائح الـ `15` على مجموعات (`1–4`, `5–8`, `9–12`, `13–15`, `T10.5`–`T10.8`) وراجعنا الصورة المصغرة (`Thumbnail`) لكل شريحة بصرياً لإصلاح أي التفاف سطري أو تداخل مع الحواف أو الجداول.
+- دققنا جميع الإحالات المرجعية `[1]`–`[16]` (`T10.9`)، واختبرنا تسلسل عناوين الشرائح الـ `15` (`Story Test`, `T10.10`)، وأضفنا ملاحظات المتحدث (`60–90` ثانية لكل شريحة، `T10.12`)، ثم صدّرنا العرض إلى `submission/Islam-Raad.pdf` (`T10.13`) وفحصناه ببرنامج `scripts/check_submission.py` (`T10.14`).
+
+#### 2. لماذا فعلنا ذلك بهذه الطريقة؟ (Why we did it this way)
+- **لماذا جداول Google Slides الحية (`Native Tables`) على الشريحة 9 والشرائح الجدولية بدل صور الجداول؟** لأن شروط التقييم (`PRD §11.8`) تنص على أن نموذج التجارب ونتيجته (`M5 XGBoost Tuned · ROC-AUC · 0.7029`) يجب أن يكون نصاً حياً (`Live Selectable Text`) تلتقطه أدوات قراءة `PDF` (`pdftotext`) وليس مرسوماً داخل صورة.
+- **لماذا راجعنا كل `Thumbnail` مباشرة؟** لاحظنا في البناء الأولي التفاف أسطر داخل البطاقات وتوسعاً تلقائياً في جداول الشرائح `8` و`9` و`11` و`13` وتدفق المراجع في الشريحة `15`، فعدّلنا الارتفاعات وعروض الأعمدة حتى صارت كل شريحة بحدود نظيفة دون أي تداخل.
+
+#### 3. كيف يرتبط العرض بدفتر العمل وملف الحقيقة الموحد؟ (End-to-end traceability)
+- كل رقم مذكور في الشرائح الـ `15` مأخوذ حرفياً من `outputs/results.json` و`research/sources_log.md`، والشريحة `15` تطابق سطراً بسطر ملف `submission/references.txt`، وتم التحقق من ذلك برمجياً عبر `scripts/check_submission.py`.
+
+#### 4. ماذا وجدنا بالأرقام الحقيقية؟ (Real results with numbers)
+- عدد صفحات ملف التسليم `submission/Islam-Raad.pdf`: **`15` صفحة** تماماً.
+- الأبعاد: **`720 × 405 pts`** (`16:9` مطابقة للمواصفات).
+- حجم الملف: **`1.20 MB`** (`1,258,340` بايت، أقل بكثير من الحد الأقصى `10 MB`).
+- نتيجة `scripts/check_submission.py`: **`0` أخطاء (`Verification PASSED: 0 problems`)**، مع وجود المكونات المطلوبة في `pdftotext` وتطابق `[1]`–`[16]` بالكامل.
+
+#### 5. ما الذي قد يسير بشكل خاطئ؟ (What could go wrong / Pitfalls)
+- **فخ تباعد الأسطر `line_spacing` وروابط الحرف المركبة (`Ligatures`):** في `gslides batch` يجب تمرير `line_spacing` كنسبة مئوية (`108` أو `115`) وليس `1.15`، وإلا تنطبق الأسطر فوق بعضها. وعند فحص `pdftotext` لملف `PDF` المُصدّر من Google، تحوّل الأحرف المركبة مثل `fi`/`ffi` إلى رموز Unicode أحادية؛ لذا أضفنا التطبيع `unicodedata.normalize("NFKC", ...)` في `scripts/check_submission.py`.
+
+#### 6. ماذا تقول لو سُئلت في المقابلة؟ (What to say if asked)
+> *"بنينا العرض التقديمي في Google Slides بدقة 16:9 (`720 × 405 pt`) وبـ 15 شريحة تتبع تسلسل اتخاذ القرار: المشكلة والسياق السوقي ← الأدلة الاستكشافية ← هندسة الميزات والتجارب ← قوة التركيز في أعلى 10% ← الأثر المالي المعاد معايرته والحوكمة. كل المخططات والأشكال من Matplotlib بجودة 200 DPI، وكل الجداول المرجعية والنتائج نص حي قابل للبحث في ملف PDF بحجم 1.20 MB مع 0 أخطاء في الفحص الآلي."*
+
+---
+
 ## قاموس المصطلحات (Glossary)
 *(سيتم استكماله بالتفصيل في المرحلة 12 — T12.1)*
 
@@ -445,7 +474,52 @@
 ---
 
 ## ملاحظات المتحدث لكل شريحة (Speaker Notes)
-*(سيتم استكمالها في المرحلة 10 — T10.12)*
+*(ملاحظات إلقاء جاهزة بطول 60–90 ثانية لكل شريحة، مخزّنة أيضاً داخل لوحة Speaker Notes في Google Slides)*
+
+- **Slide 1 (الغلاف — ~112 كلمة):** *(عرّف بنفسك وبهدف المشروع: تحويل التنبؤ بالمغادرة إلى خطة احتفاظ مربحة)*
+  > "Good morning. I am Islam Raad, an AI engineering student at the University of Mosul. This presentation proposes a data-driven customer retention program for Company A, built as a course proof-of-concept on 100,000 subscriber records across 98 features from the GCI telecom dataset. Rather than treating churn prediction as an abstract classification exercise, our goal is to turn risk rankings into profitable retention actions. Over the next fifteen slides, I will walk you through the business case, two behavioral cliff discoveries in the data, how our tuned XGBoost model ranks at-risk accounts without demographic bias, and how a two-lane retention pilot can be deployed and verified with a clean 90-day randomized holdout."
+
+- **Slide 2 (الملخص التنفيذي — ~128 كلمة):** *(الأرقام الثلاثة الكبرى: الذروة 64.6%، الرفع 3.3x، والأثر الصافي +13.2k إلى +82.6k MU)*
+  > "Here is the executive takeaway in three numbers. First, untargeted mass retention wastes budget: in our balanced sample, churn climbs sharply after 300 days of handset age and spikes to 64.6% around service month 11. Second, ranking active accounts with our tuned XGBoost model M5 yields an AUC of 0.703 and delivers 3.3x churn concentration in the riskiest 10% when calibrated to a 10% market churn rate. Third, under stated course-project assumptions—58.7 MU average ARPU, 70% margin, 6-month horizon, 20% save rate, and 8 MU offer cost—targeting the top 10% generates an estimated +13.2k to +82.6k MU net margin per cycle, breaking even above a 9.8% save rate. Next step: deploy M5 scoring with a 20% holdout, skip 1,615 zero-usage silent SIMs, and run a 4,000-account A/B pilot."
+
+- **Slide 3 (سياق السوق — ~113 كلمة):** *(تشبع السوق العراقي 103% وتفسير تعدد الشرائح مع التمييز الصريح عن بيانات Company A)*
+  > "Why does precision retention matter commercially? In Iraq's 2025 mobile market, cellular connections sit at 48.1 million for 46.5 million people—103% penetration. Zain Iraq with 19.7 million subscribers and Asiacell with 19.13 million hold over 80% of a saturated market overseen by the CMC. When most people carry multiple SIMs, subscribers rarely disconnect overnight; they quietly shift traffic to a rival SIM first. Because acquisition costs far exceed retention incentives, telecom benchmarks show roughly 1.8% monthly or 5% to 10% multi-month churn, and profit-led top-k% targeting beats blanket discounts. Important scope note: Company A is an anonymous GCI benchmark dataset, not an Iraqi operator—we use this market lens solely to interpret multi-SIM silence."
+
+- **Slide 4 (البيانات — ~117 كلمة):** *(دمج 100,000 صف × 100 عمود، تقسيم 70/30، وفحص التوازن الاصطناعي 49.56% والغياب المعلوم)*
+  > "Let us inspect the raw data architecture. We perform an exact 1-to-1 inner merge of Client.csv and Record.csv on Customer_ID, yielding 100,000 customer rows and 100 columns—98 raw features plus ID and the churn label with zero duplicates. We freeze a stratified 70/30 train-test split before any exploration. Three audit findings shape everything downstream. First, 49.56% of sample rows are churners—an artificially balanced training split that we must mathematically re-base to realistic 5–10% priors before estimating profit. Second, 43 columns have missing values, and missingness in usage-change metrics carries a 76.1% churn rate—a real behavioral signal, not random noise. Third, 133 negative eqpdays values are clipped to zero, and offer cost, margin, and disconnect reasons are absent."
+
+- **Slide 5 (EDA #1 قفزة عمر الجهاز — ~122 كلمة):** *(قفزة +23.8 pp عند 300 يوم وثباتها في 19/19 منطقة و8/8 شرائح ائتمانية)*
+  > "Our first major EDA finding on the 70,000-row training split is a structural step-change around 300 days of device age. Subscribers with handsets aged 261 to 300 days exhibit a 36.9% sample churn rate; immediately past 300 days, in the 301-to-340-day window, churn leaps to 60.7%—a +23.8 percentage point jump with a 95% bootstrap confidence interval of +22.1 to +25.6 pp—peaking at 64.3%. Crucially, this is not an artifact of one region or credit tier: the post-300-day jump stays positive across all 19 geographic areas, all 8 credit tiers, and adds +19.5 pp even inside tenure months 10 and above. Our working hypothesis H1 is upgrade-eligibility or warranty expiry coinciding with year-one contracts, which we will test causally in a randomized pilot."
+
+- **Slide 6 (EDA #2 جرف الشهر 10–12 والشرائح الصامتة — ~116 كلمة):** *(تضاعف المغادرة من 29.2% إلى 64.6% واستبعاد 0 MOU)*
+  > "Slide 6 adds two complementary behavioral signals. In Panel A, churn drops to 29.2% at service month 9, then more than doubles to 64.6% at month 11—our first-year contract cliff hypothesis H2. Panel B's heatmap reveals how device age and tenure compound: the 10-to-12-month tenure row with 301-to-360-day handsets hits 64% churn, compared to just 30% for long-tenured customers with newer phones. Panel C uncovers our third hypothesis, H3—silent or already-lost SIMs. The 1,120 training subscribers recording zero monthly minutes churn at 78.5% (1,615 across the full dataset at 79.8%) while contributing just 0.62% of total revenue. Sending paid retention offers to dead SIMs destroys ROI; instead, we intercept falling usage early and exclude zero-MOU lines."
+
+- **Slide 7 (صياغة المشكلة — ~117 كلمة):** *(الترتيب حسب القيمة المعرضة للخطر في المسار 1 وتجربة المسار 2)*
+  > "This diagnostic evidence leads directly to our operational problem definition. Rather than predicting binary churn/non-churn for every subscriber, we ask: which active subscribers are most likely to churn in the 31-to-60-day window following a 30-day lead snapshot, and how do we rank them by expected retained margin? We pair two operational lanes owned by the Head of CVM & Retention. In Lane 1, M5 scores active lines monthly and feeds Top-10% candidates weighted by adjusted churn probability times margin while excluding 1,615 silent zero-MOU SIMs. In parallel, Lane 2 applies rule triggers just ahead of the month-9 and 300-day cliffs inside a randomized A/B pilot, tracked on two core KPIs: Incremental Retention Rate and Net Retained Margin."
+
+- **Slide 8 (الميزات والتحضير — ~113 كلمة):** *(28 ميزة سلوكية، استبعاد ethnic لتصبح 125 ميزة، وتمرير NaN الأصلي في XGBoost)*
+  > "To capture the behavioral velocity behind these patterns without leaking future outcomes, we engineer 28 features strictly inside the training pipeline. XGBoost routes missing values natively to optimal left or right branches, preserving the informative missingness in usage-change columns without artificial median imputation. To prevent demographic targeting, we exclude the ethnic field, leaving 125 features. A single-feature leakage scan confirmed a maximum train AUC of 0.582—no single variable gives away the label. The top engineered features formalize what EDA revealed: mou_ratio_3m divides current minutes by the 3-month average to catch silent decline early; dev_age_gt_300 and tenure indicators encode the cliffs; overage_share separates bill shock from stable recurring plans; and n_missing_demo tracks sparse records."
+
+- **Slide 9 (تجارب النمذجة — ~120 كلمة):** *(تفوق M5 XGBoost Tuned بـ CV 0.7020 وTest 0.7029 وتفوقه على النماذج الخطية)*
+  > "Here are our controlled modeling experiments across 5-fold stratified cross-validation on 70,000 training rows and a single final evaluation on the untouched 30,000 test set. A majority baseline scores 0.500 ROC-AUC. Adding our 28 features to regularized Logistic Regression (M1) reaches 0.6614 test AUC (+4.2 pp over M2 shallow decision tree at 0.6401), confirming that linear additive rules miss interaction effects. Raw XGBoost (M3) jumps to 0.6936. Adding the 28 engineered behavioral features (M4) boosts CV AUC to 0.7002. Regularizing and tuning learning rate and depth yields M5 (XGBoost Tuned): 0.7020 ± 0.0013 CV AUC and 0.7029 test AUC (64.1% accuracy), beating a sibling LightGBM check M6 (0.7021). Because threshold accuracy sits near 64%, top-k% ranking—not p=0.5—is the operational win."
+
+- **Slide 10 (تفسير النموذج والرافعات — ~123 كلمة):** *(تجميع 400 شجرة وأهم 3 متغيرات في Permutation ΔAUC مرتبطة بعروض عملية)*
+  > "Slide 10 explains how M5 works and what it actually learned. Architecturally, M5 averages log-odds across 400 shallow regularized trees, starting from structural risk rules in early trees and refining subtle overage and billing interactions in later trees. When we measure held-out permutation importance—how much test ROC-AUC drops when a feature is randomly shuffled—three operational levers dominate: first, recent voice decline mou_ratio_3m (-0.0299 AUC, 7.6% gain); second, service tenure in months (-0.0211, 6.7% gain); and third, equipment age eqpdays (-0.0157, 8.3% gain), followed by 3-month revenue drop, average call volume, base plan charge, handset price tier, and credit class. Each driver maps directly to a CVM offer: bonus minutes on usage drop, month-9 loyalty touchpoint, handset voucher pre-300d, and tariff right-sizing for overage."
+
+- **Slide 11 (قوة الاستهداف والرفع — ~118 كلمة):** *(لماذا Top-10% يتفوق بوضوح على عتبة 0.5: دقة 81.3% خام ورفع 3.30x بعد إعادة المعايرة)*
+  > "Why does an ROC-AUC of 0.703 create strong business value? Because AUC measures pairwise ranking—the probability that a true churner outranks a stayer—so focusing outreach on the top decile dramatically concentrates risk. On the balanced test set, a naive 0.5 probability threshold produces 9,457 true positives, 5,362 wasted false-positive offers, and 5,412 missed churners. By targeting only the top 10% risk tier instead, raw precision reaches 81.3% versus just 17.7% in the bottom 10%—a 4.6x spread—and M5 probabilities show near-perfect calibration with ECE of 0.0075. Applying Saerens prior adjustment re-bases top-10% precision to 33.0% (3.30x lift) under a 10% market churn prior, and 18.9% (3.78x lift) under a 5% prior, turning moderate global AUC into sharp decile concentration."
+
+- **Slide 12 (التوصية التنفيذية ذات المسارين — ~122 كلمة):** *(98,385 نشط، المسار الأول Top-10%، والمسار الثاني 4,000 عميل في A/B لمدة 90 يوماً)*
+  > "Translating analytics into operations, we recommend a disciplined two-lane program managed by the Head of CVM & Retention. Every month, we score the 98,385 active subscriber pool and explicitly drop the 1,615 silent zero-MOU SIMs so we never subsidize already-departed accounts. Lane 1 deploys M5 value-at-risk ranking to the riskiest 10%—with 15% optimal depth at a 10% churn prior—delivering tariff fixes, ASL alerts, or bonus minutes on 3-month voice drops at an assumed 8 MU cost, while maintaining a 20% untreated holdout to measure live ROI. Lane 2 isolates 12,967 pre-cliff accounts (96.9% non-overlapping with Lane 1) in eqpdays 240–300 or months 8–9, launching a 90-day 50/50 randomized A/B pilot of 4,000 accounts with a >= +2 pp retention lift scale gate."
+
+- **Slide 13 (الأثر المالي والحساسية — ~136 كلمة):** *(معادلة صافي الربح، تجنب تضخم 3.9x، ونطاق +13.2k إلى +82.6k MU ونقطة التعادل 9.84%)*
+  > "Slide 13 sizes the financial return using transparent monetary units: Net margin equals n targeted accounts times re-based precision times offer save rate times 6-month customer margin value V (246.6 MU), minus n times offer cost c. Look at why re-basing is essential: naive unadjusted 49.6% sample arithmetic falsely inflates base net profit 3.9x to +321,004 MU. Properly re-based at 10% market churn, our Base Case nets +82,557 MU at k=10%—and rises to +90,940 MU at k*=15%—breaking even at just a 9.84% save rate. Under a stricter 5% churn prior, k=10% nets +13,160 MU (and +23,955 MU at k*=4%); under a Conservative Case, +2,929 MU (+15,349 MU at k*=4%). Panel B's tornado confirms sensitivity is driven most by offer save rate s and customer value V, and separately, scaling the Lane 2 pilot adds +30.4k MU."
+
+- **Slide 14 (المخاطر، العدالة وخطة 90 يوماً — ~130 كلمة):** *(القيود الأربعة، استبعاد العرق والبدائل، وخطة التنفيذ الأسبوعية)*
+  > "Every responsible PoC states its limitations and safeguards upfront. First, balanced 49.6% sample churn inflates ROI 3.9x, so we enforce Saerens label-shift re-basing across 5–10% priors. Second, the 300-day and month-11 cliffs are observational correlations likely reflecting contract expiry rather than pure device causality, so Lane 2 is explicitly framed as a causal hypothesis tested via a 50/50 holdout A/B pilot. Third, Company A lacks offer cost, margin, and save-rate logs, so we report break-even save rate s*=9.8% alongside full scenario bands. Fourth, on fairness, dropping the ethnic feature alters test AUC by just -0.0001 to 0.7029 and removing all 9 demographic proxies retains 0.7020—confirming we target behavior, not identity. Weeks 1–2 deploy M5 monitoring, weeks 3–12 run the pilot, and Day 90 gates rollout on >= +2 pp lift."
+
+- **Slide 15 (المراجع — ~113 كلمة):** *(خلاصة التوثيق الكامل للمصادر [1]–[16] وتنويه بروابط المحادثات قبل الرفع)*
+  > "Finally, Slide 15 provides full traceability, matching submission/references.txt line for line. References [1] through [6] ground our Iraq market context in DataReportal 2024 and 2025, the Communications and Media Commission, Zain Group, Asiacell annual disclosures, and GSMA Intelligence. References [7] through [12] anchor our methodology in telecom churn benchmarks from Neslin et al., profit-driven retention by Verbeke et al., Ascarza's retention futility framework, Saerens prior adjustment, Grinsztajn et al. on tabular trees, and Chen and Guestrin's XGBoost. Reference [13] documents our Python scientific stack, [14] cites the University of Tokyo GCI Company A dataset, and [15] and [16] preserve placeholders for our generative AI planning and execution logs. Thank you—I welcome your questions."
 
 ---
 
