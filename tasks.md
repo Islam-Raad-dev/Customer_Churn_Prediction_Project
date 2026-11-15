@@ -127,9 +127,9 @@ Follow PRD §11 exactly (canvas 720 × 405 pt, grid, Montserrat + Open Sans, pal
 - [x] **T10.3 Produce final matplotlib figures** for slides 4–13 at exact placement sizes (PRD §10); diagrams for slides 4, 7, 10, 12 also in matplotlib; open and inspect every PNG. ✔ 2026-11-15 07:15
 - [x] **T10.4 Upload the PNGs** to a Drive folder, make link-viewable only while embedding; after embedding, **revert sharing to private**. ✔ 2026-11-15 07:15
   - Executed via `gslides mutate insert-image-from-file` (uploads/embeds locally into Google Slides internal storage directly without creating publicly shared Drive folders).
-- [~] **T10.5 Build slides 1–4** (title, executive summary, market context, the data).  *Commit after the group.*
-  - Building Slides 1–4 cleanly using PRD §11.2–11.5 grid, typography, cards, and embedded figures `fig_04_data_flow.png` & `fig_04_missing.png`.
-- [ ] **T10.6 Build slides 5–8** (EDA #1, EDA #2, problem definition, features).
+- [x] **T10.5 Build slides 1–4** (title, executive summary, market context, the data).  *Commit after the group.* ✔ 2026-11-15 07:23
+- [~] **T10.6 Build slides 5–8** (EDA #1, EDA #2, problem definition, features).
+  - Building Slides 5–8 cleanly with embedded figures `fig_05_device_age.png`, `fig_06_tenure_usage.png`, `fig_07_problem_flow.png`, and native Slides feature table.
 - [ ] **T10.7 Build slides 9–12** (experiments — **live-text table** with model · metric · value; how it works + learned; targeting power; recommendation).
 - [ ] **T10.8 Build slides 13–15** (estimated impact; risks/ethics/next steps; references identical to `references.txt`).
 - [ ] **T10.9 Footnotes:** every external fact has `[n]`; every `[n]` exists on slide 15 and in `references.txt`.

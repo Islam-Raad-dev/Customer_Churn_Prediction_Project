@@ -1,8 +1,8 @@
 # PROGRESS
-Updated: 2026-11-15 07:16
-Last completed task: T10.2–T10.4 — Production Google Slides deck created + exact-size matplotlib figures verified
-Current task: T10.5 — Build slides 1–4   | status: [~] in progress
-Next concrete action: Build Slides 1–4 (`Title`, `Executive summary`, `Market context`, `The data` with `fig_04_data_flow.png` and `fig_04_missing.png`), inspect all 4 thumbnails via `read_file`, then commit the group (`T10.5`).
+Updated: 2026-11-15 07:23
+Last completed task: T10.5 — Built and visually verified Slides 1–4 in Google Slides
+Current task: T10.6 — Build slides 5–8   | status: [~] in progress
+Next concrete action: Build Slides 5–8 (`EDA #1`, `EDA #2`, `Problem definition`, `Features`) in Google Slides, inspect all 4 thumbnails via `read_file`, fix any tight card/table rows, then commit the group (`T10.6`).
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
