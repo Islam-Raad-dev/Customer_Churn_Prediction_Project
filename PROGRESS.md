@@ -1,8 +1,8 @@
 # PROGRESS
-Updated: 2026-11-15 07:43
-Last completed task: Phase 10 (T10.12–T10.15) — Added 15 speaker notes, exported `submission/Islam-Raad.pdf` (`15` pp, `1.20 MB`), verified `0` problems via `check_submission.py`, and tagged `phase-10-done`
-Current task: T11.1 — Finalize `references.txt` & re-verify all URLs   | status: [~] in progress
-Next concrete action: Re-open and verify HTTP status codes of every URL in `submission/references.txt`, cross-check Slide 15 ⇔ `references.txt` ⇔ `sources_log.md`, and draft honest AI-survey Q1–Q4 answers in `docs/UNDERSTANDING_AR.md`.
+Updated: 2026-11-15 07:47
+Last completed task: Phase 11 (T11.1–T11.4) — Re-verified all 16 reference URLs, cross-checked citations across Slide 15/references.txt/sources_log.md, drafted Q1–Q4 AI-survey answers, and tagged `phase-11-done`
+Current task: Phase 12 (T12.1–T12.5) — Complete Arabic Human-Understanding Pack   | status: [~] in progress
+Next concrete action: Populate the complete Glossary, Numbers Cheat-Sheet, >=30 Interview Q&A + 2-Minute Story, 20-Question Self-Test + Answer Key, and Re-Run Guide inside `docs/UNDERSTANDING_AR.md`.
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.

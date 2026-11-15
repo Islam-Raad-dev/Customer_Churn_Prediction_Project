@@ -140,14 +140,14 @@ Follow PRD §11 exactly (canvas 720 × 405 pt, grid, Montserrat + Open Sans, pal
 - [x] **T10.15 Phase wrap-up** (Arabic section, commit, tag `phase-10-done`). ✔ 2026-11-15 07:43
 
 ## Phase 11 — References and AI disclosure  (type: `docs`)
-- [~] **T11.1 Finalize `references.txt`:** numbered, one per line; market/academic sources, libraries (scikit-learn, XGBoost, pandas, matplotlib), dataset line, **AI-chat-link placeholders**; re-open every URL; fix dead links.
-  - Re-verifying all live HTTP URLs across `[1]`–`[16]` in `submission/references.txt` and confirming exact formatting.
-- [ ] **T11.2 Cross-check** slide 15 ⇔ `references.txt` ⇔ `research/sources_log.md` ⇔ `[n]` tags (via `check_submission.py`).
-- [ ] **T11.3 Draft the AI-survey answers** in `docs/UNDERSTANDING_AR.md` (PRD §13) with the reminder: Q4 honest; no transcripts/personal data.
-- [ ] **T11.4 Phase wrap-up** (commit, tag `phase-11-done`).
+- [x] **T11.1 Finalize `references.txt`:** numbered, one per line; market/academic sources, libraries (scikit-learn, XGBoost, pandas, matplotlib), dataset line, **AI-chat-link placeholders**; re-open every URL; fix dead links. ✔ 2026-11-15 07:47
+- [x] **T11.2 Cross-check** slide 15 ⇔ `references.txt` ⇔ `research/sources_log.md` ⇔ `[n]` tags (via `check_submission.py`). ✔ 2026-11-15 07:47
+- [x] **T11.3 Draft the AI-survey answers** in `docs/UNDERSTANDING_AR.md` (PRD §13) with the reminder: Q4 honest; no transcripts/personal data. ✔ 2026-11-15 07:47
+- [x] **T11.4 Phase wrap-up** (commit, tag `phase-11-done`). ✔ 2026-11-15 07:47
 
 ## Phase 12 — Human-Understanding Pack  (type: `docs`)
-- [ ] **T12.1 Glossary** (PRD §14 list) in Arabic with English terms.
+- [~] **T12.1 Glossary** (PRD §14 list) in Arabic with English terms.
+  - Populating the full Arabic Human-Understanding Pack in `docs/UNDERSTANDING_AR.md`: Glossary, Numbers Cheat-Sheet, >=30 Interview Q&A + 2-Minute Story, 20-Question Self-Test + Answer Key, and Re-Run Guide (`T12.1`–`T12.5`).
 - [ ] **T12.2 Numbers cheat-sheet:** every slide number → value · notebook section · meaning · sensitivity.
 - [ ] **T12.3 Interview Q&A:** ≥ 30 questions (technical, business, ethics, limitations, "why not a better model?", "why this threshold?", "why re-basing?", "how did you use AI?") + 2-minute story.
 - [ ] **T12.4 Self-test:** 20 questions with answers at the end (take it before survey Q4).

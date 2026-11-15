@@ -458,6 +458,34 @@
 
 ---
 
+### المرحلة 11: المراجع والإفصاح عن استخدام الذكاء الاصطناعي (Phase 11 — References & AI Disclosure)
+
+#### 1. ماذا فعلنا في هذه المرحلة؟ (What we did)
+- راجعنا ملف `submission/references.txt` سطراً بسطر (`[1]` إلى `[16]`): المراجع السوقية العراقية والإقليمية (`[1]`–`[6]`)، والأوراق العلمية للنمذجة وتأثير الاستبقاء وإعادة المعايرة (`[7]`–`[12]`)، وتوثيق مكتبات بايثون (`[13]`)، وبيان بيانات `Company A` من جامعة طوكيو دون إعادة توزيع (`[14]`)، وموضعي روابط محادثات الذكاء الاصطناعي (`[15]`–`[16]`).
+- أعدنا فحص كل رابط `URL` عبر `HTTP`: أعادت روابط `DataReportal`, `CMC`, `Zain`, `Asiacell`, `OpenAlex`, `arXiv`, `PubMed`, `scikit-learn`, `XGBoost`, `pandas`, و`Matplotlib` استجابات `200`/`203` حية، وتأكدنا من وجود بوابة `GSMA Mobile Economy MENA` الحية (`[6]`).
+- طابقنا برمجياً الشريحة `15` ⇔ `submission/references.txt` ⇔ `research/sources_log.md` ⇔ علامات `[n]` عبر الشرائح `1`–`14` عبر `scripts/check_submission.py` (`T11.2`).
+- أعددنا مسودة إجابات استبيان الذكاء الاصطناعي (`Q1`–`Q4`) في أسفل هذا الملف (`T11.3`).
+
+#### 2. لماذا فعلنا ذلك بهذه الطريقة؟ (Why we did it this way)
+- يشترط دليل `GCI` الشفافية الكاملة حول استخدام أدوات الذكاء الاصطناعي التوليدي (لا يُمنع استخدامها، بل يجب توثيقه بصدق)، ويشترط عدم وجود أي مرجع مختلق أو رابط معطل. التطابق التلقائي يحمي من بقاء علامة `[n]` يتيمة في الشرائح دون مرجع مقابل.
+
+#### 3. كيف يتم توثيق استبيان الذكاء الاصطناعي بأمان؟ (Safe disclosure rules)
+- ذكر الأدوات الفعلية والأدوار الحقيقية التي استُخدمت فيها.
+- التزام حد الأحرف (`1–500` حرف لكل حقل و`<= 2000` حرف إجمالاً)، وعدم لصق نصوص المحادثات الكاملة (`Transcripts`) أو أي بيانات شخصية أو مفاتيح (`API keys`) أو ملفات `CSV`.
+- الإجابة عن السؤال الرابع (`Q4`: نسبة ما تستطيع شرحه بكلماتك الخاصة) **بصدق تام** بناءً على نتيجتك في الاختبار الذاتي المكون من 20 سؤالاً.
+
+#### 4. ماذا وجدنا بالأرقام الحقيقية؟ (Real results with numbers)
+- إجمالي المراجع: **`16` مرجعاً** (`[1]`–`[14]` مذكورة صراحة داخل الشرائح `1`–`14`، و`[1]`–`[16]` متطابقة تماماً في الشريحة `15` و`references.txt` و`sources_log.md`).
+- نتيجة فحص المراجع في `scripts/check_submission.py`: **`0` أخطاء** (`0` مراجع مفقودة، `0` علامات يتيمة، `15/16` رابط `HTTP 200/203` + بوابة `GSMA` موثقة).
+
+#### 5. ما الذي قد يسير بشكل خاطئ؟ (What could go wrong / Pitfalls)
+- نسيان استبدال الموضعين `[AI-CHAT-LINK: ...]` في `[15]` و`[16]` داخل `submission/references.txt` (وعلى الشريحة `15` ثم إعادة تصدير `PDF`) قبل رفع الملفات على `Omnicampus`! سنبرز هذا الإجراء بوضوح في قائمة الخطوات النهائية.
+
+#### 6. ماذا تقول لو سُئلت في المقابلة؟ (What to say if asked)
+> *"استخدمنا الذكاء الاصطناعي بشفافية كاملة كأداة مساعدة لتخطيط المواصفات (`Claude`) والتنفيذ البرمجي وإخراج الرسوم وتصميم الشرائح (`Gemini/Antigravity`)، مع التحقق اليدوي والبرمجي من كل رقم في الكود (`outputs/results.json`) وإعادة فتح كل مصدر خارجي وتوثيقه في `research/sources_log.md`. وبإمكاني شرح كل مرحلة من تقسيم البيانات وتوليد الميزات إلى إعادة المعايرة والأثر المالي بكلماتي الخاصة."*
+
+---
+
 ## قاموس المصطلحات (Glossary)
 *(سيتم استكماله بالتفصيل في المرحلة 12 — T12.1)*
 
@@ -534,4 +562,30 @@
 ---
 
 ## خطوات التسليم واستبيان الذكاء الاصطناعي (Submission Steps & AI Survey)
-*(سيتم استكمالها في المرحلتين 11 و13 — T11.3 وT13.6)*
+
+### أ. مسودة إجابات استبيان استخدام الذكاء الاصطناعي (T11.3 — PRD §13)
+*(قواعد مهمة عند تعبئة الاستبيان على `Omnicampus`: اجعل كل إجابة بين `1–500` حرف والمجموع `<= 2000` حرف؛ **لا تضع أبداً** نصوص المحادثات الكاملة أو أي بيانات شخصية/ملفات `CSV`/مفاتيح، وأجب عن **Q4 بصدق تام** بعد أن تمتحن نفسك في أسئلة التقييم الذاتي العشرين أدناه).*
+
+- **Q1 — Did you use generative AI? (هل استخدمت الذكاء الاصطناعي التوليدي؟)**
+  - الاختيار المقترح: **`1` (Yes / نعم)**
+  - نص قصير مقترح إذا وُجد حقل تعليق (`~185` حرف):
+    `Yes. Used generative AI for architecture planning (PRD/tasks design), EDA & XGBoost notebook coding, Matplotlib charting, Google Slides drafting, Arabic study notes, and citation checks.`
+
+- **Q2 — Which parts used AI? (في أي أجزاء استُخدم الذكاء الاصطناعي؟)**
+  - الاختيارات المقترحة (الأقسام التي استُخدم فيها فعلياً من `1`–`7`):
+    `1 (market research/ideas), 2 (EDA/plots), 3 (preprocessing/features), 4 (model/interpretation), 5 (ML-to-quantified proposal), 6 (slides/writing/translation), 7 (references)`
+  - نص مختصر جاهز للنسخ (`~340` حرف):
+    `Used across: (1) Iraq telecom market research & hypothesis framing, (2) Python EDA scripts & Matplotlib visuals, (3) leakage-safe feature engineering, (4) XGBoost tuning, permutation importance & fairness checks, (5) Saerens re-basing & business impact model, (6) Google Slides layout & Arabic study pack, (7) reference formatting & verification.`
+
+- **Q3 — Which AI tools did you use? (ما الأدوات التي استخدمتها؟)**
+  - الاختيارات المقترحة: **`2` (Claude), `3` (Gemini), `5` (Other — Antigravity IDE agent)**
+  - نص مختصر جاهز للنسخ (`~140` حرف):
+    `2 (Claude for initial PRD planning and structuring), 3 & 5 (Gemini via Google Antigravity IDE for implementation, verification, and slides).`
+
+- **Q4 — Share of your work you can explain in your own words? (ما النسبة التي تستطيع شرحها بكلماتك الخاصة؟)**
+  - **تنبيه الصدق (Honesty Rule):** اختر **`1` (`100%`)** **فقط** إذا قرأت دفتر العمل واجتزت الاختبار الذاتي المكوّن من 20 سؤالاً أدناه وفهمت بصدق لماذا أعدنا المعايرة وكيف يعمل نموذج `M5`؛ وإلا فاختر بامانة **`2` (`75–99%`)** أو النسبة الفعلية دون تزييف!
+  - نص مقترح (`~260` حرف — عدّل النسبة حسب نتيجتك الصادقة):
+    `100% (or actual % after self-test): Verified every metric directly from executed notebook outputs (results.json), reviewed each EDA hypothesis, label-shift re-basing formula, and M5 permutation driver, and practiced with a 20-question self-test.`
+
+### ب. خطوات التسليم على Omnicampus وقائمة ما يُحفظ وما يُحذف
+*(سيتم استكمالها في المرحلة 13 — T13.6 وT13.8)*
