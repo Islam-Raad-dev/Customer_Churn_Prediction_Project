@@ -1,8 +1,8 @@
 # PROGRESS
-Updated: 2026-11-15 07:30
-Last completed task: T10.7 — Built and visually verified Slides 9–12 in Google Slides
-Current task: T10.8 — Build slides 13–15   | status: [~] in progress
-Next concrete action: Build Slides 13–15 (`Estimated business impact`, `Governance & next steps`, `References` verbatim from `submission/references.txt`), inspect all 3 thumbnails via `read_file`, fix any tight card/table rows, then commit the group (`T10.8`).
+Updated: 2026-11-15 07:35
+Last completed task: T10.8 — Built and visually verified Slides 13–15 in Google Slides
+Current task: T10.9–T10.11 — Footnotes, story test & full thumbnail QA   | status: [~] in progress
+Next concrete action: Programmatically audit all `[n]` tags across Slides 1–14 against Slide 15 & `submission/references.txt`, review the 15-title narrative flow, and complete full 15-slide visual QA (`T10.9`–`T10.11`).
 Key decisions so far:
 - Traced all 7 grading requirements, deliverable rules, and deadlines to `README.docx` (GCI World 2026 September, deadline 28 Nov 2026 11:30 UTC).
 - Verified `/home/islam-raad/ai_workspace/bin/python3.12` (Python 3.12.3) has all required packages; 0 packages installed or upgraded.
