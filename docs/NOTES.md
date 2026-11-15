@@ -311,3 +311,10 @@ All `28` engineered features below are computed row-wise from pre-window custome
   - Use `RECTANGLE` with `0.75 pt` `#D9E0E7` border and `#F5F7FA` fill for tall cards (since default `ROUND_RECTANGLE` corner adjustment scales with height and looks pill-shaped on tall boxes), and reserve `ROUND_RECTANGLE` for compact badges/callouts (`height <= 42 pt`).
   - Explicitly apply `font_family`, `alignment`, `content_alignment`, and `line_spacing` on every textbox/cell to override the account's default `ar` locale layout hints.
   - Because every required Google Slides API capability works natively via `gslides`, **no `python-pptx` fallback is needed**. The full 15-slide deck will be built directly in Google Slides, verified slide-by-slide via thumbnails, populated with speaker notes, and exported directly to `submission/Islam-Raad.pdf`.
+
+### T10.2 Production Presentation & Exact-Size Figures (`T10.2`–`T10.4`)
+- **Title:** `Islam-Raad — GCI Final Assignment`
+- **Presentation ID:** `1AoRnogsahX7MrPD5clmipkLutkvfTW_5UuV4rFMhJqA`
+- **URL:** `https://docs.google.com/presentation/d/1AoRnogsahX7MrPD5clmipkLutkvfTW_5UuV4rFMhJqA/edit`
+- **Canvas & Grid:** `720 × 405 pt` (`16:9`), `36 pt` margins, `18 pt` gutter, `36 × 3 pt` top teal accent bar, `Montserrat` Bold (`34 pt` cover / `24–26 pt` titles / `40 pt` KPIs / `10 pt` section tags) and `Open Sans` Regular/Bold (`14–16 pt` body, `11–12 pt` tables, `9 pt` footnotes).
+- **Exact-Size Figures Verified (`T10.3`):** All 11 slide charts/diagrams (`fig_04_missing`, `fig_04_data_flow`, `fig_05_device_age` at `9.0 × 2.75 in`, `fig_06_tenure_usage` at `9.0 × 2.75 in`, `fig_07_problem_flow` at `9.0 × 2.40 in`, `fig_09_model_comparison`, `fig_10_model_diagram`, `fig_10_importance`, `fig_11_lift`, `fig_12_two_lane` at `9.0 × 2.55 in`, `fig_13_impact` at `9.0 × 2.50 in`) inspected via `read_file` at 200 DPI and inserted via `gslides mutate insert-image-from-file` (zero public Drive folders).
