@@ -131,11 +131,11 @@ Follow PRD §11 exactly (canvas 720 × 405 pt, grid, Montserrat + Open Sans, pal
 - [x] **T10.6 Build slides 5–8** (EDA #1, EDA #2, problem definition, features). ✔ 2026-11-15 07:26
 - [x] **T10.7 Build slides 9–12** (experiments — **live-text table** with model · metric · value; how it works + learned; targeting power; recommendation). ✔ 2026-11-15 07:30
 - [x] **T10.8 Build slides 13–15** (estimated impact; risks/ethics/next steps; references identical to `references.txt`). ✔ 2026-11-15 07:35
-- [~] **T10.9 Footnotes:** every external fact has `[n]`; every `[n]` exists on slide 15 and in `references.txt`.
-  - Auditing all `[n]` citation tags across Slides 1–14 against Slide 15 and `submission/references.txt`.
-- [ ] **T10.10 Story test:** read only the 15 titles; rewrite until each leads to the next (problem → evidence → model → decision → impact → risks).
-- [ ] **T10.11 Visual QA of every slide** via thumbnails: overflow, overlaps, clipped labels, fonts (body ≥ 14 pt, chart text ≥ 10 pt), contrast, alignment to the grid, consistent colors; fix all issues.
-- [ ] **T10.12 Speaker notes** (60–90 s) in each slide's native notes pane; copy to `docs/UNDERSTANDING_AR.md`.
+- [x] **T10.9 Footnotes:** every external fact has `[n]`; every `[n]` exists on slide 15 and in `references.txt`. ✔ 2026-11-15 07:38
+- [x] **T10.10 Story test:** read only the 15 titles; rewrite until each leads to the next (problem → evidence → model → decision → impact → risks). ✔ 2026-11-15 07:38
+- [x] **T10.11 Visual QA of every slide** via thumbnails: overflow, overlaps, clipped labels, fonts (body ≥ 14 pt, chart text ≥ 10 pt), contrast, alignment to the grid, consistent colors; fix all issues. ✔ 2026-11-15 07:38
+- [~] **T10.12 Speaker notes** (60–90 s) in each slide's native notes pane; copy to `docs/UNDERSTANDING_AR.md`.
+  - Writing 60–90 s English speaker notes into Google Slides native notes panes (`set-notes`) for all 15 slides and documenting them in `docs/UNDERSTANDING_AR.md`.
 - [ ] **T10.13 Export PDF** → `submission/Islam-Raad.pdf` (Drive export or Islam: File → Download → PDF); confirm ≤ 15 pages, ≤ 10 MB.
 - [ ] **T10.14 Run `scripts/check_submission.py`** (page count, size, `pdftotext` finds model name/metric/result on slide 9, numbers vs `results.json`, `[n]` tags vs references): **0 problems**.
 - [ ] **T10.15 Phase wrap-up** (Arabic section, commit, tag `phase-10-done`).
