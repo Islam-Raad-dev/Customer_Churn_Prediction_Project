@@ -5493,7 +5493,7 @@
       "joblib": "1.5.3",
       "lightgbm": "4.7.0"
     },
-    "run_time": 109.55
+    "run_time": 68.89
   },
   "tutorial_baseline": {
     "majority_class": 0,
