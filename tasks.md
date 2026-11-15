@@ -129,9 +129,9 @@ Follow PRD §11 exactly (canvas 720 × 405 pt, grid, Montserrat + Open Sans, pal
   - Executed via `gslides mutate insert-image-from-file` (uploads/embeds locally into Google Slides internal storage directly without creating publicly shared Drive folders).
 - [x] **T10.5 Build slides 1–4** (title, executive summary, market context, the data).  *Commit after the group.* ✔ 2026-11-15 07:23
 - [x] **T10.6 Build slides 5–8** (EDA #1, EDA #2, problem definition, features). ✔ 2026-11-15 07:26
-- [~] **T10.7 Build slides 9–12** (experiments — **live-text table** with model · metric · value; how it works + learned; targeting power; recommendation).
-  - Building Slides 9–12 with live-text performance & lift tables and embedded figures `fig_09_model_comparison.png`, `fig_10_model_diagram.png`, `fig_10_importance.png`, `fig_11_lift.png`, `fig_12_two_lane.png`.
-- [ ] **T10.8 Build slides 13–15** (estimated impact; risks/ethics/next steps; references identical to `references.txt`).
+- [x] **T10.7 Build slides 9–12** (experiments — **live-text table** with model · metric · value; how it works + learned; targeting power; recommendation). ✔ 2026-11-15 07:30
+- [~] **T10.8 Build slides 13–15** (estimated impact; risks/ethics/next steps; references identical to `references.txt`).
+  - Building Slides 13–15 with native scenario & governance tables, `fig_13_impact.png`, and verbatim two-column `[1]`–`[16]` references from `submission/references.txt`.
 - [ ] **T10.9 Footnotes:** every external fact has `[n]`; every `[n]` exists on slide 15 and in `references.txt`.
 - [ ] **T10.10 Story test:** read only the 15 titles; rewrite until each leads to the next (problem → evidence → model → decision → impact → risks).
 - [ ] **T10.11 Visual QA of every slide** via thumbnails: overflow, overlaps, clipped labels, fonts (body ≥ 14 pt, chart text ≥ 10 pt), contrast, alignment to the grid, consistent colors; fix all issues.
