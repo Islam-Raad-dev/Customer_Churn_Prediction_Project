@@ -90,7 +90,6 @@ Because the outcome depends strongly on the real churn rate in the market (`+83,
 ```
 Customer_Churn_Prediction_Project/
 ├── README.md
-├── CHANGELOG.md
 ├── requirements.txt
 ├── dataset/
 │   ├── Client.csv
@@ -105,49 +104,13 @@ Customer_Churn_Prediction_Project/
 │   ├── models/
 │   │   └── final_xgb_m5_pipeline.joblib
 │   └── tables/
-│       ├── colab_truth_snapshot.json
-│       ├── colab_truth_snapshot.md
 │       ├── experiment_log.csv
 │       └── test_predictions.csv
 ├── reports/
 │   ├── Project-overview.pdf         # Final 15-slide presentation
 │   └── references.txt
-└── scripts/
-    └── check_consistency.py
 ```
 
-## Getting Started
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/Islam-Raad-dev/Customer_Churn_Prediction_Project.git
-cd Customer_Churn_Prediction_Project
-```
-
-### 2. Create an environment and install dependencies
-
-```bash
-python -m venv env
-source env/bin/activate        # Windows: env\Scripts\activate
-pip install -r requirements.txt
-```
-
-### 3. Run the notebook
-
-```bash
-jupyter notebook notebooks/churn_prediction.ipynb
-```
-
-Run the cells from top to bottom. The notebook reads the data from `dataset/` and writes figures, tables, and the trained model into `outputs/`.
-
-### 4. Load the trained model (optional)
-
-```python
-import joblib
-model = joblib.load("outputs/models/final_xgb_m5_pipeline.joblib")
-# model.predict_proba(X)[:, 1] -> churn probability
-```
 
 ## Tech Stack
 
@@ -170,20 +133,6 @@ The data comes from the GCI World 2026 course material: an anonymized telecom da
 - Patterns such as the 300-day threshold are correlational. Only the A/B test can prove that an offer actually retains customers.
 - ROC-AUC of ~0.70 is typical for noisy human-behavior data: the model ranks customers usefully, but it does not predict each individual with high accuracy.
 
-## Documentation
-
-- **Presentation:** [`reports/Project-overview.pdf`](reports/Project-overview.pdf)
-- **References:** [`reports/references.txt`](reports/references.txt)
-- **Detailed guide (Arabic):** [`docs/UNDERSTANDING_AR.md`](docs/UNDERSTANDING_AR.md)
-
 ## Disclosure
 
 AI assistants were used during development, as permitted by the program, and are disclosed in the references. All results and decisions in this repository were reviewed and are understood by the author.
-
-## Author
-
-**Islam Raad Fathi**
-AI Engineering Student, University of Mosul
-
-- GitHub: [Islam-Raad-dev](https://github.com/Islam-Raad-dev)
-- LinkedIn: [islam-raad](https://www.linkedin.com/in/islam-raad/)
