@@ -89,8 +89,7 @@ Because the outcome depends strongly on the real churn rate in the market (`+83,
 
 ```
 Customer_Churn_Prediction_Project/
-├── README.md
-├── requirements.txt
+
 ├── dataset/
 │   ├── Client.csv
 │   ├── Record.csv
@@ -98,7 +97,7 @@ Customer_Churn_Prediction_Project/
 ├── docs/
 │   └── UNDERSTANDING_AR.md          # Detailed project guide (Arabic)
 ├── notebooks/
-│   └── churn_prediction.ipynb       # Full analysis, modeling, and financial model
+│   └── churn_prediction.ipynb       # Full analysis, modeling
 ├── outputs/
 │   ├── figures/                     # Charts used in the report
 │   ├── models/
@@ -109,6 +108,8 @@ Customer_Churn_Prediction_Project/
 ├── reports/
 │   ├── Project-overview.pdf         # Final 15-slide presentation
 │   └── references.txt
+├── README.md
+├── requirements.txt
 ```
 
 
