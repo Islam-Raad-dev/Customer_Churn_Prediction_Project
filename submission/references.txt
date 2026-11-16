@@ -12,5 +12,6 @@
 [12] Chen, T., & Guestrin, C. (2016). XGBoost: A Scalable Tree Boosting System. Proceedings of the 22nd ACM SIGKDD International Conference (KDD '16), 785-794. https://arxiv.org/abs/1603.02754
 [13] Open-source Python scientific stack (scikit-learn 1.8.0, XGBoost 3.4.1, LightGBM 4.7.0, pandas 3.0.2, NumPy 2.4.4, SciPy 1.17.1, Matplotlib 3.10.8). https://scikit-learn.org/ ; https://matplotlib.org/
 [14] Company A telecom dataset (Client.csv, Record.csv), GCI World 2026 September Final Assignment materials, Matsuo-Iwasawa Lab, University of Tokyo (not redistributed).
-[15] Generative AI planning & assistance log (Claude): [AI-CHAT-LINK: Claude planning conversation]
-[16] Generative AI research & assistant log (Gemini / Antigravity): [AI-CHAT-LINK: Antigravity/Gemini session]
+[15] Generative AI planning & assistance log (Claude): [https://claude.ai/share/10d3fecc-c785-4d63-a0af-c10bc483014f]
+[16] Generative AI research log (Gemini): [https://share.gemini.google/cbb4ohTYrnqt]
+[17] Generative AI assistant log (Gemini): [https://share.gemini.google/Nfkbjkuk8K1e]
