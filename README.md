@@ -1,7 +1,7 @@
 # Customer Churn Prediction & Retention Strategy
 
 End-to-end machine learning project for a telecom company (anonymized as **"Company A"**): predict which subscribers will churn, then decide with numbers whether a retention campaign is actually worth running.
-
+                                   
 Final project of the **GCI World Program** (Matsuo-Iwasawa Lab, University of Tokyo, 2026).
 
 ---
