@@ -6,7 +6,7 @@ Final project of the **GCI World Program** (Matsuo-Iwasawa Lab, University of To
 
 ---
 
-## Overview
+## Overview  
 
 A telecom operator loses subscribers every month, and a retention offer costs money even when it is sent to someone who would have stayed anyway. So the question is not only *"who will leave?"* but also *"is it profitable to spend on this segment?"*
 
